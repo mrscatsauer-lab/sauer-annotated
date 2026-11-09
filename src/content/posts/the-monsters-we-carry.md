@@ -4,12 +4,16 @@ description: A little girl hiding in a closet, the woman she became, and the day
 date: 2026-11-09
 shelf: writing-life
 tags: [poetry]
+hiddenNotes: true
+annotationBlurb: See how it’s built, in my own margin notes.
 draft: false
 ---
 
+<aside class="note">her voice is always in italics. the narrator’s never is.</aside>
+
 <div class="poem stanza">a little girl cries into the night,
 <em>“help me, please.
-can anybody hear me?”</em></div>
+<mark class="clue">can anybody hear me?</mark>”</em></div>
 
 <div class="poem stanza">but no one comes.</div>
 
@@ -24,13 +28,15 @@ holding her breath,
 praying the darkness will swallow her
 before he finds her.</div>
 
-<div class="poem stanza"><em>will today be the day i die?</em></div>
+<aside class="note">the refrain. she asks it three times before anyone answers.</aside>
+
+<div class="poem stanza"><em><mark class="clue">will today be the day i die?</mark></em></div>
 
 <div class="poem stanza">outside, the streets are restless.
 gangs claim corners,
 bullets tear through the night,
 and childhood is measured
-in the distance between gunshots.</div>
+<mark class="clue">in the distance between gunshots.</mark></div>
 
 <div class="poem stanza">she learns to run
 before she learns to trust.
@@ -64,7 +70,9 @@ the closet door stands open.</div>
 
 <div class="poem stanza">she is safe now.</div>
 
-<div class="poem stanza">but no one told the monsters.</div>
+<aside class="note">“safe” in one stanza, taken back in the next. five words.</aside>
+
+<div class="poem stanza"><mark class="clue">but no one told the monsters.</mark></div>
 
 <div class="poem stanza">they follow her into dreams,
 crawl beneath her skin,
@@ -99,10 +107,12 @@ a marriage,
 a life that little girl
 could never have imagined.</div>
 
+<aside class="note">the children arrive as faces, not a list.</aside>
+
 <div class="poem stanza">and then she sees them.</div>
 
-<div class="poem stanza">her daughter’s face.
-her son’s face.</div>
+<div class="poem stanza"><mark class="clue">her daughter’s face.</mark>
+<mark class="clue">her son’s face.</mark></div>
 
 <div class="poem stanza">and there it is,
 the love she was never sure
@@ -120,8 +130,10 @@ the promise that stays.</div>
 <div class="poem stanza">but even love
 cannot erase every shadow.</div>
 
-<div class="poem stanza">a slammed door
-becomes a gunshot.</div>
+<aside class="note">two lines each. no explanation. the present and the past share one image.</aside>
+
+<div class="poem stanza"><mark class="clue">a slammed door</mark>
+<mark class="clue">becomes a gunshot.</mark></div>
 
 <div class="poem stanza">a raised voice
 becomes a monster.</div>
@@ -129,7 +141,7 @@ becomes a monster.</div>
 <div class="poem stanza">and just like that,
 she is small again,
 hiding in a closet
-that no longer exists.</div>
+<mark class="clue">that no longer exists.</mark></div>
 
 <hr />
 
@@ -150,8 +162,10 @@ frail and small.</div>
 he hasn’t held power over her
 in years.</div>
 
+<aside class="note">the turn. the danger is gone; the child inside never got the news.</aside>
+
 <div class="poem stanza">but the little girl
-never knew.</div>
+<mark class="clue">never knew.</mark></div>
 
 <div class="poem stanza">she was still hiding,
 still trembling,
@@ -165,7 +179,9 @@ she did not wait.</div>
 
 <hr />
 
-<div class="poem stanza">She fought.</div>
+<aside class="note">lowercase for the whole poem until now. capital letters the moment she fights.</aside>
+
+<div class="poem stanza"><mark class="clue">She fought.</mark></div>
 
 <div class="poem stanza">Through the fear,
 through the shame,
@@ -185,8 +201,10 @@ still hiding inside them.</div>
 
 <div class="poem stanza">And she opened the door.</div>
 
-<div class="poem stanza">“I hear you,” she whispered.
-“I’ve always heard you.</div>
+<aside class="note">the answer to “can anybody hear me?” from the very first stanza.</aside>
+
+<div class="poem stanza">“<mark class="clue">I hear you</mark>,” she whispered.
+“<mark class="clue">I’ve always heard you.</mark></div>
 
 <div class="poem stanza">You kept us alive.
 Now it’s my turn
@@ -202,6 +220,8 @@ who did.</div>
 
 <div class="poem stanza">Now she looks the monsters in the eye.</div>
 
-<div class="poem stanza">Not today.</div>
+<aside class="note">lowercase “i” when she asks if she’ll die. capital “I” when she lives.</aside>
 
-<div class="poem stanza">Today is the day I live.</div>
+<div class="poem stanza"><mark class="clue">Not today.</mark></div>
+
+<div class="poem stanza"><mark class="clue">Today is the day I live.</mark></div>
