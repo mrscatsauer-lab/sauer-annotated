@@ -7,7 +7,7 @@ import { z } from 'astro/zod';
 const shelves = ['soapbox', 'reviews', 'writing-life', 'teaching', 'parents'] as const;
 
 // Recurring series. Keep in sync with SERIES in src/consts.ts.
-const series = ['pass-the-potatoes', 'what-to-say-when', 'teenager-translator', 'small-lives'] as const;
+const series = ['pass-the-potatoes', 'what-to-say-when', 'teenager-translator', 'small-lives', 'here-be-monsters'] as const;
 
 const posts = defineCollection({
   loader: glob({ base: './src/content/posts', pattern: '**/*.{md,mdx}' }),

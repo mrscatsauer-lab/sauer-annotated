@@ -3,6 +3,7 @@ title: The Monsters We Carry
 description: A little girl hiding in a closet, the woman she became, and the day she finally opened the door.
 date: 2026-11-09
 shelf: writing-life
+series: here-be-monsters
 tags: [poetry]
 hiddenNotes: true
 annotationBlurb: See how it’s built, in my own margin notes.

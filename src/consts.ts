@@ -37,6 +37,11 @@ export const SERIES = {
     blurb: 'Flash fiction from creatures who don’t know what we know about their world.',
     shelf: 'writing-life',
   },
+  'here-be-monsters': {
+    label: 'Here Be Monsters',
+    blurb: 'Poems and stories about the monsters we grow up with, and the ones we finally outgrow.',
+    shelf: 'writing-life',
+  },
 } as const;
 
 export type SeriesKey = keyof typeof SERIES;

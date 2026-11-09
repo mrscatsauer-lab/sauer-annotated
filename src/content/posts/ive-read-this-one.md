@@ -3,6 +3,7 @@ title: "I’ve Read This One"
 description: A sonnet about a story you recognize by the second chapter.
 date: 2026-11-08
 shelf: writing-life
+series: here-be-monsters
 tags: [poetry, sonnet]
 hiddenNotes: true
 annotationBlurb: See how a sonnet is built, in my own margin notes.

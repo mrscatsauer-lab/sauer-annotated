@@ -3,6 +3,7 @@ title: Orange Cheese and Purple Grapes
 description: A snack for a toddler, a memory of jelly shoes, and a six-year-old looking for a new mother.
 date: 2026-11-08
 shelf: writing-life
+series: here-be-monsters
 tags: [short-story, flash-fiction, motherhood]
 hiddenNotes: true
 annotationBlurb: See how it’s built, in my own margin notes.
