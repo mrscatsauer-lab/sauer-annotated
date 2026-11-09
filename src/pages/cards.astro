@@ -26,7 +26,7 @@ const first = allCards.find((c) => c.deck === 'tweens') ?? allCards[0];
     <div class="table-card" aria-live="polite">
       <p class="card-meta"><span class="card-deck">{first.label}</span> · <span class="card-ages">{first.ages}</span></p>
       <p class="card-q">{first.q}</p>
-      <p class="card-foot hand">sauer, annotated</p>
+      <p class="card-foot hand">catherine, annotated</p>
     </div>
 
     <div class="actions">
@@ -52,7 +52,7 @@ const first = allCards.find((c) => c.deck === 'tweens') ?? allCards[0];
       <div class="print-card" data-deck={c.deck}>
         <p class="pc-meta">{c.label} · {c.ages}</p>
         <p class="pc-q">{c.q}</p>
-        <p class="pc-foot">Sauer, Annotated · sauerannotated.com</p>
+        <p class="pc-foot">Catherine, Annotated · sauerannotated.com</p>
       </div>
     ))}
   </section>

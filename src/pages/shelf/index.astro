@@ -5,7 +5,7 @@ import { SHELVES } from '../../consts';
 import { getPosts } from '../../utils';
 const posts = await getPosts();
 ---
-<Base title="Shelves" description="Browse Sauer, Annotated by section.">
+<Base title="Shelves" description="Browse Catherine, Annotated by section.">
   <PageHead eyebrow="Browse the stacks" title="The shelves" note="pick a section, any section" />
   <ul class="wrap shelf-list">
     {Object.entries(SHELVES).map(([key, s]) => {

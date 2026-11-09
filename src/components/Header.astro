@@ -20,7 +20,7 @@ const nav = [
   <div class="wrap bar">
     <a href="/" class="brand" aria-label={`${SITE_TITLE}, home`}>
       <Crow size={92} class="brand-crow" />
-      <span class="wordmark">Sauer<span class="comma">,</span> <span class="scrawl">annotated</span></span>
+      <span class="wordmark">Catherine<span class="comma">,</span> <span class="scrawl">annotated</span></span>
     </a>
     <div class="tools">
       <button class="theme" type="button" aria-label="Toggle dark mode" title="Lights on / lights off">
@@ -222,10 +222,13 @@ const nav = [
   }
   @media (max-width: 400px) {
     .wordmark {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
+    }
+    .brand {
+      gap: 0.4rem;
     }
     .brand :global(.brand-crow) {
-      --size: 52px !important;
+      --size: 46px !important;
     }
     .menu-btn span {
       display: none;

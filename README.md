@@ -1,4 +1,4 @@
-# Sauer, Annotated
+# Catherine, Annotated
 
 Margin notes on books, writing, and everything else. Built with [Astro](https://astro.build), hosted on Vercel at **sauerannotated.com**.
 

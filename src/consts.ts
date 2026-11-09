@@ -1,4 +1,4 @@
-export const SITE_TITLE = 'Sauer, Annotated';
+export const SITE_TITLE = 'Catherine, Annotated';
 export const SITE_TAGLINE = 'Margin notes on books, writing, and everything else.';
 export const SITE_DESCRIPTION =
   'Essays, book reviews, short stories, and literacy tips for teachers and parents from Catherine Sauer, English teacher and writer.';
