@@ -9,7 +9,7 @@ const year = new Date().getFullYear();
     <div class="sign">
       <Crow size={64} badge />
       <div>
-        <p class="name">{SITE_TITLE}</p>
+        <p class="name">Sauer, <span class="scrawl">annotated</span></p>
         <p class="hand small">written in the margins by {AUTHOR}</p>
       </div>
     </div>
@@ -56,6 +56,15 @@ const year = new Date().getFullYear();
     font-family: var(--font-display);
     font-size: 1.3rem;
     margin: 0;
+  }
+  .scrawl {
+    display: inline-block;
+    font-family: var(--font-hand);
+    font-weight: 600;
+    font-size: 1.45em;
+    line-height: 0;
+    color: var(--mustard);
+    transform: rotate(-4deg);
   }
   .small {
     margin: 0;
