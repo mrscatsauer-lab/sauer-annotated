@@ -17,7 +17,7 @@ const counts = Object.fromEntries(
   Object.keys(SHELVES).map((k) => [k, posts.filter((p) => p.data.shelf === k).length]),
 );
 const shelfArtwork = {
-  essays: genreStack,
+  soapbox: genreStack,
   reviews: bestBook,
   'writing-life': readMe,
   teaching: shelfArt,
@@ -31,7 +31,7 @@ const shelfArtwork = {
         <p class="hand kicker">pull up a chair</p>
         <h1>Margin notes on books, writing, and <em class="underlined">everything else.</em></h1>
         <p class="lede">
-          Essays, honest reviews, and short stories, plus real help for teachers and parents raising readers.
+          Opinions, honest reviews, and short stories, plus real help for teachers and parents raising readers.
           Written by an English teacher who cannot read a book without a pen in her hand.
         </p>
         <div class="actions">
@@ -263,7 +263,7 @@ const shelfArtwork = {
     color: var(--ink-soft);
   }
   .s-reviews { --tint: #f3e0e1; --tone: #500000; }
-  .s-essays { --tint: #d9e3dc; --tone: #1f4d46; }
+  .s-soapbox { --tint: #d9e3dc; --tone: #1f4d46; }
   .s-parents { --tint: #f2dfe0; --tone: #7a1f2b; }
   .s-writing-life { --tint: #f8e7c2; --tone: #8a6312; }
   .s-teaching { --tint: #e3e8dc; --tone: #4f604c; }

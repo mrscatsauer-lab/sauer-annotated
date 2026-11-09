@@ -4,7 +4,7 @@ import { z } from 'astro/zod';
 
 // The "shelves" a post can live on. Add or rename these any time;
 // just keep them in sync with src/consts.ts.
-const shelves = ['essays', 'reviews', 'writing-life', 'teaching', 'parents'] as const;
+const shelves = ['soapbox', 'reviews', 'writing-life', 'teaching', 'parents'] as const;
 
 // Recurring series. Keep in sync with SERIES in src/consts.ts.
 const series = ['pass-the-potatoes', 'what-to-say-when', 'teenager-translator', 'small-lives'] as const;
