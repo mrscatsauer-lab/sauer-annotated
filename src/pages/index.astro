@@ -46,21 +46,6 @@ const shelfArtwork = {
     </div>
   </section>
 
-  <section class="wrap section" id="latest">
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">Fresh off the cart</p>
-        <h2>Recently shelved</h2>
-      </div>
-      <a href="/archive/" class="see-all">See the whole archive →</a>
-    </div>
-    {latest.length ? (
-      <div class="cards">{latest.map((post) => <PostCard post={post} />)}</div>
-    ) : (
-      <p class="empty hand">Nothing shelved yet. The first post is coming.</p>
-    )}
-  </section>
-
   <section class="wrap section">
     <div class="section-head">
       <div>
@@ -82,6 +67,21 @@ const shelfArtwork = {
         </li>
       ))}
     </ul>
+  </section>
+
+  <section class="wrap section" id="latest">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Fresh off the cart</p>
+        <h2>Recently shelved</h2>
+      </div>
+      <a href="/archive/" class="see-all">See the whole archive →</a>
+    </div>
+    {latest.length ? (
+      <div class="cards">{latest.map((post) => <PostCard post={post} />)}</div>
+    ) : (
+      <p class="empty hand">Nothing shelved yet. The first post is coming.</p>
+    )}
   </section>
 
   <section class="wrap section">
