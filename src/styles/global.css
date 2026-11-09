@@ -390,3 +390,124 @@ a:hover {
 .prose .poem:not(.stanza) + .poem:not(.stanza) {
   margin-top: -0.6em;
 }
+
+/* ---------- Print ----------
+   Teacher's Edition posts have a "Print this lesson" button that opens the
+   browser's print dialog. Choosing "Save as PDF" there makes the PDF.
+   These rules strip the site chrome and leave a clean, ink-friendly handout. */
+@media print {
+  @page {
+    margin: 0.7in;
+  }
+  :root {
+    color-scheme: light;
+  }
+  html,
+  body {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 11.5pt;
+  }
+  .topbar,
+  .site-header,
+  .site-footer,
+  .sr-only,
+  .print-row,
+  .catalog-card,
+  .edition-banner,
+  .reread,
+  .companion,
+  .post-foot {
+    display: none !important;
+  }
+  .post .print-source {
+    display: block !important;
+    font-family: var(--font-ui);
+    font-size: 8.5pt;
+    letter-spacing: 0.04em;
+    color: #555;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.4em;
+    margin-bottom: 1.2em;
+  }
+  .wrap,
+  .wrap-prose,
+  .prose {
+    max-width: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .post-head h1 {
+    font-size: 22pt;
+    color: #111;
+  }
+  .post-head .dek {
+    font-size: 11pt;
+    color: #333;
+  }
+  .prose h2,
+  .prose h3 {
+    color: #111;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .prose li,
+  .prose blockquote,
+  .prose .note {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .prose blockquote {
+    color: #222;
+  }
+  .prose mark {
+    background: none;
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: #999;
+  }
+  /* Margin notes print inline as small teacher tips */
+  .prose .note,
+  .prose.notes-hidden .note {
+    display: block !important;
+    float: none !important;
+    width: auto !important;
+    margin: 0.4em 0 1em !important;
+    transform: none !important;
+    font-family: var(--font-ui);
+    font-size: 9.5pt;
+    font-style: italic;
+    color: #444 !important;
+    border-left: 2px solid #bbb;
+    padding: 0 0 0 0.8em !important;
+  }
+  .prose .note::before {
+    content: 'Note: ';
+    position: static;
+    border: 0;
+    width: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+  /* Spell out web links so they still work on paper */
+  .prose a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 8.5pt;
+    color: #555;
+    word-break: break-all;
+  }
+  .prose a {
+    color: #111;
+  }
+  .prose hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1.2em 0;
+  }
+  .prose hr::after {
+    display: none;
+  }
+}

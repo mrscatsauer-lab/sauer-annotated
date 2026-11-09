@@ -10,11 +10,13 @@ const { post } = Astro.props;
 const { title, description, date, updated, shelf, tags, book } = post.data;
 const companion = post.data.companion ? await getEntry('posts', post.data.companion) : undefined;
 const hasHiddenNotes = post.data.hiddenNotes && (post.body ?? '').includes('class="note');
+const printUrl = new URL(Astro.url.pathname, Astro.site).toString().replace(/^https?:\/\//, '');
 const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : undefined;
 ---
 <Base title={title} description={description}>
   <article class="post">
     <header class="post-head wrap">
+      <p class="print-source">From <strong>Catherine, Annotated</strong> · {printUrl}</p>
       <p class="eyebrow">
         <a href={`/shelf/${shelf}/`}>{SHELVES[shelf].label}</a>
         <span aria-hidden="true">·</span>
@@ -27,6 +29,12 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
       )}
       <h1>{title}</h1>
       <p class="dek">{description}</p>
+      {shelf === 'teaching' && (
+        <p class="print-row">
+          <button type="button" class="btn print-btn" data-print>Print this lesson</button>
+          <span class="hand">or save it as a PDF</span>
+        </p>
+      )}
       {post.data.draft && <p class="draft">Draft: only visible while you preview locally</p>}
     </header>
 
@@ -95,6 +103,9 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
 </Base>
 
 <script>
+  document.querySelectorAll('[data-print]').forEach((btn) =>
+    btn.addEventListener('click', () => window.print()),
+  );
   const story = document.getElementById('story');
   const banner = document.querySelector('.edition-banner');
   const toggles = document.querySelectorAll('[data-toggle-notes]');
@@ -115,6 +126,22 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
 </script>
 
 <style>
+  .print-source {
+    display: none;
+  }
+  .print-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem 1rem;
+    margin-top: 1.4rem;
+  }
+  .print-row .hand {
+    font-size: 1.35rem;
+    color: var(--accent);
+    transform: rotate(-3deg);
+  }
   .edition-banner[hidden] {
     display: none;
   }
