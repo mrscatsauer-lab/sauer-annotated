@@ -13,7 +13,7 @@ draft: false
 
 <mark class="clue">Dad used to say a bird always knows when it’s time to fly.</mark> I never understood what he meant until the Thanksgiving I finally drove toward my brother instead of away from him. The pettiness of how it all started is what makes the distance of time so heart-shattering.
 
-My brother and I haven’t spoken in six years because of pride. It was a cool, rainy morning in New Orleans, and my baby brother, Tim, was getting married to the love of his life. I remember feeling a range of mixed emotions, because I didn’t like his wife-to-be, Kara.
+My brother and I haven’t spoken in six years because of pride. It was a cool, rainy morning in Savannah, Georgia, and my baby brother, Tim, was getting married to the love of his life. I remember feeling a range of mixed emotions, because I didn’t like his wife-to-be, Kara.
 
 Kara had the ability to insult you but make it look like a compliment.
 
@@ -21,11 +21,11 @@ Kara had the ability to insult you but make it look like a compliment.
 
 “Wow, Olivia, you look great,” she’d say. “It’s amazing what a little contour can do for <mark class="clue">a nose like yours.</mark>”
 
-We never clicked. I’m a laid-back, no-frills type of girl, and she is a high-maintenance monster. My brother loved her from the moment he looked into her crystal blue eyes. He pursued her, and a month later, she was pregnant. A year later, I was standing in a rented antique house in the French Quarter, being introduced to all of her friends and family as “the photographer.” No one knew I was the sister-in-law, and her bridesmaids kept bossing me around like I hadn’t been a wedding photographer for the last five years.
+We never clicked. I’m a laid-back, no-frills type of girl, and she is a high-maintenance monster. My brother loved her from the moment he looked into her crystal blue eyes. He pursued her, and a month later, she was pregnant. A year later, I was standing in a rented antique house in Savannah’s historic district, being introduced to all of her friends and family as “the photographer.” No one knew I was the sister-in-law, and her bridesmaids kept bossing me around like I hadn’t been a wedding photographer for the last five years.
 
 “I want you to stand over here and take the photos, Olivia,” Bridezilla demanded as the makeup artist applied her eyeshadow.
 
-The gorgeous wedding took place in front of the famous St. Louis Cathedral, in a garden surrounded by palm trees and Southern flora. The smell of freshly cooked beignets floated around me. A guitar player strummed a lovely melody. The gray clouds thinned, and the rain cleared for the vows. It was perfect, and I couldn’t have asked for a more beautiful setting for photographing a wedding. So I was caught completely off guard when, right after the pastor announced Mr. and Mrs. Johnson, Zilla marched straight to me with fury in her light blue eyes.
+The gorgeous wedding took place in Forsyth Park, in front of the famous white fountain, beneath live oaks dripping with Spanish moss. The smell of warm pralines drifted over from the candy shops downtown. A guitar player strummed a lovely melody. The gray clouds thinned, and the rain cleared for the vows. It was perfect, and I couldn’t have asked for a more beautiful setting for photographing a wedding. So I was caught completely off guard when, right after the pastor announced Mr. and Mrs. Johnson, Zilla marched straight to me with fury in her light blue eyes.
 
 “You did that on purpose!” she yelled, jabbing a manicured finger into my chest. “You ruined my wedding day. How could you walk around drawing attention to yourself while I was getting married? All I could see was YOU, clicking away!”
 
