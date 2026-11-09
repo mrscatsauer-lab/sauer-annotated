@@ -4,7 +4,7 @@ import { z } from 'astro/zod';
 
 // The "shelves" a post can live on. Add or rename these any time;
 // just keep them in sync with src/consts.ts.
-const shelves = ['reviews', 'essays', 'stories', 'writing-life', 'classroom'] as const;
+const shelves = ['essays', 'reviews', 'writing-life', 'teaching', 'parents'] as const;
 
 const posts = defineCollection({
   loader: glob({ base: './src/content/posts', pattern: '**/*.{md,mdx}' }),

@@ -2,7 +2,7 @@
 title: How to Write a Post (a cheat sheet)
 description: Every formatting trick this blog knows, in one place. Stays a draft, so only you see it.
 date: 2026-11-06
-shelf: classroom
+shelf: teaching
 tags: [reference]
 draft: true
 ---
@@ -27,7 +27,7 @@ Three dashes on their own line make a little fleuron divider:
 
 ## Short stories
 
-Put a story on the `stories` shelf. Use three dashes (`---`) between scenes and you get the scribble divider as your scene break. The drop cap on the first letter happens automatically.
+Put a story on the `writing-life` shelf. Use three dashes (`---`) between scenes and you get the scribble divider as your scene break. The drop cap on the first letter happens automatically.
 
 ## The occasional poem
 

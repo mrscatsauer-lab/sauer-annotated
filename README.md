@@ -26,7 +26,7 @@ Every post starts with this block (called front matter):
 title: "My Post Title"
 description: "One sentence that shows up on cards and in search results."
 date: 2026-11-08
-shelf: essays        # reviews, essays, stories, writing-life, or classroom
+shelf: essays        # essays, reviews, writing-life, teaching, or parents
 tags: [books, teaching]
 draft: false
 ---
@@ -68,7 +68,7 @@ Vercel rebuilds and the post is live in about a minute.
 | File | What it controls |
 | --- | --- |
 | `src/styles/global.css` | Colors, fonts, spacing (change the variables at the top) |
-| `src/consts.ts` | Site name, tagline, and the shelves |
+| `src/consts.ts` | Site name, tagline, and the shelf names and subtitles |
 | `src/content.config.ts` | Allowed shelves and post fields (keep in sync with `consts.ts`) |
 | `src/pages/index.astro` | Home page |
 | `src/pages/about.astro` | About page |
