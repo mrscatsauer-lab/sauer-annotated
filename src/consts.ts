@@ -32,6 +32,11 @@ export const SERIES = {
     blurb: 'What English class is actually asking for, decoded for parents.',
     shelf: 'parents',
   },
+  'small-lives': {
+    label: 'Small Lives',
+    blurb: 'Flash fiction from creatures who don’t know what we know about their world.',
+    shelf: 'writing-life',
+  },
 } as const;
 
 export type SeriesKey = keyof typeof SERIES;

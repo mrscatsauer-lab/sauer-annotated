@@ -55,7 +55,7 @@ The draft post **How to Write a Post** in `src/content/posts/` shows all of thes
 
 ### Series
 
-Add `series:` to a post's front matter to put it in a recurring feature: `pass-the-potatoes`, `what-to-say-when`, or `teenager-translator`. Each series has its own page at `/series/<name>/`. Add or rename series in `src/consts.ts` and `src/content.config.ts`.
+Add `series:` to a post's front matter to put it in a recurring feature: `pass-the-potatoes`, `what-to-say-when`, `teenager-translator`, or `small-lives`. Each series has its own page at `/series/<name>/`. Add or rename series in `src/consts.ts` and `src/content.config.ts`.
 
 ### Hidden annotations (for stories)
 
