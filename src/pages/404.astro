@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Crow from '../components/Crow.astro';
+---
+<Base title="Not found">
+  <section class="wrap lost">
+    <Crow size={180} class="lost-crow" />
+    <p class="hand">the crow took the key and ran</p>
+    <h1>This page has been checked out.</h1>
+    <p>It may be overdue, misshelved, or never existed. Try the <a href="/archive/">archive</a> or head <a href="/">home</a>.</p>
+  </section>
+</Base>
+<style>
+  .lost {
+    text-align: center;
+    padding-top: 5rem;
+  }
+  .lost :global(.lost-crow) {
+    color: var(--ink);
+  }
+  .hand {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+  }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 500;
+  }
+</style>

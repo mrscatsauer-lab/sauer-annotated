@@ -1,0 +1,97 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { SHELVES } from '../consts';
+import { formatDate, readingTime } from '../utils';
+interface Props { post: CollectionEntry<'posts'> }
+const { post } = Astro.props;
+const shelf = SHELVES[post.data.shelf];
+---
+<article class={`card shelf-${post.data.shelf}`}>
+  <a href={`/posts/${post.id}/`} class="hit" aria-label={post.data.title}></a>
+  <p class="eyebrow">
+    <span class="shelf">{shelf.label}</span>
+    <span aria-hidden="true">·</span>
+    <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+  </p>
+  <h3>{post.data.title}</h3>
+  {post.data.book && <p class="book">{post.data.book.title} <span>by {post.data.book.author}</span></p>}
+  <p class="desc">{post.data.description}</p>
+  <p class="more">{readingTime(post.body)} min read <span aria-hidden="true">→</span></p>
+</article>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--spine, var(--oxblood));
+    border-radius: 6px 6px var(--radius) var(--radius);
+    padding: 1.5rem 1.5rem 1.25rem;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+  .hit {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  .eyebrow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 0.8rem;
+  }
+  .shelf {
+    color: var(--spine, var(--oxblood));
+  }
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .book {
+    font-style: italic;
+    margin: 0 0 0.5rem;
+    color: var(--ink);
+  }
+  .book span {
+    font-style: normal;
+    color: var(--ink-soft);
+  }
+  .desc {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 1rem;
+    flex: 1;
+  }
+  .more {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .card:hover .more {
+    color: var(--accent);
+  }
+  .shelf-reviews { --spine: #6f1d24; }
+  .shelf-essays { --spine: #1f3b39; }
+  .shelf-poems { --spine: #b4787c; }
+  .shelf-writing-life { --spine: #b98432; }
+  .shelf-classroom { --spine: #4f6f6b; }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .shelf-reviews { --spine: #e3a4a4; }
+    :global(:root:not([data-theme='light'])) .shelf-essays { --spine: #8fb7b1; }
+    :global(:root:not([data-theme='light'])) .shelf-classroom { --spine: #a3c2bd; }
+  }
+  :global(:root[data-theme='dark']) .shelf-reviews { --spine: #e3a4a4; }
+  :global(:root[data-theme='dark']) .shelf-essays { --spine: #8fb7b1; }
+  :global(:root[data-theme='dark']) .shelf-classroom { --spine: #a3c2bd; }
+</style>

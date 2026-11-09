@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { SHELVES } from '../consts';
+import { getPosts } from '../utils';
+
+const posts = await getPosts();
+const byYear = new Map<number, typeof posts>();
+for (const p of posts) {
+  const y = p.data.date.getUTCFullYear();
+  byYear.set(y, [...(byYear.get(y) ?? []), p]);
+}
+const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+<Base title="Archive" description="Every post on Sauer, Annotated, in order.">
+  <PageHead eyebrow="The card catalog" title="Archive" note={`${posts.length} entries and counting`} />
+  <div class="wrap list">
+    {[...byYear].map(([year, items]) => (
+      <section>
+        <h2>{year}</h2>
+        <ul>
+          {items.map((p) => (
+            <li>
+              <time datetime={p.data.date.toISOString()}>{fmt(p.data.date)}</time>
+              <a href={`/posts/${p.id}/`}>{p.data.title}</a>
+              <span class="shelf">{SHELVES[p.data.shelf].label}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>
+<style>
+  .list {
+    max-width: calc(48rem + 2 * var(--gutter));
+  }
+  h2 {
+    font-size: 1.1rem;
+    font-family: var(--font-ui);
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin: 2.5rem 0 0.5rem;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr auto;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.9rem 0;
+    border-bottom: 1px dashed var(--rule);
+  }
+  time,
+  .shelf {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  a {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  @media (max-width: 560px) {
+    li {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+    }
+    .shelf {
+      display: none;
+    }
+  }
+</style>

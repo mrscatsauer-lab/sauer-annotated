@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import PostCard from '../../components/PostCard.astro';
+import { SHELVES, type ShelfKey } from '../../consts';
+import { getPosts } from '../../utils';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return (Object.keys(SHELVES) as ShelfKey[]).map((shelf) => ({
+    params: { shelf },
+    props: { posts: posts.filter((p) => p.data.shelf === shelf) },
+  }));
+}
+const { shelf } = Astro.params as { shelf: ShelfKey };
+const { posts } = Astro.props;
+const s = SHELVES[shelf];
+---
+<Base title={s.label} description={s.blurb}>
+  <PageHead eyebrow="Shelf" title={s.label} note={s.blurb} />
+  <div class="wrap">
+    {posts.length ? (
+      <div class="cards">{posts.map((p) => <PostCard post={p} />)}</div>
+    ) : (
+      <p class="hand empty">This shelf is empty for now. Give it time.</p>
+    )}
+  </div>
+</Base>
+<style>
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 1.5rem;
+  }
+  .empty {
+    font-size: 1.5rem;
+  }
+</style>

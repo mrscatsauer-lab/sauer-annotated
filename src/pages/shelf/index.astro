@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import { SHELVES } from '../../consts';
+import { getPosts } from '../../utils';
+const posts = await getPosts();
+---
+<Base title="Shelves" description="Browse Sauer, Annotated by section.">
+  <PageHead eyebrow="Browse the stacks" title="The shelves" note="pick a section, any section" />
+  <ul class="wrap shelf-list">
+    {Object.entries(SHELVES).map(([key, s]) => {
+      const n = posts.filter((p) => p.data.shelf === key).length;
+      return (
+        <li>
+          <a href={`/shelf/${key}/`}>
+            <span class="name">{s.label}</span>
+            <span class="blurb">{s.blurb}</span>
+            <span class="n">{n} {n === 1 ? 'post' : 'posts'} →</span>
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</Base>
+<style>
+  .shelf-list {
+    list-style: none;
+    margin-top: 1rem;
+    display: grid;
+    gap: 0;
+  }
+  .shelf-list a {
+    display: grid;
+    grid-template-columns: 14rem 1fr auto;
+    gap: 1.5rem;
+    align-items: baseline;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .name {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+  }
+  .blurb {
+    color: var(--ink-soft);
+  }
+  .n {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .shelf-list a:hover .name {
+    color: var(--accent);
+  }
+  @media (max-width: 700px) {
+    .shelf-list a {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+  }
+</style>
