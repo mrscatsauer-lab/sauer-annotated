@@ -1,6 +1,6 @@
 /* ==========================================================
    Sauer, Annotated: design tokens
-   Cozy old library (oxblood, library green, brass, paper)
+   Cozy old library (deep green, terracotta, mustard, blush, paper)
    meets clean modern (lots of space, crisp type, simple grid).
    Change colors here and the whole site follows.
    ========================================================== */
@@ -14,20 +14,29 @@
   --ink-soft: #5d524b;
   --rule: #e2d6c3;
 
-  /* Library colors */
-  --oxblood: #6f1d24;
-  --oxblood-deep: #521419;
-  --green: #1f3b39;
-  --green-soft: #a9bdb9;
-  --rose: #d8a3a3;
-  --rose-wash: #f3dede;
-  --brass: #b98432;
-  --brass-wash: #f8e6c3;
+  /* Library colors, pulled from the illustrations */
+  --green: #1f4d46;
+  --green-deep: #173a35;
+  --sage: #7e8f7b;
+  --green-soft: #cdd8d2;
+  --terracotta: #dc7f5f;
+  --rust: #a64b2f;
+  --blush: #eec3b6;
+  --rose: #e3a492;
+  --rose-wash: #f6e1d9;
+  --mustard: #d4a03a;
+  --mustard-wash: #f8e7c2;
+  --brown: #7a4a2c;
+  /* old names kept so nothing breaks */
+  --oxblood: var(--rust);
+  --oxblood-deep: var(--green-deep);
+  --brass: var(--mustard);
+  --brass-wash: var(--mustard-wash);
 
   /* Roles */
-  --accent: var(--oxblood);
-  --link: var(--oxblood);
-  --highlight: #f1d3cf;
+  --accent: var(--rust);
+  --link: var(--rust);
+  --highlight: #f6d3c6;
   --btn: var(--green);
 
   /* Type */
@@ -47,34 +56,34 @@
 /* Dark mode: the library after closing time */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --paper: #161b1a;
-    --paper-deep: #1d2422;
-    --card: #1f2725;
+    --paper: #14201e;
+    --paper-deep: #1a2826;
+    --card: #1c2b28;
     --ink: #f1e9dc;
     --ink-soft: #b9aea1;
     --rule: #33403d;
-    --accent: #e3a4a4;
-    --link: #eab0a8;
-    --highlight: #5a2a2d;
-    --rose-wash: #3a2729;
+    --accent: #eba48a;
+    --link: #f0b49c;
+    --highlight: #5b3324;
+    --rose-wash: #3b2a24;
     --brass-wash: #3a3021;
-    --green-soft: #2f4a47;
+    --green-soft: #24413c;
     --btn: #376660;
   }
 }
 :root[data-theme='dark'] {
-  --paper: #161b1a;
-  --paper-deep: #1d2422;
-  --card: #1f2725;
+  --paper: #14201e;
+  --paper-deep: #1a2826;
+  --card: #1c2b28;
   --ink: #f1e9dc;
   --ink-soft: #b9aea1;
   --rule: #33403d;
-  --accent: #e3a4a4;
-  --link: #eab0a8;
-  --highlight: #5a2a2d;
-  --rose-wash: #3a2729;
+  --accent: #eba48a;
+  --link: #f0b49c;
+  --highlight: #5b3324;
+  --rose-wash: #3b2a24;
   --brass-wash: #3a3021;
-  --green-soft: #2f4a47;
+  --green-soft: #24413c;
   --btn: #376660;
 }
 
@@ -247,10 +256,11 @@ a:hover {
   text-align: center;
 }
 .prose hr::after {
-  content: '*\00a0\00a0\00a0*\00a0\00a0\00a0*';
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--brass);
+  content: '';
+  display: inline-block;
+  width: 140px;
+  height: 24px;
+  background: url('/art/scribble-terracotta.webp') center / contain no-repeat;
 }
 
 .prose mark {

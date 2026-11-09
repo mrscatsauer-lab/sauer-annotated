@@ -1,7 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
-import Crow from '../components/Crow.astro';
+import { Image } from 'astro:assets';
+import soMany from '../assets/art/so-many-books.webp';
 ---
 <Base title="About" description="Who is doing all this annotating.">
   <PageHead eyebrow="About" title="Meet the annotator" note="hi, it's me" />
@@ -15,35 +16,36 @@ import Crow from '../components/Crow.astro';
         <em>Sauer, Annotated</em> is where those margin notes live now. Expect honest book reviews, essays
         that take the long way around, a poem when one shows up, and dispatches from the writing life.
       </p>
-      <aside class="note">yes, I annotate my own about page</aside>
       <p>
         If you're here, you probably read with a pen too. Welcome. Pull up a chair.
       </p>
     </div>
-    <div class="crow-side" aria-hidden="true"><Crow size={200} /></div>
+    <div class="art-side" aria-hidden="true"><Image src={soMany} alt="" width={520} /></div>
   </div>
 </Base>
 <style>
   .about {
     display: grid;
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: 1fr 300px;
     gap: 3rem;
     align-items: start;
   }
   .about .prose {
     margin: 0;
   }
-  .crow-side {
-    color: var(--ink);
-    opacity: 0.9;
-    padding-top: 1rem;
+  .art-side :global(img) {
+    width: 100%;
+    height: auto;
+    transform: rotate(2deg);
   }
   @media (max-width: 760px) {
     .about {
       grid-template-columns: 1fr;
     }
-    .crow-side {
-      display: none;
+    .art-side {
+      max-width: 260px;
+      margin: 0 auto;
+      order: -1;
     }
   }
 </style>

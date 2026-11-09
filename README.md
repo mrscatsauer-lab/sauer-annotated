@@ -72,7 +72,9 @@ Vercel rebuilds and the post is live in about a minute.
 | `src/content.config.ts` | Allowed shelves and post fields (keep in sync with `consts.ts`) |
 | `src/pages/index.astro` | Home page |
 | `src/pages/about.astro` | About page |
-| `src/components/Crow.astro` | The crow |
+| `src/assets/crow-logo.webp` | The crow logo (replace this file to change it everywhere) |
+| `src/assets/art/` | Illustrations (shelf icons, hero, About, 404) |
+| `public/art/` | Decorative bits: scribbles, crosses, tulip row |
 | `src/layouts/Post.astro` | How a single post looks |
 
 ## Sample posts

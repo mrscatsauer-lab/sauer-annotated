@@ -54,7 +54,7 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
       )}
       {updated && <p class="updated">Revised {formatDate(updated)}</p>}
       <div class="signoff">
-        <Crow size={40} class="sig-crow" />
+        <Crow size={48} />
         <p class="hand">That's all from the margins. <a href="/archive/">Keep reading →</a></p>
       </div>
     </footer>
@@ -177,10 +177,6 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
     gap: 0.8rem;
     border-top: 1px solid var(--rule);
     padding-top: 1.5rem;
-  }
-  .signoff :global(.sig-crow) {
-    color: var(--ink);
-    flex-shrink: 0;
   }
   .signoff p {
     font-size: 1.4rem;

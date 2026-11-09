@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-import Crow from '../components/Crow.astro';
+import { Image } from 'astro:assets';
+import getLost from '../assets/art/get-lost.webp';
 ---
 <Base title="Not found">
   <section class="wrap lost">
-    <Crow size={180} class="lost-crow" />
-    <p class="hand">the crow took the key and ran</p>
+    <Image src={getLost} alt="Get lost! Read a book." width={520} class="lost-art" />
     <h1>This page has been checked out.</h1>
     <p>It may be overdue, misshelved, or never existed. Try the <a href="/archive/">archive</a> or head <a href="/">home</a>.</p>
   </section>
@@ -13,10 +13,11 @@ import Crow from '../components/Crow.astro';
 <style>
   .lost {
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 3rem;
   }
-  .lost :global(.lost-crow) {
-    color: var(--ink);
+  .lost :global(.lost-art) {
+    width: min(260px, 70vw);
+    height: auto;
   }
   .hand {
     font-size: 1.6rem;

@@ -14,7 +14,7 @@ const nav = [
 <header class="site-header">
   <div class="wrap bar">
     <a href="/" class="brand" aria-label={`${SITE_TITLE}, home`}>
-      <Crow size={46} class="brand-crow" />
+      <Crow size={58} />
       <span class="wordmark">Sauer<span class="comma">,</span> <em>Annotated</em></span>
     </a>
     <nav aria-label="Main">
@@ -75,10 +75,6 @@ const nav = [
     gap: 0.7rem;
     text-decoration: none;
     color: var(--ink);
-  }
-  .brand :global(.brand-crow) {
-    color: var(--ink);
-    flex-shrink: 0;
   }
   .wordmark {
     font-family: var(--font-display);

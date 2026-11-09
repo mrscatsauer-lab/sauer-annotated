@@ -1,6 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
-import Crow from '../components/Crow.astro';
+import { Image } from 'astro:assets';
+import bouquet from '../assets/art/reading-bouquet.webp';
+import bestBook from '../assets/art/best-book.webp';
+import genreStack from '../assets/art/genre-stack.webp';
+import loveBooks from '../assets/art/reading-is-my-love.webp';
+import readMe from '../assets/art/read-me.webp';
+import shelfArt from '../assets/art/bookshelf.webp';
 import PostCard from '../components/PostCard.astro';
 import { SHELVES, SITE_TAGLINE } from '../consts';
 import { getPosts } from '../utils';
@@ -10,12 +16,12 @@ const latest = posts.slice(0, 6);
 const counts = Object.fromEntries(
   Object.keys(SHELVES).map((k) => [k, posts.filter((p) => p.data.shelf === k).length]),
 );
-const shelfIcons: Record<string, string> = {
-  reviews: 'M6 4h9a3 3 0 0 1 3 3v13H9a3 3 0 0 1-3-3V4Zm0 13a3 3 0 0 1 3-3h9',
-  essays: 'M5 19 15 9m-4-4 4-1 5 5-1 4-8 8H5v-6l6-6Z',
-  poems: 'M12 20c-4-3-8-6-8-10a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-4 7-8 10Z',
-  'writing-life': 'M4 6h16M4 12h10M4 18h7m9-4-4 4-2-2',
-  classroom: 'M4 9l8-4 8 4-8 4-8-4Zm3 2v5c3 2 7 2 10 0v-5',
+const shelfArtwork = {
+  reviews: bestBook,
+  essays: genreStack,
+  poems: loveBooks,
+  'writing-life': readMe,
+  classroom: shelfArt,
 };
 ---
 <Base>
@@ -23,7 +29,7 @@ const shelfIcons: Record<string, string> = {
     <div class="wrap grid">
       <div class="copy">
         <p class="hand kicker">pull up a chair</p>
-        <h1>Margin notes on books, writing, and <em>everything else.</em></h1>
+        <h1>Margin notes on books, writing, and <em class="underlined">everything else.</em></h1>
         <p class="lede">
           Reviews that actually say something, essays that wander on purpose, and the occasional poem.
           Written by an English teacher who cannot read a book without a pen in her hand.
@@ -34,15 +40,8 @@ const shelfIcons: Record<string, string> = {
         </div>
       </div>
       <div class="plate" aria-hidden="true">
-        <div class="ruled">
-          <span class="hand note n1">ah, the key to the stacks</span>
-          <span class="hand note n2">note to self: more pens</span>
-          <Crow size={260} class="hero-crow" />
-          <p class="catalog">
-            <span>Call No. 811.6 SAU</span>
-            <span>Est. 2026</span>
-          </p>
-        </div>
+        <span class="hand note n1">currently reading: everything</span>
+        <Image src={bouquet} alt="" widths={[420, 640, 900]} sizes="(max-width: 900px) 90vw, 480px" loading="eager" class="bouquet" />
       </div>
     </div>
   </section>
@@ -74,7 +73,7 @@ const shelfIcons: Record<string, string> = {
         <li class={`shelf-tile s-${key}`}>
           <a href={`/shelf/${key}/`}>
             <span class="disc">
-              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d={shelfIcons[key]} /></svg>
+              <Image src={shelfArtwork[key as keyof typeof shelfArtwork]} alt="" width={180} class="disc-art" />
             </span>
             <span class="label">{shelf.label}</span>
             <span class="hand sub">{shelf.blurb}</span>
@@ -87,6 +86,7 @@ const shelfIcons: Record<string, string> = {
 
   <section class="wrap section">
     <div class="quote">
+      <span class="crosses" aria-hidden="true"></span>
       <p class="hand">a reminder, scribbled inside the front cover:</p>
       <blockquote>Read slowly. Argue with the author. Leave evidence that you were here.</blockquote>
     </div>
@@ -130,73 +130,51 @@ const shelfIcons: Record<string, string> = {
     gap: 0.75rem;
   }
 
-  .plate {
+  h1 em.underlined {
     position: relative;
+    z-index: 0;
+    white-space: nowrap;
   }
-  .plate::before {
-    /* a book-spine stack peeking out behind the card */
+  h1 em.underlined::after {
     content: '';
     position: absolute;
-    inset: 18px -14px -14px 18px;
-    border-radius: var(--radius);
-    background: repeating-linear-gradient(
-      90deg,
-      var(--oxblood) 0 22%,
-      var(--green) 22% 40%,
-      var(--rose) 40% 58%,
-      var(--brass) 58% 74%,
-      var(--green-soft) 74% 100%
-    );
-    opacity: 0.9;
+    z-index: -1;
+    left: -2%;
+    right: 2%;
+    bottom: 0.02em;
+    height: 0.32em;
+    background: url('/art/scribble-mustard.webp') center / 100% 100% no-repeat;
+    opacity: 0.75;
   }
-  .ruled {
+
+  .plate {
     position: relative;
     display: grid;
     place-items: center;
-    aspect-ratio: 5 / 4;
-    border-radius: var(--radius);
-    border: 1px solid var(--rule);
-    background:
-      linear-gradient(90deg, transparent 2.6rem, var(--rose) 2.6rem, var(--rose) calc(2.6rem + 1px), transparent calc(2.6rem + 1px)),
-      repeating-linear-gradient(var(--card) 0 31px, var(--rule) 31px 32px);
-    box-shadow: var(--shadow);
-    overflow: hidden;
   }
-  .ruled :global(.hero-crow) {
-    color: var(--ink);
-    width: 62%;
+  .plate::before {
+    /* sprinkle of terracotta crosses behind the art */
+    content: '';
+    position: absolute;
+    inset: -6% 10% 0 -8%;
+    background: url('/art/crosses.webp') center / contain no-repeat;
+    opacity: 0.35;
+  }
+  .plate :global(.bouquet) {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
     height: auto;
-    margin-top: 1rem;
   }
   .note {
     position: absolute;
-    font-size: 1.35rem;
+    z-index: 1;
+    top: -0.5rem;
+    right: 0;
+    font-size: 1.45rem;
     line-height: 1;
-  }
-  .n1 {
-    top: 12%;
-    left: 16%;
-    transform: rotate(-6deg);
-  }
-  .n2 {
-    top: 9%;
-    right: 8%;
-    transform: rotate(5deg);
-    color: var(--brass);
-  }
-  .catalog {
-    position: absolute;
-    bottom: 0.8rem;
-    left: 3.4rem;
-    right: 1.2rem;
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    font-family: var(--font-ui);
-    font-size: 0.65rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
+    transform: rotate(4deg);
+    color: var(--accent);
   }
 
   .section {
@@ -250,13 +228,17 @@ const shelfIcons: Record<string, string> = {
   .disc {
     display: grid;
     place-items: center;
-    width: 110px;
-    height: 110px;
+    width: 132px;
+    height: 132px;
     border-radius: 50%;
     background: var(--tint);
-    color: var(--tone);
     margin-bottom: 0.9rem;
     transition: transform 0.2s ease;
+  }
+  .disc :global(.disc-art) {
+    width: 76%;
+    height: 76%;
+    object-fit: contain;
   }
   .shelf-tile a:hover .disc {
     transform: rotate(-6deg) scale(1.05);
@@ -280,21 +262,32 @@ const shelfIcons: Record<string, string> = {
     text-transform: uppercase;
     color: var(--ink-soft);
   }
-  .s-reviews { --tint: #f1d6d3; --tone: #6f1d24; }
-  .s-essays { --tint: #cddbd8; --tone: #1f3b39; }
-  .s-poems { --tint: #f6dfe3; --tone: #8e4f55; }
-  .s-writing-life { --tint: #f8e6c3; --tone: #8a5f1c; }
-  .s-classroom { --tint: #dbe5e3; --tone: #3e5f5b; }
+  .s-reviews { --tint: #f6e1d9; --tone: #a64b2f; }
+  .s-essays { --tint: #d9e3dc; --tone: #1f4d46; }
+  .s-poems { --tint: #f4dcd3; --tone: #a9573f; }
+  .s-writing-life { --tint: #f8e7c2; --tone: #8a6312; }
+  .s-classroom { --tint: #e3e8dc; --tone: #4f604c; }
   @media (prefers-color-scheme: dark) {
-    :global(:root:not([data-theme='light'])) .shelf-tile { --tone: #f1e9dc; --tint: #26302e; }
+    :global(:root:not([data-theme='light'])) .shelf-tile { --tone: #f1e9dc; --tint: #263a36; }
   }
-  :global(:root[data-theme='dark']) .shelf-tile { --tone: #f1e9dc; --tint: #26302e; }
+  :global(:root[data-theme='dark']) .shelf-tile { --tone: #f1e9dc; --tint: #263a36; }
 
   .quote {
+    position: relative;
     text-align: center;
     padding: clamp(2rem, 6vw, 3.5rem) 1rem;
     border-top: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
+  }
+  .crosses {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 110px;
+    height: 130px;
+    transform: translateY(-50%);
+    background: url('/art/crosses.webp') center / contain no-repeat;
+    opacity: 0.55;
   }
   .quote .hand {
     font-size: 1.4rem;
@@ -314,23 +307,26 @@ const shelfIcons: Record<string, string> = {
       grid-template-columns: 1fr;
     }
     .plate {
-      max-width: 460px;
-      margin-right: 14px;
+      max-width: 320px;
+      margin: 0 auto;
     }
     .shelves {
       grid-template-columns: repeat(3, 1fr);
     }
   }
   @media (max-width: 560px) {
-    .n2 {
-      display: none;
-    }
     .shelves {
       grid-template-columns: repeat(2, 1fr);
     }
     .disc {
-      width: 88px;
-      height: 88px;
+      width: 110px;
+      height: 110px;
+    }
+    .crosses {
+      display: none;
+    }
+    h1 em.underlined {
+      white-space: normal;
     }
   }
 </style>
