@@ -26,7 +26,7 @@ Every post starts with this block (called front matter):
 title: "My Post Title"
 description: "One sentence that shows up on cards and in search results."
 date: 2026-11-08
-shelf: essays        # reviews, essays, poems, writing-life, or classroom
+shelf: essays        # reviews, essays, stories, writing-life, or classroom
 tags: [books, teaching]
 draft: false
 ---

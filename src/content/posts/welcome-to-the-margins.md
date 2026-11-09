@@ -15,7 +15,7 @@ This blog is those margins, moved somewhere other people can read them.
 
 ## What lives here
 
-Book reviews that actually say something. Essays that take the long way around. A poem when one shows up uninvited. And notes from the writing life, including the parts nobody puts on Instagram.
+Book reviews that actually say something. Essays that take the long way around. Short stories, when the characters won't leave me alone. And notes from the writing life, including the parts nobody puts on Instagram.
 
 > Read slowly. Argue with the author. Leave evidence that you were here.
 

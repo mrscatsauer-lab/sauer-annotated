@@ -20,7 +20,7 @@ writeFileSync(
 title: ${JSON.stringify(title)}
 description: ""
 date: ${today}
-shelf: essays # reviews, essays, poems, writing-life, or classroom
+shelf: essays # reviews, essays, stories, writing-life, or classroom
 tags: []
 draft: true # change to false when it's ready to publish
 ---

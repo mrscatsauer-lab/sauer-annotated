@@ -7,7 +7,7 @@ export const AUTHOR = 'Catherine Sauer';
 export const SHELVES = {
   reviews: { label: 'Reviews', blurb: 'Books, read closely and judged honestly.' },
   essays: { label: 'Essays', blurb: 'Longer thoughts that needed more than a margin.' },
-  poems: { label: 'Poems', blurb: 'Small things, carefully arranged.' },
+  stories: { label: 'Short Stories', blurb: 'Small fictions, best read in one sitting.' },
   'writing-life': { label: 'Writing Life', blurb: 'Drafting, querying, and the long middle.' },
   classroom: { label: 'Classroom', blurb: 'Notes from the front of the room.' },
 } as const;

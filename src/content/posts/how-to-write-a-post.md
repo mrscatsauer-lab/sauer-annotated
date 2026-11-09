@@ -25,9 +25,13 @@ Three dashes on their own line make a little fleuron divider:
 
 ---
 
-## Poems
+## Short stories
 
-Wrap a poem in a poem box so the line breaks stay put:
+Put a story on the `stories` shelf. Use three dashes (`---`) between scenes and you get the scribble divider as your scene break. The drop cap on the first letter happens automatically.
+
+## The occasional poem
+
+If one sneaks in anyway, wrap it in a poem box so the line breaks stay put:
 
 <div class="poem">
 the crow keeps the key
