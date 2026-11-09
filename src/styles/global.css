@@ -411,6 +411,7 @@ a:hover {
   .topbar,
   .site-header,
   .site-footer,
+  .tulips,
   .sr-only,
   .print-row,
   .catalog-card,
@@ -509,5 +510,106 @@ a:hover {
   }
   .prose hr::after {
     display: none;
+  }
+}
+
+/* ---------- Handouts ----------
+   Wrap a printable worksheet in <div class="handout"> ... </div>.
+   It prints on its own page. Use <table class="fill-in"> for blank charts
+   and <div class="lines"></div> for ruled writing space. */
+.prose .handout {
+  border: 1.5px dashed var(--rose);
+  border-radius: var(--radius, 10px);
+  padding: 0.5rem 1.4rem 1.4rem;
+  margin: 2.5rem 0;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+  font-size: 0.9rem;
+}
+.prose th,
+.prose td {
+  border: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+  padding: 0.45em 0.6em;
+  text-align: left;
+  vertical-align: top;
+}
+.prose th {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.prose table.fill-in td {
+  height: 3.4rem;
+}
+.prose .lines {
+  height: 6.5rem;
+  margin: 0.4em 0 1.4em;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent calc(2.1rem - 1px),
+    color-mix(in srgb, var(--ink) 30%, transparent) calc(2.1rem - 1px),
+    color-mix(in srgb, var(--ink) 30%, transparent) 2.1rem
+  );
+}
+@media (max-width: 600px) {
+  .prose table.fill-in {
+    font-size: 0.7rem;
+  }
+  .prose .handout {
+    padding: 0.3rem 0.8rem 1rem;
+  }
+}
+@media print {
+  .prose .handout {
+    break-before: page;
+    page-break-before: always;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 10.5pt;
+  }
+  .prose .handout h2 {
+    margin-top: 0;
+  }
+  .prose .handout p {
+    margin: 0.5em 0;
+  }
+  .prose .handout > :last-child,
+  .prose > :last-child {
+    margin-bottom: 0 !important;
+  }
+  .post,
+  main {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  .prose th,
+  .prose td {
+    border-color: #777;
+  }
+  .prose table.fill-in td {
+    height: 0.72in;
+  }
+  .prose table.fill-in th:nth-child(2),
+  .prose table.fill-in th:nth-child(3),
+  .prose table.fill-in th:nth-child(4) {
+    width: 0.8in;
+  }
+  .prose .lines {
+    height: 1.45in;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(0.35in - 1px),
+      #999 calc(0.35in - 1px),
+      #999 0.35in
+    );
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
