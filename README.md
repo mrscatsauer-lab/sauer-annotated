@@ -61,6 +61,10 @@ Add `series:` to a post's front matter to put it in a recurring feature: `pass-t
 
 Add `hiddenNotes: true` to a story's front matter. Its margin notes, plus anything wrapped in `<mark class="clue">...</mark>`, stay hidden on the first read. At the end, readers get a "Read it again, annotated" button that reveals them. *The Library After Dark* shows how it works.
 
+### Companion pieces
+
+Add `companion: other-post-file-name` (no `.md`) to link two pieces with a "read it with its companion" card. *In the Dark* and *When I Wake* point to each other.
+
 ## Dinner Table Cards
 
 The conversation deck lives at `/cards/`. Edit, add, or remove questions in `src/data/cards.ts`.

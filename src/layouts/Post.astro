@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { getEntry, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import Crow from '../components/Crow.astro';
 import { SHELVES, SERIES } from '../consts';
@@ -8,6 +8,7 @@ import { formatDate, readingTime } from '../utils';
 interface Props { post: CollectionEntry<'posts'> }
 const { post } = Astro.props;
 const { title, description, date, updated, shelf, tags, book } = post.data;
+const companion = post.data.companion ? await getEntry('posts', post.data.companion) : undefined;
 const hasHiddenNotes = post.data.hiddenNotes && (post.body ?? '').includes('class="note');
 const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : undefined;
 ---
@@ -65,6 +66,16 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
           <p class="reread-sub">{post.data.annotationBlurb ?? 'See the clues I hid the first time, in my own margin notes.'}</p>
           <button type="button" class="btn" data-toggle-notes>Show my annotations</button>
         </div>
+      </aside>
+    )}
+
+    {companion && (!companion.data.draft || import.meta.env.DEV) && (
+      <aside class="companion wrap" aria-label="Companion piece">
+        <a href={`/posts/${companion.id}/`}>
+          <span class="hand">read it with its companion</span>
+          <span class="c-title">{companion.data.title}</span>
+          <span class="c-desc">{companion.data.description}</span>
+        </a>
       </aside>
     )}
 
@@ -176,6 +187,42 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
   }
   .reread .btn {
     cursor: pointer;
+  }
+  .companion {
+    max-width: calc(30rem + 2 * var(--gutter));
+    margin: 2.5rem auto 0;
+  }
+  .companion a {
+    display: block;
+    text-align: center;
+    padding: 1.2rem 1.4rem;
+    border: 1px dashed var(--rose);
+    border-radius: var(--radius);
+    background: var(--rose-wash);
+    color: var(--ink);
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+  .companion a:hover {
+    transform: translateY(-2px);
+    border-style: solid;
+  }
+  .companion .hand {
+    display: block;
+    font-size: 1.35rem;
+    color: var(--accent);
+  }
+  .companion .c-title {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0.1rem 0 0.2rem;
+  }
+  .companion .c-desc {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
   }
   .post-head {
     max-width: calc(var(--measure) + 2 * var(--gutter));

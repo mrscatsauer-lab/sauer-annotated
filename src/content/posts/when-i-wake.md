@@ -4,6 +4,7 @@ description: A short poem about the light someone brings, and the morning that c
 date: 2026-11-08
 shelf: writing-life
 tags: [poetry]
+companion: in-the-dark
 hiddenNotes: true
 annotationBlurb: See how it’s built, in my own margin notes.
 draft: false

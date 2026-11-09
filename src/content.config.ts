@@ -30,6 +30,8 @@ const posts = defineCollection({
       .optional(),
     // For fiction: hide margin notes (and <mark class="clue"> highlights)
     // until the reader clicks "Read it again, annotated" at the end.
+    // Optional: the file name (no .md) of a companion piece to link to
+    companion: z.string().optional(),
     hiddenNotes: z.boolean().default(false),
     // Optional line under "Read it again, annotated."
     annotationBlurb: z.string().optional(),
