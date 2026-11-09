@@ -343,3 +343,36 @@ a:hover {
 :root[data-theme='dark'] .prose hr::after {
   filter: brightness(2.6) saturate(0.8);
 }
+
+/* ---------- Hidden annotations (fiction) ----------
+   With hiddenNotes: true, notes and <mark class="clue"> stay hidden
+   until the reader asks for the annotated edition. */
+.prose.notes-hidden .note {
+  display: none;
+}
+.prose.notes-hidden mark.clue {
+  background: none;
+  padding: 0;
+}
+.prose.notes-revealed .note {
+  animation: scribble-in 0.6s ease both;
+}
+.prose.notes-revealed mark.clue {
+  animation: highlight-in 0.9s ease both;
+  background-size: 100% 100%;
+}
+@keyframes scribble-in {
+  from { opacity: 0; transform: translateY(6px) rotate(-6deg); }
+  to { opacity: 1; }
+}
+@keyframes highlight-in {
+  from { background-size: 0% 100%; }
+  to { background-size: 100% 100%; }
+}
+.prose mark {
+  background-repeat: no-repeat;
+}
+@media (prefers-reduced-motion: reduce) {
+  .prose.notes-revealed .note,
+  .prose.notes-revealed mark.clue { animation: none; }
+}

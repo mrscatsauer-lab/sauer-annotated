@@ -28,6 +28,9 @@ const posts = defineCollection({
         rating: z.number().min(0).max(5).optional(),
       })
       .optional(),
+    // For fiction: hide margin notes (and <mark class="clue"> highlights)
+    // until the reader clicks "Read it again, annotated" at the end.
+    hiddenNotes: z.boolean().default(false),
     draft: z.boolean().default(false),
   }),
 });

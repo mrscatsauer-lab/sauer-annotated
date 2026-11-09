@@ -8,6 +8,7 @@ import { formatDate, readingTime } from '../utils';
 interface Props { post: CollectionEntry<'posts'> }
 const { post } = Astro.props;
 const { title, description, date, updated, shelf, tags, book } = post.data;
+const hasHiddenNotes = post.data.hiddenNotes && (post.body ?? '').includes('class="note');
 const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : undefined;
 ---
 <Base title={title} description={description}>
@@ -45,9 +46,27 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
       </aside>
     )}
 
-    <div class="prose wrap-prose">
+    {hasHiddenNotes && (
+      <p class="edition-banner wrap" hidden>
+        <span class="hand">you're reading the annotated edition</span>
+        <button type="button" class="linkish" data-toggle-notes>back to the clean copy</button>
+      </p>
+    )}
+
+    <div class:list={['prose', 'wrap-prose', { 'notes-hidden': hasHiddenNotes }]} id="story">
       <slot />
     </div>
+
+    {hasHiddenNotes && (
+      <aside class="reread wrap" aria-label="Annotated edition">
+        <div class="reread-card">
+          <p class="hand psst">psst.</p>
+          <p class="reread-title">Read it again, annotated.</p>
+          <p class="reread-sub">See the clues I hid the first time, in my own margin notes.</p>
+          <button type="button" class="btn" data-toggle-notes>Show my annotations</button>
+        </div>
+      </aside>
+    )}
 
     <footer class="post-foot">
       {tags.length > 0 && (
@@ -64,7 +83,97 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
   </article>
 </Base>
 
+<script>
+  const story = document.getElementById('story');
+  const banner = document.querySelector('.edition-banner');
+  const toggles = document.querySelectorAll('[data-toggle-notes]');
+  if (story && toggles.length) {
+    const label = document.querySelector('.reread .btn');
+    toggles.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        const showing = story.classList.toggle('notes-hidden') === false;
+        story.classList.toggle('notes-revealed', showing);
+        if (banner) banner.hidden = !showing;
+        if (label) label.textContent = showing ? 'Hide my annotations' : 'Show my annotations';
+        if (showing) {
+          (banner ?? story).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }),
+    );
+  }
+</script>
+
 <style>
+  .edition-banner {
+    max-width: calc(var(--measure) + 2 * var(--gutter));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    margin: 0 auto 1.5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    border-top: 1px dashed var(--rose);
+    border-bottom: 1px dashed var(--rose);
+    scroll-margin-top: 1.5rem;
+  }
+  .edition-banner .hand {
+    font-size: 1.4rem;
+  }
+  .linkish {
+    background: none;
+    border: 0;
+    padding: 0;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .linkish:hover {
+    color: var(--accent);
+  }
+  .reread {
+    max-width: calc(30rem + 2 * var(--gutter));
+    margin: 3rem auto 0;
+  }
+  .reread-card {
+    position: relative;
+    text-align: center;
+    padding: 2rem 1.5rem 1.8rem;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-top: 5px solid var(--accent);
+    border-radius: 6px 6px var(--radius) var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .psst {
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    margin: 0;
+    font-size: 1.5rem;
+    transform: rotate(-8deg);
+  }
+  .reread-title {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 0.3rem;
+  }
+  .reread-sub {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    margin: 0 0 1.2rem;
+  }
+  .reread .btn {
+    cursor: pointer;
+  }
   .post-head {
     max-width: calc(var(--measure) + 2 * var(--gutter));
     text-align: center;
