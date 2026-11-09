@@ -111,6 +111,6 @@ A warm hand covers mine, and I lift my head. Tim is sitting across from me in th
 
 <aside class="note">every clue lands at once: the nose, the hand, the voice no one else could hear.</aside>
 
-The warmth of a large hand gently touches my shoulder. When I look behind me, I see Dad’s smiling face. When I look back at the body on the bed, I realize <mark class="clue">it’s my nose, Dad’s nose, peeking out between the gauze.</mark> This fills me with tremendous peace, because Tim is a rock for so many people in his life. It’s not his time.
+The warmth of a large hand gently touches my shoulder. When I look behind me, I see Dad’s smiling face. When I look back at the body on the bed, I realize <mark class="clue">it’s my nose, Dad’s nose, peeking out between the gauze.</mark> Instead of panic, I feel the weightlessness of forgiveness, warmth washing over me. It’s not Tim’s time. I’m thankful.
 
 “You’ll always be my sister,” Tim says softly. “It’s okay to let go, Liv. <mark class="clue">It’s time to fly.</mark>”
