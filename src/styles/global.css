@@ -385,3 +385,8 @@ a:hover {
 .prose .poem.stanza:first-of-type {
   margin-top: 1em;
 }
+
+/* Consecutive poem stanzas: keep the gap between them tight */
+.prose .poem + .poem {
+  margin-top: -0.6em;
+}
