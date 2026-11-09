@@ -62,7 +62,7 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
         <div class="reread-card">
           <p class="hand psst">psst.</p>
           <p class="reread-title">Read it again, annotated.</p>
-          <p class="reread-sub">See the clues I hid the first time, in my own margin notes.</p>
+          <p class="reread-sub">{post.data.annotationBlurb ?? 'See the clues I hid the first time, in my own margin notes.'}</p>
           <button type="button" class="btn" data-toggle-notes>Show my annotations</button>
         </div>
       </aside>
