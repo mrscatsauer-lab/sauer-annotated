@@ -1,6 +1,6 @@
 /* ==========================================================
    Sauer, Annotated: design tokens
-   Cozy old library (deep green, terracotta, mustard, blush, paper)
+   Cozy old library (Aggie maroon, deep green, mustard, blush, paper)
    meets clean modern (lots of space, crisp type, simple grid).
    Change colors here and the whole site follows.
    ========================================================== */
@@ -20,10 +20,12 @@
   --sage: #7e8f7b;
   --green-soft: #cdd8d2;
   --terracotta: #dc7f5f;
-  --rust: #a64b2f;
+  --maroon: #500000; /* Texas A&M maroon */
+  --maroon-soft: #7a1f2b;
+  --rust: var(--maroon);
   --blush: #eec3b6;
   --rose: #e3a492;
-  --rose-wash: #f6e1d9;
+  --rose-wash: #f3e0e1;
   --mustard: #d4a03a;
   --mustard-wash: #f8e7c2;
   --brown: #7a4a2c;
@@ -36,7 +38,7 @@
   /* Roles */
   --accent: var(--rust);
   --link: var(--rust);
-  --highlight: #f6d3c6;
+  --highlight: #efd2d5;
   --btn: var(--green);
 
   /* Type */
@@ -62,8 +64,8 @@
     --ink: #f1e9dc;
     --ink-soft: #b9aea1;
     --rule: #33403d;
-    --accent: #eba48a;
-    --link: #f0b49c;
+    --accent: #e3a3ab;
+    --link: #ebb3ba;
     --highlight: #5b3324;
     --rose-wash: #3b2a24;
     --brass-wash: #3a3021;
@@ -78,8 +80,8 @@
   --ink: #f1e9dc;
   --ink-soft: #b9aea1;
   --rule: #33403d;
-  --accent: #eba48a;
-  --link: #f0b49c;
+  --accent: #e3a3ab;
+  --link: #ebb3ba;
   --highlight: #5b3324;
   --rose-wash: #3b2a24;
   --brass-wash: #3a3021;
@@ -260,7 +262,7 @@ a:hover {
   display: inline-block;
   width: 140px;
   height: 24px;
-  background: url('/art/scribble-terracotta.webp') center / contain no-repeat;
+  background: url('/art/scribble-maroon.webp') center / contain no-repeat;
 }
 
 .prose mark {
@@ -330,4 +332,14 @@ a:hover {
     width: 1.1rem;
     border-top: 1.5px solid var(--rose);
   }
+}
+
+/* Maroon scribble divider: lighten it so it shows up after dark */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .prose hr::after {
+    filter: brightness(2.6) saturate(0.8);
+  }
+}
+:root[data-theme='dark'] .prose hr::after {
+  filter: brightness(2.6) saturate(0.8);
 }
