@@ -104,6 +104,9 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
 </script>
 
 <style>
+  .edition-banner[hidden] {
+    display: none;
+  }
   .edition-banner {
     max-width: calc(var(--measure) + 2 * var(--gutter));
     display: flex;

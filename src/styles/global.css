@@ -376,3 +376,12 @@ a:hover {
   .prose.notes-revealed .note,
   .prose.notes-revealed mark.clue { animation: none; }
 }
+
+/* Poem split into stanzas (so margin notes can sit beside each one) */
+.prose .poem.stanza {
+  margin-top: 0;
+  margin-bottom: 1.1em;
+}
+.prose .poem.stanza:first-of-type {
+  margin-top: 1em;
+}
