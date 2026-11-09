@@ -7,7 +7,7 @@ tags: [classics, shakespeare, ovid, required-reading]
 book:
   title: Romeo and Juliet
   author: William Shakespeare
-  rating: 4.5
+  rating: 4
 draft: false
 ---
 
@@ -101,9 +101,15 @@ But both stories are really about speed. Nobody in either one dies because they 
 
 ## The verdict
 
-Half a star off for Act 1, in which Romeo mopes about Rosaline, a girl who never actually appears onstage, at such length that you start rooting for the feud.
+One star off. Half for Act 1, in which Romeo mopes about Rosaline, a girl who never actually appears onstage, at such length that you start rooting for the feud. The other half because my students called it mid, and I can't fully argue with them.
 
 Everything else? Required reading, and it's even better with Ovid next to it. Read Pyramus and Thisbe first. It's only a few pages. Then watch your students (or your kids) realize they've already read the ending of *Romeo and Juliet* before they start it.
+
+Fair warning: it might backfire. When I taught them together, my students liked Pyramus and Thisbe better. Their official review of *Romeo and Juliet*, the most famous love story in the English language, was "mid."
+
+<aside class="note">four hundred years of critics, and none of them were this brutal.</aside>
+
+Honestly, I get it. Ovid tells the whole thing in a few pages and includes a lion. Shakespeare takes five acts and includes Rosaline.
 
 **Read it if:** you teach ninth grade, you love a tragedy, or you once made a major life decision in under an hour.
 
