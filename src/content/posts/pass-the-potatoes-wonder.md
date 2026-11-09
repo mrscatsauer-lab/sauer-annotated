@@ -8,7 +8,6 @@ tags: [middle-grade, conversation-starters, kindness]
 book:
   title: Wonder
   author: R. J. Palacio
-draft: true
 ---
 
 Welcome to **Pass the Potatoes**, where every week I hand you three questions for the dinner table, built around one book, movie, or headline. No homework, no worksheet. Just better conversation than "how was school?" "Fine."

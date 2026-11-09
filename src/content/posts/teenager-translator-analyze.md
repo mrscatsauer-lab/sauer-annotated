@@ -5,7 +5,6 @@ date: 2026-11-08
 shelf: parents
 series: teenager-translator
 tags: [high-school, essays, homework-help]
-draft: true
 ---
 
 Welcome to **The Teenager Translator**, where I decode what English class is actually asking for, so you can help with homework without needing a teaching degree.

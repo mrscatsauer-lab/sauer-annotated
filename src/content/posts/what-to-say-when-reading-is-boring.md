@@ -5,7 +5,6 @@ date: 2026-11-08
 shelf: parents
 series: what-to-say-when
 tags: [reluctant-readers, scripts, motivation]
-draft: true
 ---
 
 Welcome to **What to Say When…**, short scripts for the moments parents freeze. Today's moment is a classic: your kid tosses the book on the couch and announces, with their whole chest, that reading is boring.
