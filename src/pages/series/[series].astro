@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import PostCard from '../../components/PostCard.astro';
+import { SERIES, SHELVES, type SeriesKey } from '../../consts';
+import { getPosts } from '../../utils';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return (Object.keys(SERIES) as SeriesKey[]).map((series) => ({
+    params: { series },
+    props: { posts: posts.filter((p) => p.data.series === series) },
+  }));
+}
+const { series } = Astro.params as { series: SeriesKey };
+const { posts } = Astro.props;
+const s = SERIES[series];
+const shelf = SHELVES[s.shelf];
+---
+<Base title={s.label} description={s.blurb}>
+  <PageHead eyebrow={`A series from ${shelf.label}`} title={s.label} note={s.blurb} />
+  <div class="wrap">
+    {posts.length ? (
+      <div class="cards">{posts.map((p) => <PostCard post={p} />)}</div>
+    ) : (
+      <p class="hand empty">The first one is in the oven.</p>
+    )}
+    <p class="back"><a href={`/shelf/${s.shelf}/`}>← Back to {shelf.label}</a></p>
+  </div>
+</Base>
+<style>
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 1.5rem;
+  }
+  .empty {
+    font-size: 1.5rem;
+  }
+  .back {
+    margin-top: 2.5rem;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+  }
+</style>

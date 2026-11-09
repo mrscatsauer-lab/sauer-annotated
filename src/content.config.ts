@@ -6,6 +6,9 @@ import { z } from 'astro/zod';
 // just keep them in sync with src/consts.ts.
 const shelves = ['essays', 'reviews', 'writing-life', 'teaching', 'parents'] as const;
 
+// Recurring series. Keep in sync with SERIES in src/consts.ts.
+const series = ['pass-the-potatoes', 'what-to-say-when', 'teenager-translator'] as const;
+
 const posts = defineCollection({
   loader: glob({ base: './src/content/posts', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
@@ -14,6 +17,8 @@ const posts = defineCollection({
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     shelf: z.enum(shelves),
+    // Optional: put the post in a recurring series
+    series: z.enum(series).optional(),
     tags: z.array(z.string()).default([]),
     // For book reviews: optional book details shown in a little "card catalog" box
     book: z

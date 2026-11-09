@@ -1,0 +1,301 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { DECKS } from '../data/cards';
+
+const decks = Object.entries(DECKS);
+const allCards = decks.flatMap(([key, d]) => d.cards.map((q) => ({ deck: key, label: d.label, ages: d.ages, q })));
+const first = allCards.find((c) => c.deck === 'tweens') ?? allCards[0];
+---
+<Base
+  title="Dinner Table Cards"
+  description="Conversation starters for family dinner, sorted by age. Shuffle one at the table or print the deck and keep it in a jar."
+>
+  <PageHead eyebrow="From Dinner Table Literacy" title="Dinner Table Cards" note="pick a card. pass the potatoes." />
+
+  <section class="wrap deck-app" data-deck="tweens">
+    <div class="tabs" role="tablist" aria-label="Choose an age group">
+      {decks.map(([key, d]) => (
+        <button role="tab" type="button" data-pick={key} aria-selected={key === 'tweens' ? 'true' : 'false'}>
+          {d.label}<span>{d.ages}</span>
+        </button>
+      ))}
+      <button role="tab" type="button" data-pick="all" aria-selected="false">Everyone<span>mix them all</span></button>
+    </div>
+
+    <div class="table-card" aria-live="polite">
+      <p class="card-meta"><span class="card-deck">{first.label}</span> · <span class="card-ages">{first.ages}</span></p>
+      <p class="card-q">{first.q}</p>
+      <p class="card-foot hand">sauer, annotated</p>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn shuffle">Shuffle</button>
+      <button type="button" class="btn ghost print">Print this deck</button>
+    </div>
+
+    <div class="how">
+      <h2>House rules</h2>
+      <ul>
+        <li><strong>Everyone answers,</strong> grown-ups included. Kids talk more when we go first.</li>
+        <li><strong>No wrong answers.</strong> "I don't know" is allowed. So is "pass."</li>
+        <li><strong>Follow-up questions are the good part.</strong> "Why?" and "Then what?" go a long way.</li>
+        <li><strong>Print a deck</strong>, cut on the dashed lines, and keep the cards in a jar on the table.</li>
+      </ul>
+      <p>Want a fresh set of questions every week? Try <a href="/series/pass-the-potatoes/">Pass the Potatoes</a>.</p>
+    </div>
+  </section>
+
+  <!-- Printable version: hidden on screen, shown when printing -->
+  <section class="print-deck" aria-hidden="true">
+    {allCards.map((c) => (
+      <div class="print-card" data-deck={c.deck}>
+        <p class="pc-meta">{c.label} · {c.ages}</p>
+        <p class="pc-q">{c.q}</p>
+        <p class="pc-foot">Sauer, Annotated · sauerannotated.com</p>
+      </div>
+    ))}
+  </section>
+</Base>
+
+<script define:vars={{ allCards }}>
+  const app = document.querySelector('.deck-app');
+  const tabs = app.querySelectorAll('[data-pick]');
+  const q = app.querySelector('.card-q');
+  const deckEl = app.querySelector('.card-deck');
+  const agesEl = app.querySelector('.card-ages');
+  const card = app.querySelector('.table-card');
+  let current = q.textContent;
+
+  function pool() {
+    const d = app.dataset.deck;
+    return d === 'all' ? allCards : allCards.filter((c) => c.deck === d);
+  }
+
+  function shuffle() {
+    const options = pool().filter((c) => c.q !== current);
+    const pick = options[Math.floor(Math.random() * options.length)];
+    current = pick.q;
+    card.classList.remove('flip');
+    void card.offsetWidth; // restart the animation
+    card.classList.add('flip');
+    q.textContent = pick.q;
+    deckEl.textContent = pick.label;
+    agesEl.textContent = pick.ages;
+  }
+
+  tabs.forEach((t) =>
+    t.addEventListener('click', () => {
+      app.dataset.deck = t.dataset.pick;
+      tabs.forEach((x) => x.setAttribute('aria-selected', x === t ? 'true' : 'false'));
+      shuffle();
+    }),
+  );
+  app.querySelector('.shuffle').addEventListener('click', shuffle);
+  app.querySelector('.print').addEventListener('click', () => {
+    document.documentElement.dataset.printDeck = app.dataset.deck;
+    window.print();
+  });
+</script>
+
+<style>
+  .deck-app {
+    max-width: calc(46rem + 2 * var(--gutter));
+  }
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .tabs button {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 0.7rem 0.5rem;
+    cursor: pointer;
+    line-height: 1.3;
+  }
+  .tabs button span {
+    display: block;
+    font-weight: 400;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    margin-top: 0.15rem;
+  }
+  .tabs button[aria-selected='true'] {
+    background: var(--btn);
+    border-color: var(--btn);
+    color: #f8f3ea;
+  }
+
+  .table-card {
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem clamp(1.5rem, 5vw, 3.5rem) 3rem;
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-top: 6px solid var(--accent);
+    border-radius: 6px 6px var(--radius) var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    overflow: hidden;
+  }
+  .table-card::after {
+    /* a sprinkle of crosses in the corner */
+    content: '';
+    position: absolute;
+    right: -18px;
+    bottom: -14px;
+    width: 110px;
+    height: 120px;
+    background: url('/art/crosses-maroon.webp') center / contain no-repeat;
+    opacity: 0.18;
+  }
+  .card-meta {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 1rem;
+  }
+  .card-q {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    line-height: 1.3;
+    margin: 0;
+  }
+  .card-foot {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.7rem;
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+  }
+  .flip {
+    animation: flip 0.45s ease;
+  }
+  @keyframes flip {
+    0% { transform: rotateX(70deg); opacity: 0.2; }
+    100% { transform: rotateX(0); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flip { animation: none; }
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1.75rem 0 3rem;
+  }
+  .actions .btn {
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+
+  .how {
+    border-top: 1px solid var(--rule);
+    padding-top: 2rem;
+  }
+  .how h2 {
+    font-size: 1.6rem;
+  }
+  .how ul {
+    padding-left: 1.2rem;
+  }
+  .how li {
+    margin-bottom: 0.5rem;
+  }
+  .how li::marker {
+    color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    .tabs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ---------- Printing ---------- */
+  .print-deck {
+    display: none;
+  }
+  @media print {
+    :global(.topbar),
+    :global(.site-header),
+    :global(.site-footer),
+    :global(.tulips),
+    :global(.page-head),
+    .deck-app {
+      display: none !important;
+    }
+    :global(body) {
+      background: #fff;
+    }
+    .print-deck {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .print-card {
+      break-inside: avoid;
+      height: 2.45in;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.3in;
+      border: 1px dashed #999;
+      text-align: center;
+      position: relative;
+      color: #222;
+    }
+    .pc-meta {
+      font-family: var(--font-ui);
+      font-size: 7.5pt;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #500000;
+      margin: 0 0 0.12in;
+    }
+    .pc-q {
+      font-family: var(--font-display);
+      font-size: 13pt;
+      line-height: 1.3;
+      margin: 0;
+    }
+    .pc-foot {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.1in;
+      font-family: var(--font-ui);
+      font-size: 6.5pt;
+      color: #888;
+      margin: 0;
+    }
+    :global(html[data-print-deck='little']) .print-card:not([data-deck='little']),
+    :global(html[data-print-deck='tweens']) .print-card:not([data-deck='tweens']),
+    :global(html[data-print-deck='teens']) .print-card:not([data-deck='teens']) {
+      display: none;
+    }
+  }
+  @page {
+    margin: 0.5in;
+  }
+</style>

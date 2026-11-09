@@ -2,7 +2,7 @@
 import type { CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import Crow from '../components/Crow.astro';
-import { SHELVES } from '../consts';
+import { SHELVES, SERIES } from '../consts';
 import { formatDate, readingTime } from '../utils';
 
 interface Props { post: CollectionEntry<'posts'> }
@@ -20,6 +20,9 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
         <span aria-hidden="true">·</span>
         <span>{readingTime(post.body)} min read</span>
       </p>
+      {post.data.series && (
+        <a class="series hand" href={`/series/${post.data.series}/`}>a {SERIES[post.data.series].label} post</a>
+      )}
       <h1>{title}</h1>
       <p class="dek">{description}</p>
       {post.data.draft && <p class="draft">Draft: only visible while you preview locally</p>}
@@ -78,6 +81,16 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
   .post-head .eyebrow a {
     color: var(--accent);
     text-decoration: none;
+  }
+  .series {
+    display: inline-block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transform: rotate(-2deg);
+    margin-bottom: 0.4rem;
+  }
+  .series:hover {
+    text-decoration: underline;
   }
   h1 {
     font-size: clamp(2.2rem, 5.5vw, 3.6rem);

@@ -53,6 +53,14 @@ book:
 
 The draft post **How to Write a Post** in `src/content/posts/` shows all of these in action.
 
+### Series
+
+Add `series:` to a post's front matter to put it in a recurring feature: `pass-the-potatoes`, `what-to-say-when`, or `teenager-translator`. Each series has its own page at `/series/<name>/`. Add or rename series in `src/consts.ts` and `src/content.config.ts`.
+
+## Dinner Table Cards
+
+The conversation deck lives at `/cards/`. Edit, add, or remove questions in `src/data/cards.ts`.
+
 ## Publish
 
 ```bash

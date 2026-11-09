@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { SHELVES } from '../consts';
+import { SHELVES, SERIES } from '../consts';
 import { formatDate, readingTime } from '../utils';
 interface Props { post: CollectionEntry<'posts'> }
 const { post } = Astro.props;
@@ -13,6 +13,7 @@ const shelf = SHELVES[post.data.shelf];
     <span aria-hidden="true">·</span>
     <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
   </p>
+  {post.data.series && <p class="series hand">{SERIES[post.data.series].label}</p>}
   <h3>{post.data.title}</h3>
   {post.data.book && <p class="book">{post.data.book.title} <span>by {post.data.book.author}</span></p>}
   <p class="desc">{post.data.description}</p>
@@ -48,6 +49,12 @@ const shelf = SHELVES[post.data.shelf];
   }
   .shelf {
     color: var(--spine, var(--oxblood));
+  }
+  .series {
+    margin: -0.4rem 0 0.2rem;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    color: var(--accent);
   }
   h3 {
     font-size: 1.4rem;

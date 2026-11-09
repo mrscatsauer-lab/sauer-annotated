@@ -1,0 +1,73 @@
+// Dinner Table Cards: add, edit, or delete questions here.
+// Each deck shows up as a tab on /cards/ and prints as its own set.
+
+export const DECKS = {
+  little: {
+    label: 'Little Kids',
+    ages: 'ages 4 to 8',
+    cards: [
+      'If you could shrink down and live inside any book, which one would you pick?',
+      'What made you laugh today?',
+      'If an animal could talk to you for one minute, which animal would you pick? What would it say?',
+      'What would you name a dragon?',
+      'Which character from a story would you want as your best friend?',
+      'If you wrote a book about today, what would the title be?',
+      'What is something you were brave about today?',
+      'If you could change the ending of a story you know, which one would you change?',
+      'If you had a magic backpack, what three things would be inside?',
+      'What is a new word you learned this week?',
+      'Would you rather be a giant in a tiny town or tiny in a giant town?',
+      'What should the bad guy in your favorite story have done instead?',
+      'Tell a story that starts with: "Once upon a time, a potato..."',
+      'If you could invent a holiday, what would we celebrate?',
+      'Who did you help today? Who helped you?',
+      'Which book should we read together next?',
+    ],
+  },
+  tweens: {
+    label: 'Tweens',
+    ages: 'ages 9 to 12',
+    cards: [
+      'What is a book or show everyone loves that you think is overrated?',
+      'If your life were a book, what would this chapter be called?',
+      'Which character would you trust with a secret? Which one never?',
+      'What is something you changed your mind about this year?',
+      'If you could ask any author one question, who would you ask and what would it be?',
+      'What is the hardest thing about being your age that adults forget?',
+      'Who is a villain you secretly understood?',
+      'If you could add one class to your school, what would it be?',
+      'What is a rule you think is unfair? How would you rewrite it?',
+      'Which book or movie world would be the worst place to actually live?',
+      'What are you really good at that nobody at school knows about?',
+      'If you could swap lives with a character for one day, who would it be?',
+      'What is the best plot twist you have ever seen?',
+      'If you started a club, what would it be about?',
+      'What do you hope people say about you when you are not in the room?',
+      'What word do you love just because of how it sounds?',
+    ],
+  },
+  teens: {
+    label: 'Teens',
+    ages: 'ages 13 and up',
+    cards: [
+      'What is a book you were assigned that was actually good? Be honest.',
+      'Is it ever okay to lie? When?',
+      'What is something adults get completely wrong about your generation?',
+      'Which fictional character are you most like? Are you happy about that?',
+      'What is a headline from this week that made you think?',
+      'How do you decide whether something you read online is true?',
+      'What song would be the soundtrack of your year so far?',
+      'Who do you admire who is not famous?',
+      'What is an opinion you hold that you think most people would disagree with?',
+      'What would you do with a completely free Saturday and no phone?',
+      'What story changed the way you see something?',
+      'Is it more important to be right or to be kind? When are those different?',
+      'If you wrote a novel, what would it be about?',
+      'What is one thing you wish you had learned earlier?',
+      'Who is the main character in our family? Who is the comic relief?',
+      'What is something you are looking forward to that nobody knows about?',
+    ],
+  },
+} as const;
+
+export type DeckKey = keyof typeof DECKS;

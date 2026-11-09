@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import PostCard from '../../components/PostCard.astro';
-import { SHELVES, type ShelfKey } from '../../consts';
+import { SHELVES, SERIES, type ShelfKey } from '../../consts';
 import { getPosts } from '../../utils';
 
 export async function getStaticPaths() {
@@ -15,10 +15,34 @@ export async function getStaticPaths() {
 const { shelf } = Astro.params as { shelf: ShelfKey };
 const { posts } = Astro.props;
 const s = SHELVES[shelf];
+const shelfSeries = Object.entries(SERIES).filter(([, v]) => v.shelf === shelf);
 ---
 <Base title={s.label} description={s.blurb}>
   <PageHead eyebrow="Shelf" title={s.label} note={s.blurb} />
   <div class="wrap">
+    {shelf === 'parents' && (
+      <a class="cards-callout" href="/cards/">
+        <span class="hand">new!</span>
+        <strong>Dinner Table Cards</strong>
+        <span class="sub">Conversation starters by age. Shuffle one at the table or print the deck.</span>
+        <span class="go">Open the deck →</span>
+      </a>
+    )}
+    {shelfSeries.length > 0 && (
+      <nav class="series-row" aria-label="Series on this shelf">
+        <p class="eyebrow">Regular features</p>
+        <ul>
+          {shelfSeries.map(([key, v]) => (
+            <li>
+              <a href={`/series/${key}/`}>
+                <span class="name">{v.label}</span>
+                <span class="blurb">{v.blurb}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )}
     {posts.length ? (
       <div class="cards">{posts.map((p) => <PostCard post={p} />)}</div>
     ) : (
@@ -34,5 +58,94 @@ const s = SHELVES[shelf];
   }
   .empty {
     font-size: 1.5rem;
+  }
+  .series-row {
+    margin-bottom: 2.5rem;
+  }
+  .cards-callout {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.3rem 1rem;
+    margin-bottom: 2rem;
+    padding: 1.2rem 1.4rem;
+    border-radius: var(--radius);
+    border-top: 5px solid var(--accent);
+    background: var(--card);
+    box-shadow: var(--shadow);
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .cards-callout .hand {
+    font-size: 1.5rem;
+    transform: rotate(-6deg);
+    grid-row: span 2;
+  }
+  .cards-callout strong {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+  }
+  .cards-callout .sub {
+    grid-column: 2;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+  .cards-callout .go {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  @media (max-width: 600px) {
+    .cards-callout {
+      grid-template-columns: 1fr;
+    }
+    .cards-callout .hand,
+    .cards-callout .sub,
+    .cards-callout .go {
+      grid-column: 1;
+      grid-row: auto;
+    }
+  }
+  .series-row ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.6rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 1rem;
+  }
+  .series-row a {
+    display: block;
+    height: 100%;
+    padding: 1.1rem 1.2rem;
+    border: 1px dashed var(--rose);
+    border-radius: var(--radius);
+    background: var(--rose-wash);
+    color: var(--ink);
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+  .series-row a:hover {
+    transform: translateY(-2px);
+    border-style: solid;
+  }
+  .series-row .name {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+  .series-row .blurb {
+    display: block;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-top: 0.2rem;
   }
 </style>
