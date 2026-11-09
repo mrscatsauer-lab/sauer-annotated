@@ -387,6 +387,6 @@ a:hover {
 }
 
 /* Consecutive poem stanzas: keep the gap between them tight */
-.prose .poem + .poem {
+.prose .poem:not(.stanza) + .poem:not(.stanza) {
   margin-top: -0.6em;
 }
