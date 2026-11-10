@@ -7,7 +7,7 @@ series: here-be-monsters
 tags: [poetry]
 hiddenNotes: true
 annotationBlurb: See how it’s built, in my own margin notes.
-draft: false
+draft: true
 ---
 
 <aside class="note">her voice is always in italics. the narrator’s never is.</aside>
