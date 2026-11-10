@@ -618,3 +618,55 @@ a:hover {
 .prose .poem ~ hr {
   margin: 1.4em 0;
 }
+
+/* ---------- Story illustrations ----------
+   <figure class="story-art tall|wide"><img src="/art/..." alt="..." /></figure>
+   Transparent PNG/WebP art sits right on the paper, no frame. */
+.prose .story-art {
+  margin: 2rem auto;
+  text-align: center;
+}
+.prose .story-art img {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+}
+.prose .story-art.tall img {
+  max-width: 340px;
+}
+.prose .story-art.wide img {
+  max-width: 520px;
+}
+@media print {
+  .prose .story-art {
+    break-inside: avoid;
+  }
+  .prose .story-art.tall img {
+    max-width: 2.6in;
+  }
+  .prose .story-art.wide img {
+    max-width: 4in;
+  }
+}
+
+/* Byline / age note at the top of a story (a div, so the drop cap skips it) */
+.prose .story-byline {
+  text-align: center;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-soft, inherit);
+  margin: 0 0 0.5rem;
+}
+.prose .story-byline span {
+  display: block;
+}
+.prose .story-byline .ages {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  letter-spacing: 0;
+  color: var(--accent);
+  margin-top: 0.3rem;
+}
