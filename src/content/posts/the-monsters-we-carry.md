@@ -48,10 +48,6 @@ sometimes means survival.</div>
 
 <div class="poem stanza">and then her mother leaves.</div>
 
-<div class="poem stanza">no goodbye that makes sense,
-no promise to return,
-no voice calling her name.</div>
-
 <div class="poem stanza">just an empty space
 where a mother’s love
 was supposed to live.</div>
@@ -90,10 +86,6 @@ for something she cannot name.</div>
 <div class="poem stanza">and one day,
 her mother returns.</div>
 
-<div class="poem stanza">the little girl, now grown,
-waits for the missing pieces
-to fall into place.</div>
-
 <div class="poem stanza">but the emptiness remains.</div>
 
 <div class="poem stanza">because sometimes
@@ -127,9 +119,6 @@ could exist.</div>
 she once needed,
 the voice that answers,
 the promise that stays.</div>
-
-<div class="poem stanza">but even love
-cannot erase every shadow.</div>
 
 <aside class="note">two lines each. no explanation. the present and the past share one image.</aside>
 

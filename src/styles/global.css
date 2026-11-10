@@ -613,3 +613,8 @@ a:hover {
     print-color-adjust: exact;
   }
 }
+
+/* Section breaks inside poems: tighter than in prose, so long poems scroll less */
+.prose .poem ~ hr {
+  margin: 1.4em 0;
+}
