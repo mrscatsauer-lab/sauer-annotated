@@ -639,6 +639,9 @@ a:hover {
 .prose .story-art.wide img {
   max-width: 520px;
 }
+.prose .story-art.medium img {
+  max-width: 440px;
+}
 @media print {
   .prose .story-art {
     break-inside: avoid;
@@ -648,6 +651,9 @@ a:hover {
   }
   .prose .story-art.wide img {
     max-width: 4in;
+  }
+  .prose .story-art.medium img {
+    max-width: 3.3in;
   }
 }
 

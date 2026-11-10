@@ -11,6 +11,8 @@ book:
 draft: false
 ---
 
+<figure class="story-art medium"><img src="/art/reviews/romeo-and-juliet.webp" alt="A pencil drawing of a stone balcony wrapped in roses, with a poison bottle, a single rose, and a dagger resting on a sealed letter below." loading="lazy" /></figure>
+
 Everyone calls *Romeo and Juliet* the greatest love story ever told. That's generous. <mark>It's the greatest story ever told about two teenagers who could not wait five minutes.</mark>
 
 And it isn't even original. Shakespeare was working off a story that was already about 1,600 years old, from the Roman poet Ovid. Same forbidden love. Same secret meeting. Same tragic misunderstanding. The main difference is that Ovid's version has a lion.

@@ -11,6 +11,8 @@ book:
 draft: false
 ---
 
+<figure class="story-art tall"><img src="/art/reviews/the-oval-portrait.webp" alt="A pencil drawing of a young woman in an ornate oval frame, with a lit candle, a painter's palette and brushes, an open book, and fallen rose petals." loading="lazy" /></figure>
+
 Every couple has had this fight. One person is trying to get the perfect picture. The other person has been standing in the sun for twenty minutes and would like to go inside now.
 
 <mark>Edgar Allan Poe took that fight and made it fatal.</mark>

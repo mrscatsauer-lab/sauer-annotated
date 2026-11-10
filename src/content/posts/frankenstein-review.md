@@ -11,6 +11,8 @@ book:
 draft: false
 ---
 
+<figure class="story-art wide"><img src="/art/reviews/frankenstein.webp" alt="A pencil drawing of a laboratory table: a glass flask, an electrical coil apparatus, an open anatomy notebook, and a stitched-together hand, with a cloaked figure walking away across a stormy moor." loading="lazy" /></figure>
+
 Victor Frankenstein spends two years building a person and roughly four seconds deciding he wants nothing to do with him. <mark>That is not a horror premise. That is a group chat.</mark>
 
 <aside class="note">he went to bed. he literally went to bed.</aside>
