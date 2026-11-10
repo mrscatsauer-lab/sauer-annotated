@@ -65,6 +65,14 @@ Add `hiddenNotes: true` to a story's front matter. Its margin notes, plus anythi
 
 Add `companion: other-post-file-name` (no `.md`) to link two pieces with a "read it with its companion" card. *In the Dark* and *When I Wake* point to each other.
 
+### Scheduling posts
+
+Give a post a future date and time, like `date: 2026-11-16T07:00:00-06:00`, and it stays hidden until then. Every morning at about 7:15 a.m. Central, a GitHub Action (`.github/workflows/daily-rebuild.yml`) asks Vercel to rebuild, which publishes anything whose date has arrived. One-time setup: create a Deploy Hook in Vercel and save its URL as a GitHub secret named `VERCEL_DEPLOY_HOOK` (instructions are at the top of the workflow file).
+
+### Multi-part pieces
+
+Add `sequence: the-monsters-we-carry` and `part: 1` (2, 3...) to each part. Readers get a "part 2 of..." badge, a "continue to part 3" card (or "part 3 arrives Monday..." if it's scheduled), and a page at `/sequence/the-monsters-we-carry/`. Add new sequences in `src/consts.ts` (SEQUENCES) and `src/content.config.ts`.
+
 ## Dinner Table Cards
 
 The conversation deck lives at `/cards/`. Edit, add, or remove questions in `src/data/cards.ts`.

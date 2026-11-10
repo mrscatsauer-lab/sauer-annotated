@@ -45,3 +45,17 @@ export const SERIES = {
 } as const;
 
 export type SeriesKey = keyof typeof SERIES;
+
+// Multi-part pieces. Each part is its own post with `sequence:` and `part:`.
+// Readers get a "Part 2 of ..." badge, a "Continue to Part 3" card,
+// and a page at /sequence/<key>/ that lists every part in order.
+export const SEQUENCES = {
+  'the-monsters-we-carry': {
+    title: 'The Monsters We Carry',
+    blurb: 'A poem in five parts, from the closet to the day she finally opened the door.',
+    parts: 5,
+    prelude: 'the-closet',
+  },
+} as const;
+
+export type SequenceKey = keyof typeof SEQUENCES;

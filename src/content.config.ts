@@ -30,6 +30,9 @@ const posts = defineCollection({
       .optional(),
     // For fiction: hide margin notes (and <mark class="clue"> highlights)
     // until the reader clicks "Read it again, annotated" at the end.
+    // Optional: a multi-part poem or story, and which part this is
+    sequence: z.enum(['the-monsters-we-carry']).optional(),
+    part: z.number().int().positive().optional(),
     // Optional: the file name (no .md) of a companion piece to link to
     companion: z.string().optional(),
     hiddenNotes: z.boolean().default(false),

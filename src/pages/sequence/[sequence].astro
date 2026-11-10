@@ -1,0 +1,115 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import { SEQUENCES, type SequenceKey } from '../../consts';
+import { isLive, formatDay } from '../../utils';
+
+export function getStaticPaths() {
+  return Object.keys(SEQUENCES).map((sequence) => ({ params: { sequence } }));
+}
+const { sequence } = Astro.params as { sequence: SequenceKey };
+const seq = SEQUENCES[sequence];
+const parts = (await getCollection('posts', (e) => e.data.sequence === sequence && (!e.data.draft || import.meta.env.DEV)))
+  .sort((a, b) => (a.data.part ?? 0) - (b.data.part ?? 0));
+const prelude = seq.prelude ? await getEntry('posts', seq.prelude) : undefined;
+---
+<Base title={seq.title} description={seq.blurb}>
+  <PageHead eyebrow={`A poem in ${seq.parts} parts`} title={seq.title} note={seq.blurb} />
+  <div class="wrap seq">
+    {prelude && isLive(prelude) && (
+      <a class="prelude" href={`/posts/${prelude.id}/`}>
+        <span class="num">Prelude</span>
+        <span class="t">{prelude.data.title}</span>
+        <span class="d">{prelude.data.description}</span>
+      </a>
+    )}
+    <ol>
+      {parts.map((p) => (
+        <li>
+          {isLive(p) ? (
+            <a href={`/posts/${p.id}/`}>
+              <span class="num">Part {p.data.part}</span>
+              <span class="t">{p.data.title}</span>
+              <span class="d">{p.data.description}</span>
+            </a>
+          ) : (
+            <div class="upcoming">
+              <span class="num">Part {p.data.part}</span>
+              <span class="t hand">arrives {formatDay(p.data.date)}</span>
+            </div>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</Base>
+<style>
+  .seq {
+    max-width: calc(44rem + 2 * var(--gutter));
+  }
+  ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    border-bottom: 1px solid var(--rule);
+  }
+  a,
+  .upcoming,
+  .prelude {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 0.2rem 1.2rem;
+    padding: 1.3rem 0;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .prelude {
+    border: 1px dashed var(--rose);
+    background: var(--rose-wash);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .num {
+    grid-row: span 2;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 0.45rem;
+  }
+  .t {
+    font-family: var(--font-display);
+    font-size: 1.45rem;
+    font-weight: 600;
+  }
+  .upcoming .t {
+    font-family: var(--font-hand);
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: var(--ink-soft);
+  }
+  .d {
+    color: var(--ink-soft);
+    font-size: 1rem;
+  }
+  a:hover .t {
+    color: var(--accent);
+  }
+  @media (max-width: 560px) {
+    a,
+    .upcoming,
+    .prelude {
+      grid-template-columns: 1fr;
+    }
+    .num {
+      grid-row: auto;
+      padding: 0;
+    }
+  }
+</style>

@@ -1,14 +1,22 @@
 ---
-import { getEntry, type CollectionEntry } from 'astro:content';
+import { getEntry, getCollection, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import Crow from '../components/Crow.astro';
-import { SHELVES, SERIES } from '../consts';
-import { formatDate, readingTime } from '../utils';
+import { SHELVES, SERIES, SEQUENCES } from '../consts';
+import { formatDate, formatDay, readingTime, isLive } from '../utils';
 
 interface Props { post: CollectionEntry<'posts'> }
 const { post } = Astro.props;
 const { title, description, date, updated, shelf, tags, book } = post.data;
 const companion = post.data.companion ? await getEntry('posts', post.data.companion) : undefined;
+const seqKey = post.data.sequence;
+const seq = seqKey ? SEQUENCES[seqKey] : undefined;
+const part = post.data.part ?? 0;
+const seqParts = seqKey
+  ? (await getCollection('posts', (e) => e.data.sequence === seqKey)).sort((a, b) => (a.data.part ?? 0) - (b.data.part ?? 0))
+  : [];
+const nextPart = seqParts.find((e) => e.data.part === part + 1);
+const firstPart = seqParts.find((e) => e.data.part === 1);
 const hasHiddenNotes = post.data.hiddenNotes && (post.body ?? '').includes('class="note');
 const printUrl = new URL(Astro.url.pathname, Astro.site).toString().replace(/^https?:\/\//, '');
 const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : undefined;
@@ -24,7 +32,9 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
         <span aria-hidden="true">·</span>
         <span>{readingTime(post.body)} min read</span>
       </p>
-      {post.data.series && (
+      {seq ? (
+        <a class="series hand" href={`/sequence/${seqKey}/`}>part {part} of {seq.title}</a>
+      ) : post.data.series && (
         <a class="series hand" href={`/series/${post.data.series}/`}>a {SERIES[post.data.series].label} post</a>
       )}
       <h1>{title}</h1>
@@ -77,7 +87,34 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
       </aside>
     )}
 
-    {companion && (!companion.data.draft || import.meta.env.DEV) && (
+    {seq && nextPart && isLive(nextPart) && (
+      <aside class="companion wrap" aria-label="Next part">
+        <a href={`/posts/${nextPart.id}/`}>
+          <span class="hand">continue to part {part + 1}</span>
+          <span class="c-title">{nextPart.data.title}</span>
+          <span class="c-desc">{nextPart.data.description}</span>
+        </a>
+      </aside>
+    )}
+    {seq && nextPart && !isLive(nextPart) && (
+      <aside class="companion wrap" aria-label="Next part">
+        <a href={`/sequence/${seqKey}/`}>
+          <span class="hand">part {part + 1} arrives {formatDay(nextPart.data.date)}</span>
+          <span class="c-title">{seq.title}</span>
+          <span class="c-desc">See every part so far</span>
+        </a>
+      </aside>
+    )}
+    {seq && !nextPart && firstPart && part > 1 && (
+      <aside class="companion wrap" aria-label="Start from the beginning">
+        <a href={`/sequence/${seqKey}/`}>
+          <span class="hand">the end. read all {seq.parts} parts together</span>
+          <span class="c-title">{seq.title}</span>
+          <span class="c-desc">{seq.blurb}</span>
+        </a>
+      </aside>
+    )}
+    {companion && isLive(companion) && (
       <aside class="companion wrap" aria-label="Companion piece">
         <a href={`/posts/${companion.id}/`}>
           <span class="hand">read it with its companion</span>

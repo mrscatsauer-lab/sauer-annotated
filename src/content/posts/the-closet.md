@@ -4,7 +4,7 @@ description: Piles of clothes, tiny claws in the walls, and a girl who needs the
 date: 2026-11-09
 shelf: writing-life
 series: here-be-monsters
-companion: the-monsters-we-carry
+companion: the-monsters-we-carry-part-1
 tags: [poetry]
 hiddenNotes: true
 annotationBlurb: See how it’s built, in my own margin notes.
