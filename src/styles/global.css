@@ -231,11 +231,13 @@ a:hover {
 
 .prose h2 {
   font-size: 1.7rem;
-  margin-top: 2.2em;
+  margin-top: 1.4em;
+  margin-bottom: 0.45em;
 }
 .prose h3 {
   font-size: 1.3rem;
-  margin-top: 1.8em;
+  margin-top: 1.3em;
+  margin-bottom: 0.4em;
 }
 
 .prose blockquote {
