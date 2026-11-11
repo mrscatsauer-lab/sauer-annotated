@@ -24,11 +24,13 @@ Our rough corner of Southern California is riddled with bullet holes and run by 
 
 With my magical jelly shoes on my feet, I head out in search of food. I know the rules about walking around the neighborhood. If I hear gunshots, I drop to the ground. It has happened a time or two, but both times my magical shoes kept me safe. <mark class="clue">That’s what Mom said, anyway.</mark>
 
-As I pass a fenced yard, I notice a brown-haired lady sitting on a pink blanket, singing to a freckle-nosed baby. Quietly, I squeeze my thin body between the metal slats and walk up to them. The woman looks at my mismatched clothes and bedhead hair and asks if I want to play. After a loud growl from my stomach, she offers me a small container of orange cheese and purple grapes. I don’t hesitate. I grab the container and shovel the food into my mouth. Her eyes double in size as she watches me devour the snack.
+As I pass a fenced yard, I notice a brown-haired lady sitting on a pink blanket, singing to a freckle-nosed baby. I stop walking. She looks at that baby like he's the only person in the whole world. Fights, screams, and gunshots don't exist on that blanket. She holds out something orange, and he giggles, and she laughs right along with him. My chest gets tight and my eyes sting. I have seen my mom's face sleeping, yelling, and gone. I have never seen it do that.
+
+Quietly, I squeeze my thin body between the metal slats and walk up to them. The woman looks at my mismatched clothes and bedhead hair and asks if I want to play. After a loud growl from my stomach, she offers me a small container of orange cheese and purple grapes. I don’t hesitate. I grab the container and shovel the food into my mouth. Her eyes double in size as she watches me devour the snack.
 
 <aside class="note">every line before this one builds to this question.</aside>
 
-She asks if I know where my mother is, but I never really know unless she’s passed out on a couch or standing in front of me. I shrug, and then I quietly ask, <mark class="clue">“Do you want to be my mom?”</mark>
+She asks if I know where my mother is, but I never really know unless she’s passed out on a couch or standing in front of me. I shrug. I'm good at shrugging. Then I look at the baby, still giggling, and the words come out before I can stop them: <mark class="clue">“Do you want to be my mom?”</mark>
 
 <aside class="note">same snack, same small container. now she’s the one handing it over.</aside>
 
