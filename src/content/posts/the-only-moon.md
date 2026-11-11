@@ -4,7 +4,7 @@ description: Something frantic moves in the dark, and the hunter in the burrow w
 date: 2026-10-02
 shelf: writing-life
 series: small-lives
-tags: [short-story, flash-fiction]
+tags: [short-story, fiction, flash-fiction]
 hiddenNotes: true
 draft: false
 ---

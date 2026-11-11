@@ -4,7 +4,7 @@ description: A snack for a toddler, a memory of jelly shoes, and a six-year-old 
 date: 2026-09-14
 shelf: writing-life
 series: here-be-monsters
-tags: [short-story, flash-fiction, motherhood]
+tags: [short-story, fiction, flash-fiction, motherhood]
 hiddenNotes: true
 annotationBlurb: See how it’s built, in my own margin notes.
 draft: false

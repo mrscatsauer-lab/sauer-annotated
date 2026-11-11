@@ -4,7 +4,7 @@ description: Deep blue wallpaper, never-ending shelves, and one reader who knows
 date: 2026-09-21
 shelf: writing-life
 series: small-lives
-tags: [short-story, flash-fiction]
+tags: [short-story, fiction, flash-fiction]
 hiddenNotes: true
 draft: false
 ---

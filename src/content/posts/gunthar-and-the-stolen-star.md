@@ -3,7 +3,7 @@ title: Gunthar and the Stolen Star
 description: An eleven-year-old who loves routines, a dad with a pirate past, a toad with an eye patch, and a missing North Star. A middle-grade adventure about finding your way when the one thing you counted on disappears.
 date: 2026-10-30
 shelf: writing-life
-tags: [short-story, adventure, middle-grade, stars]
+tags: [short-story, fiction, adventure, middle-grade, stars]
 hiddenNotes: true
 annotationBlurb: Every promise in this story gets kept. Read it again and watch for them.
 draft: true

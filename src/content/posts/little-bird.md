@@ -3,7 +3,7 @@ title: Little Bird
 description: Six years of silence, one Thanksgiving, and thirty minutes in a Jeep with the brother she hasn’t forgiven.
 date: 2026-10-09
 shelf: writing-life
-tags: [short-story, family]
+tags: [short-story, fiction, family]
 hiddenNotes: true
 annotationBlurb: See the clues I hid along the way, in my own margin notes.
 draft: false
