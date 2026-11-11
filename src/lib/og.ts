@@ -67,7 +67,7 @@ export async function renderOg({ title, eyebrow, note }: { title: string; eyebro
           ].filter(Boolean)),
           h('div', { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }, [
             h('div', { fontFamily: 'Caveat', fontWeight: 600, fontSize: 34, color: maroon }, note ?? 'margin notes on books, writing, and everything else'),
-            h('div', { fontFamily: 'Fraunces', fontStyle: 'italic', fontWeight: 400, fontSize: 24, color: '#5d524b' }, 'sauerannotated.com'),
+            h('div', { fontFamily: 'Fraunces', fontStyle: 'italic', fontWeight: 400, fontSize: 24, color: '#5d524b' }, 'catherineannotated.com'),
           ]),
         ],
       ),
