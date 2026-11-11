@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import { Image } from 'astro:assets';
-import soMany from '../assets/art/so-many-books.webp';
+import portrait from '../assets/art/catherine-portrait.webp';
 ---
 <Base title="About" description="Who is doing all this annotating.">
   <PageHead eyebrow="About" title="Meet the annotator" note="hi, it's me" />
@@ -16,7 +16,7 @@ import soMany from '../assets/art/so-many-books.webp';
       <p>
         I'm Catherine. By day I teach high school English, which means I spend a lot of time convincing
         fifteen-year-olds that the curtains might actually be blue for a reason. I'm also a certified reading
-        specialist, a doctoral candidate in literacy, and a writer who can't stop making up stories about small
+        specialist, a doctoral student at Texas A&amp;M University (gig 'em), and a writer who can't stop making up stories about small
         creatures with big opinions. This is me taking a big step, because while I love writing, I never share
         it with anyone.
       </p>
@@ -41,7 +41,7 @@ import soMany from '../assets/art/so-many-books.webp';
       <blockquote><p>Read slowly. Argue with the author. Leave evidence that you were here.</p></blockquote>
       <p>Pull up a chair.</p>
     </div>
-    <div class="art-side" aria-hidden="true"><Image src={soMany} alt="" width={520} /></div>
+    <div class="art-side"><Image src={portrait} alt="A pencil-sketch portrait of Catherine Sauer, smiling, in glasses, inside an ornate oval frame." width={600} /></div>
   </div>
 </Base>
 <style>
@@ -57,7 +57,6 @@ import soMany from '../assets/art/so-many-books.webp';
   .art-side :global(img) {
     width: 100%;
     height: auto;
-    transform: rotate(2deg);
   }
   @media (max-width: 760px) {
     .about {
