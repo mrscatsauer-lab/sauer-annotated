@@ -6,7 +6,7 @@ shelf: writing-life
 tags: [short-story, adventure, middle-grade, stars]
 hiddenNotes: true
 annotationBlurb: Every promise in this story gets kept. Read it again and watch for them.
-draft: false
+draft: true
 ---
 
 <div class="story-byline">
