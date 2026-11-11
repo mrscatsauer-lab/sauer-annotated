@@ -30,7 +30,7 @@ Quietly, I squeeze my thin body between the metal slats and walk up to them. The
 
 <aside class="note">every line before this one builds to this question.</aside>
 
-She asks if I know where my mother is, but I never really know unless she’s passed out on a couch or standing in front of me. I shrug. I'm good at shrugging. Then I look at the baby, still giggling, and the words come out before I can stop them: <mark class="clue">“Do you want to be my mom?”</mark>
+She asks if I know where my mother is, but I never really know unless she’s passed out on a couch or standing in front of me. I shrug. I'm good at shrugging. Then I look at the baby, still giggling, and the words come out before I can stop them: <mark class="clue">“Can you be my mom too?”</mark>
 
 <aside class="note">same snack, same small container. now she’s the one handing it over.</aside>
 
