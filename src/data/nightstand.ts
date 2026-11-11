@@ -7,4 +7,6 @@ export interface NightstandBook {
 }
 
 // Empty list = the nightstand card hides itself everywhere.
-export const nightstand: NightstandBook[] = [];
+export const nightstand: NightstandBook[] = [
+  { title: 'A Promise of Fire', author: 'Amanda Bouchet' },
+];

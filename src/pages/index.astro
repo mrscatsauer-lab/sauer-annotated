@@ -43,14 +43,12 @@ const shelfArtwork = {
       <div class="plate">
         {nightstand[0] ? (
           <a class="ns-tag" href="/shelf/reviews/#nightstand" aria-label={`On my nightstand: ${nightstand[0].title} by ${nightstand[0].author}`}>
-            <span class="ns-moon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M15.5 3.5a8.5 8.5 0 1 0 5 15.2A9.5 9.5 0 0 1 15.5 3.5Z" fill="currentColor"/><circle cx="19" cy="6" r="1.1" fill="currentColor"/><circle cx="21" cy="10" r=".7" fill="currentColor"/></svg></span>
             <span class="ns-eyebrow">on my nightstand</span>
             <span class="ns-title">{nightstand[0].title}</span>
             <span class="ns-author">{nightstand[0].author}</span>
           </a>
         ) : (
           <a class="ns-tag" href="/margin-notes/" aria-label="My nightstand is empty. Suggest a book on the Margin Notes wall.">
-            <span class="ns-moon" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M15.5 3.5a8.5 8.5 0 1 0 5 15.2A9.5 9.5 0 0 1 15.5 3.5Z" fill="currentColor"/><circle cx="19" cy="6" r="1.1" fill="currentColor"/><circle cx="21" cy="10" r=".7" fill="currentColor"/></svg></span>
             <span class="ns-eyebrow">on my nightstand</span>
             <span class="ns-empty">nothing yet!</span>
             <span class="ns-ask">got a suggestion? →</span>
@@ -231,12 +229,6 @@ const shelfArtwork = {
   }
   .ns-tag:hover {
     transform: rotate(2deg);
-  }
-  .ns-moon {
-    position: absolute;
-    top: 0.4rem;
-    left: 0.6rem;
-    color: var(--mustard);
   }
   .ns-eyebrow {
     font-family: var(--font-ui);
