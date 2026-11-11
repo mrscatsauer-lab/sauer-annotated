@@ -1,5 +1,5 @@
 ---
-title: Orange Cheese and Purple Grapes
+title: "Somebody's Mother"
 description: A snack for a toddler, a memory of jelly shoes, and a six-year-old looking for a new mother.
 date: 2026-09-14
 shelf: writing-life
