@@ -5,6 +5,7 @@ import { formatDate, readingTime } from '../utils';
 interface Props { post: CollectionEntry<'posts'> }
 const { post } = Astro.props;
 const shelf = SHELVES[post.data.shelf];
+const isPoem = post.data.tags?.includes('poetry');
 ---
 <article class={`card shelf-${post.data.shelf}`}>
   <a href={`/posts/${post.id}/`} class="hit" aria-label={post.data.title}></a>
@@ -20,7 +21,10 @@ const shelf = SHELVES[post.data.shelf];
   {post.data.book && <p class="book">{post.data.book.title} <span>by {post.data.book.author}</span></p>}
   {post.data.pairedBook && <p class="book">{post.data.pairedBook.title} <span>by {post.data.pairedBook.author}</span></p>}
   <p class="desc">{post.data.description}</p>
-  <p class="more">{readingTime(post.body)} min read <span aria-hidden="true">→</span></p>
+  <p class="more">
+    <span>{readingTime(post.body)} min read <span aria-hidden="true">→</span></span>
+    {isPoem && <span class="kind">poem</span>}
+  </p>
 </article>
 
 <style>
@@ -53,6 +57,14 @@ const shelf = SHELVES[post.data.shelf];
   .shelf {
     color: var(--spine, var(--oxblood));
   }
+  .kind {
+    padding: 0.05rem 0.55rem;
+    border: 1px solid var(--spine, var(--oxblood));
+    border-radius: 999px;
+    color: var(--spine, var(--oxblood));
+    font-size: 0.85em;
+    line-height: 1.5;
+  }
   .series {
     margin: -0.4rem 0 0.2rem;
     font-size: 1.25rem;
@@ -80,6 +92,10 @@ const shelf = SHELVES[post.data.shelf];
     flex: 1;
   }
   .more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
     font-family: var(--font-ui);
     font-size: 0.75rem;
     font-weight: 600;
