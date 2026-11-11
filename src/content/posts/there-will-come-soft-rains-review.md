@@ -10,6 +10,10 @@ book:
   author: Ray Bradbury
   rating: 4.5
 draft: false
+checkout:
+  readIf: "you teach personification, irony, or theme, or you've ever wondered what your smart speaker would do if you never came home."
+  skipIf: "you need a happy ending, or a dog who makes it."
+  pairWith: "Teasdale's full poem (just twelve lines), and the [Omelas lesson](/posts/omelas-fishbowl-lesson/) for another perfect world with a terrible price."
 ---
 
 <figure class="story-art wide"><img src="/art/reviews/there-will-come-soft-rains.webp" alt="A pencil drawing of an empty mid-century modern house in the rain, lights on inside, ivy on the chimney, swallows overhead, and a broken flowerpot by the steps." loading="lazy" /></figure>
@@ -29,7 +33,6 @@ My students loved it. A house that keeps running after everyone's gone hits diff
 - **Situational irony:** a house built to protect a family outlives them. Technology does everything right except the one thing that mattered.
 - **Allusion:** the title comes from a real poem by Sara Teasdale, written during World War I. The house reads it aloud to an empty room.
 - **Symbolism:** the clock. Every section starts with the time, and the story ends when time stops meaning anything.
-- **Mood:** cheerful voices, empty rooms. That gap is where the dread lives.
 
 <aside class="note">the dog. we don't talk about the dog.</aside>
 
@@ -37,14 +40,8 @@ The poem is in the public domain, so here's the ending the house reads to nobody
 
 > And Spring herself, when she woke at dawn / Would scarcely know that we were gone.
 
-<mark>It's a story about the end of the world where the world turns out to be fine. We're the only part that's missing.</mark>
+That's the part that gets me. The world ends, and the world turns out to be fine. We're the only thing missing.
 
 ## The verdict
 
 Four and a half stars. Half a star off because of the dog. You know what you did, Ray.
-
-**Read it if:** you teach personification, irony, or theme, or you've ever wondered what your smart speaker would do if you never came home.
-
-**Skip it if:** you need a happy ending, or a dog who makes it.
-
-**Pair it with:** Teasdale's full poem (just twelve lines), and the [Omelas lesson](/posts/omelas-fishbowl-lesson/) for another perfect world with a terrible price.

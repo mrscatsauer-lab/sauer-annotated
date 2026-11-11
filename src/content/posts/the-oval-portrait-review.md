@@ -10,21 +10,21 @@ book:
   author: Edgar Allan Poe
   rating: 4.5
 draft: false
+checkout:
+  readIf: "you love gothic fiction, you teach Poe, or you need a ten-minute story that starts a forty-minute argument."
+  skipIf: "you're hoping for a classic Poe jump scare. This one doesn't scream. It whispers."
+  pairWith: "a quick question at dinner: what's something you love so much you might stop noticing the people around you? Then put the phones away. Just for an hour. For Poe."
 ---
 
 <figure class="story-art tall"><img src="/art/reviews/the-oval-portrait.webp" alt="A pencil drawing of a young woman in an ornate oval frame, with a lit candle, a painter's palette and brushes, an open book, and fallen rose petals." loading="lazy" /></figure>
 
 Every couple has had this fight. One person is trying to get the perfect picture. The other person has been standing in the sun for twenty minutes and would like to go inside now.
 
-<mark>Edgar Allan Poe took that fight and made it fatal.</mark>
+Edgar Allan Poe took that fight and made it fatal.
 
 "The Oval Portrait" is barely three pages long. You can read it in the time it takes to microwave leftovers. And it's one of the creepiest things he ever wrote, without a single body under the floorboards.
 
 My students liked it for exactly that reason. It's dark and creepy, but in a quiet way that sneaks up on you. Nobody jumps out. Nobody screams. Somebody just keeps painting.
-
-<aside class="note">teenagers will always pick the creepy one. always.</aside>
-
-<aside class="note">no ravens. no beating hearts. just a husband with a hobby.</aside>
 
 ## The setup is very Poe
 
@@ -50,8 +50,6 @@ She agreed, because she loved him, and she sat for him for weeks in a dark, high
 
 And she started to fade. She got paler. Weaker. Quieter. Everyone could see it except him. He was too busy mixing exactly the right shade for her cheeks, and Poe makes it horribly clear where that color was coming from. The more alive the painting got, the less alive she was.
 
-<mark>The more real she looked on the canvas, the less of her was left in the chair.</mark>
-
 ## The last brushstroke
 
 Finally, he adds one last touch to the mouth and one last tint to the eye. He steps back, stunned by what he's made, and cries out:
@@ -66,7 +64,7 @@ She was dead.
 
 And that's it. That's the ending. The story just stops. The narrator never comes back to react. We never return to the turret room or the candle or the wounded traveler. Poe drops you right there, staring at the painting, the same way the painter is.
 
-It's a bold move, and it works. You end the story in the exact position the narrator started it: looking at a beautiful portrait and realizing, too late, what it cost.
+You end up exactly where the narrator started: looking at a beautiful portrait and realizing, too late, what it cost.
 
 ---
 
@@ -76,22 +74,10 @@ On the surface, it's a ghost story without a ghost. Underneath, it's a question 
 
 Every artist, writer, and very committed hobbyist should feel slightly attacked by this story. So should anyone who has ever missed a real moment because they were busy photographing it.
 
-<aside class="note">poe predicted the guy who films the whole concert on his phone. 1842.</aside>
-
-It also pairs beautifully with stories you might already teach:
-
-- ***Frankenstein*:** another obsessive creator who pours himself into his work and destroys the people he's supposed to love.
-- ***The Picture of Dorian Gray*:** the mirror image. In Wilde's novel, the portrait ages while the man stays young. In Poe's, the portrait comes alive while the woman dies.
-- **Any photo you've retaken eleven times:** no explanation needed.
+If you already teach *Frankenstein*, this is a nice warm-up: another obsessive creator who destroys the person he's supposed to love. *The Picture of Dorian Gray* is the mirror image. Wilde's portrait ages while the man stays young. Poe's portrait comes alive while the woman dies.
 
 ## The verdict
 
 Half a star off for the frame story. Poe sets up a wounded traveler, a creepy château, and a sleepless night, and then completely abandons all of it. I understand why. I just want to know if the guy ever got a bandage.
 
-Everything else? It's dense, quick, and quietly devastating. It's perfect for teaching mood, foreshadowing, and the story-within-a-story structure, and it's short enough to read twice in one class period. You should read it twice. It hits harder the second time, once you know what the painter is actually painting with.
-
-**Read it if:** you love gothic fiction, you teach Poe, or you need a ten-minute story that starts a forty-minute argument.
-
-**Skip it if:** you're hoping for a classic Poe jump scare. This one doesn't scream. It whispers.
-
-**Pair it with:** a quick question at dinner: what's something you love so much you might stop noticing the people around you? Then put the phones away. Just for an hour. For Poe.
+The rest is dense, quick, and quietly devastating. It's great for teaching mood, foreshadowing, and the story-within-a-story structure, and it's short enough to read twice in one class period. You should read it twice. It hits harder the second time, once you know what the painter is actually painting with.

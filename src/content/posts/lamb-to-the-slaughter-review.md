@@ -10,6 +10,10 @@ book:
   author: Roald Dahl
   rating: 5
 draft: false
+checkout:
+  readIf: "you teach irony, you like your suspense with a side of dark comedy, or you've ever wondered what's really going on in a very calm house."
+  skipIf: "you planned to have lamb for dinner tonight."
+  pairWith: "Alfred Hitchcock's TV adaptation, which he directed himself in 1958. Or Poe's \"The Tell-Tale Heart,\" for a fun contrast: Poe's murderer cracks under pressure, and Mary doesn't crack at all. Then, one question at dinner: is Mary a villain, or did she just get revenge?"
 ---
 
 <figure class="story-art wide"><img src="/art/reviews/lamb-to-the-slaughter.webp" alt="A pencil drawing of a 1950s housewife in a ruffled apron, gripping a leg of lamb like a club, in a kitchen with a tipped-over glass on the table." loading="lazy" /></figure>
@@ -17,8 +21,6 @@ draft: false
 Yes, that Roald Dahl. The man who gave us *Charlie and the Chocolate Factory* also wrote a story in which a pregnant housewife beats her husband to death with a frozen leg of lamb, cooks it, and serves it to the police officers investigating his murder.
 
 <mark>The cops eat the murder weapon.</mark> That's the story. It's perfect.
-
-<aside class="note">the chocolate factory guy. the same one.</aside>
 
 My students, who recently rated *Romeo and Juliet* "mid," loved this one. They loved the suspense. They loved the irony. Mostly, they loved yelling at the page during the dinner scene, which is exactly the right response.
 
@@ -32,7 +34,7 @@ Dahl lays it on thick, and he's doing it on purpose. Every cozy detail is a setu
 
 Patrick comes home. He's quiet. He drinks faster than usual. And then he tells her something. We never find out exactly what, but it's clear he's leaving, and he'd like her not to make a fuss about it.
 
-That gap is one of the smartest choices in the whole story. Dahl doesn't tell us what Patrick said, so every reader fills it in with the worst thing they can imagine. Which is plenty.
+That gap is one of the smartest choices in the whole story. Dahl doesn't tell us what Patrick said, so every reader fills it in with the worst thing they can imagine.
 
 ## Dinner, interrupted
 
@@ -40,13 +42,9 @@ Mary goes down to the freezer in a daze, pulls out a leg of lamb for supper, wal
 
 He dies. She is, briefly, shocked. Then she gets organized.
 
-<aside class="note">the speed at which she switches from "housewife" to "criminal mastermind" is genuinely alarming.</aside>
-
 She puts the lamb in the oven. She fixes her face and practices a smile in the mirror until it looks natural. She walks to the grocery store and makes cheerful small talk about what to serve Patrick for dinner. She comes home, "discovers" the body, and calls the police in tears.
 
 Every one of those steps is building an alibi, and every one of them is terrifying, because she's so good at it.
-
-> Dramatic irony is when you know something the characters don't. Here, what you know is that dinner is evidence.
 
 ## The best dinner party in literature
 
@@ -60,21 +58,13 @@ So they do. And while they eat, they talk about the weapon. Where could it be? P
 
 In the next room, Mary starts to giggle.
 
-> The most chilling sound in this story is not a scream. It's a housewife giggling in the next room.
-
 ## Why it works so well with teenagers
 
-Every literary term you want them to learn is in this story, and none of them feel like vocabulary. They feel like the plot.
+Every literary term you want them to learn is in this story, and none of them feel like vocabulary. Dramatic irony is the whole dinner scene: the reader knows what's on the plate and the officers don't. Situational irony is the investigators destroying the evidence by eating it. With peas. The title does its own work, too, because Mary looks like the meek little lamb and she is not the lamb.
 
-- **Dramatic irony:** you know what they're eating. They don't. Every bite is a joke at their expense.
-- **Situational irony:** the investigators destroy the evidence by eating it. With peas.
-- **The theory:** the officers keep saying the weapon must be right in front of them, and they're right in a way they'll never understand.
-- **The title:** Mary looks like the meek little lamb. She is not the lamb.
-- **Suspense:** the grocery store scene is just a woman buying potatoes, and it's somehow the tensest thing in the story.
+And the suspense is sneaky. The grocery store scene is just a woman buying potatoes, and somehow it's the tensest part of the story.
 
-<aside class="note">teaching irony with this story is unfair. it does all the work for you.</aside>
-
-And then there's the big question that keeps a room arguing long after the bell: is Mary a villain? She killed a man. But he blindsided her, and she thinks about her baby the whole time she's covering it up. Students will defend her with their whole chest, and other students will be horrified that they're defending her. That's the good stuff.
+And then there's the big question that keeps a room arguing long after the bell: is Mary a villain? She killed a man. But he blindsided her, and she thinks about her baby the whole time she's covering it up. Students will defend her with their whole chest, and other students will be horrified that they're defending her.
 
 ---
 
@@ -83,9 +73,3 @@ And then there's the big question that keeps a room arguing long after the bell:
 Five stars. No notes. Okay, I have notes, they're all over the margins, but none of them are complaints.
 
 It's short enough to read in one class period, dark enough to feel a little forbidden, and funny enough that teenagers forget they're doing literary analysis. Dahl wrote it in 1953, and it still lands harder than most things written last year.
-
-**Read it if:** you teach irony, you like your suspense with a side of dark comedy, or you've ever wondered what's really going on in a very calm house.
-
-**Skip it if:** you planned to have lamb for dinner tonight.
-
-**Pair it with:** Alfred Hitchcock's TV adaptation, which he directed himself in 1958. Or Poe's "The Tell-Tale Heart," for a fun contrast: Poe's murderer cracks under pressure, and Mary doesn't crack at all. Then, one question at dinner: is Mary a villain, or did she just get revenge?

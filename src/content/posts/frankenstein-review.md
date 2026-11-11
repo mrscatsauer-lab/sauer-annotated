@@ -10,6 +10,10 @@ book:
   author: Mary Shelley
   rating: 4.5
 draft: false
+checkout:
+  readIf: "you like books that argue with you, you teach argument writing, or you think you know this story from the movies. You don't."
+  skipIf: "you need a laboratory explosion by page ten."
+  pairWith: "a conversation, at the dinner table or in a classroom, about what we owe the things we create."
 ---
 
 <figure class="story-art wide"><img src="/art/reviews/frankenstein.webp" alt="A pencil drawing of a laboratory table: a glass flask, an electrical coil apparatus, an open anatomy notebook, and a stitched-together hand, with a cloaked figure walking away across a stormy moor." loading="lazy" /></figure>
@@ -71,9 +75,3 @@ Half a star off for the framing letters. The novel opens and closes with Robert 
 Everything else? Required reading. Especially for anyone who has ever made something and then panicked about it, which is every writer, every teacher, and every parent I know.
 
 <aside class="note">also: she was 18 when she started this. I was 18 and still learning how to do laundry.</aside>
-
-**Read it if:** you like books that argue with you, you teach argument writing, or you think you know this story from the movies. You don't.
-
-**Skip it if:** you need a laboratory explosion by page ten.
-
-**Pair it with:** a conversation, at the dinner table or in a classroom, about what we owe the things we create.

@@ -10,6 +10,16 @@ import { formatDate, formatDay, readingTime, isLive } from '../utils';
 interface Props { post: CollectionEntry<'posts'> }
 const { post } = Astro.props;
 const { title, description, date, updated, shelf, tags, book, pairedBook } = post.data;
+const checkout = post.data.checkout;
+const inline = (t = '') =>
+  t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\*([^*]+)\*/g, '<em>$1</em>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
+const checkoutRows = checkout
+  ? [
+      ['Read it if', checkout.readIf],
+      ['Skip it if', checkout.skipIf],
+      ['Pair it with', checkout.pairWith],
+    ].filter(([, v]) => v)
+  : [];
 const books = [book, pairedBook].filter((x): x is NonNullable<typeof book> => Boolean(x));
 const toStars = (r?: number) => (r !== undefined ? Math.round(r * 2) / 2 : undefined);
 const companion = post.data.companion ? await getEntry('posts', post.data.companion) : undefined;
@@ -106,6 +116,29 @@ const related = picks.map((r) => r.p);
     <div class:list={['prose', 'wrap-prose', { 'notes-hidden': hasHiddenNotes }]} id="story">
       <slot />
     </div>
+
+    {checkoutRows.length > 0 && (
+      <div class="wrap checkout-wrap">
+        <aside class="checkout-card" aria-label="Checkout card">
+          <div class="cc-head">
+            <span class="cc-label">Checkout card</span>
+            <span class="cc-title">{book?.title ?? title}</span>
+            {book?.author && <span class="cc-author">{book.author}</span>}
+          </div>
+          <dl class="cc-rows">
+            {checkoutRows.map(([k, v]) => (
+              <div class="cc-row">
+                <dt>{k}</dt>
+                <dd set:html={inline(v)} />
+              </div>
+            ))}
+          </dl>
+          {book?.rating !== undefined && (
+            <span class="cc-stamp" aria-label={`${book.rating} out of 5 stars`}>{book.rating} / 5</span>
+          )}
+        </aside>
+      </div>
+    )}
 
     {tags.length > 0 && (
       <div class="wrap tag-wrap">
@@ -508,5 +541,121 @@ const related = picks.map((r) => r.p);
   }
   .tag-wrap .tags {
     justify-content: flex-start;
+  }
+  .checkout-wrap {
+    max-width: calc(var(--measure) + 2 * var(--gutter));
+    margin-top: 2.2rem;
+  }
+  .checkout-card {
+    position: relative;
+    padding: 1.1rem 1.3rem 1rem;
+    background: #f3e7c9;
+    color: #3a2f25;
+    border: 1px solid #d9c79c;
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    transform: rotate(-0.6deg);
+  }
+  .checkout-card::before {
+    /* the little card-pocket notch */
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    width: 3.2rem;
+    height: 0.7rem;
+    margin-left: -1.6rem;
+    background: var(--paper);
+    border: 1px solid #d9c79c;
+    border-top: 0;
+    border-radius: 0 0 1.6rem 1.6rem;
+  }
+  .cc-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.2rem 0.7rem;
+    padding: 0.4rem 0 0.6rem;
+    border-bottom: 2px solid #b8a274;
+  }
+  .cc-label {
+    width: 100%;
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7a1f2b;
+  }
+  .cc-title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.25rem;
+  }
+  .cc-author {
+    font-size: 0.9rem;
+    color: #6b5d50;
+  }
+  .cc-rows {
+    margin: 0;
+  }
+  .cc-row {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.8rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #d9c79c;
+  }
+  .cc-row:last-child {
+    border-bottom: 0;
+  }
+  .cc-row dt {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #3d4f7a;
+    padding-top: 0.15rem;
+  }
+  .cc-row dd :global(a) {
+    color: #7a1f2b;
+  }
+  .cc-row dd {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+  .cc-stamp {
+    position: absolute;
+    right: 1rem;
+    top: 0.9rem;
+    padding: 0.1rem 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    color: #a01818;
+    border: 2px solid #a01818;
+    border-radius: 3px;
+    opacity: 0.85;
+    transform: rotate(-8deg);
+  }
+  @media (max-width: 520px) {
+    .cc-row {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+    .cc-stamp {
+      top: 0.6rem;
+      right: 0.6rem;
+      font-size: 0.85rem;
+    }
+  }
+  @media print {
+    .checkout-card {
+      transform: none;
+      box-shadow: none;
+    }
   }
 </style>
