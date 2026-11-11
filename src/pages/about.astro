@@ -41,7 +41,17 @@ import portrait from '../assets/art/catherine-portrait.webp';
       <blockquote><p>Read slowly. Argue with the author. Leave evidence that you were here.</p></blockquote>
       <p>Pull up a chair.</p>
     </div>
-    <div class="art-side"><Image src={portrait} alt="A pencil-sketch portrait of Catherine Sauer, smiling, in glasses, inside an ornate oval frame." width={600} /></div>
+    <div class="art-side">
+      <Image src={portrait} alt="A pencil-sketch portrait of Catherine Sauer, smiling, in glasses, inside an ornate oval frame." width={600} />
+      <ul class="portrait-notes hand">
+        <li class="arrow">↑ that's me</li>
+        <li>42 and still doing homework</li>
+        <li>teaching under 5 years <span>(cried on day one. stayed.)</span></li>
+        <li>two teenagers <span>(pray for me)</span></li>
+        <li>one husband, navy veteran <span>(29 years. he signed up for this.)</span></li>
+        <li class="last">my life is crazy. sleep is a rumor.</li>
+      </ul>
+    </div>
   </div>
 </Base>
 <style>
@@ -57,6 +67,34 @@ import portrait from '../assets/art/catherine-portrait.webp';
   .art-side :global(img) {
     width: 100%;
     height: auto;
+  }
+  .portrait-notes {
+    list-style: none;
+    margin: 0.8rem 0 0;
+    padding: 0 0.4rem;
+    color: var(--accent);
+    font-size: 1.35rem;
+    line-height: 1.1;
+    transform: rotate(-2deg);
+  }
+  .portrait-notes li {
+    margin: 0 0 0.45rem;
+  }
+  .portrait-notes li span {
+    display: block;
+    padding-left: 1rem;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+  }
+  .portrait-notes .arrow {
+    text-align: center;
+    margin-bottom: 0.7rem;
+  }
+  .portrait-notes .last {
+    margin-top: 0.6rem;
+    text-decoration: underline wavy;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
   }
   @media (max-width: 760px) {
     .about {
