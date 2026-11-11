@@ -20,6 +20,7 @@ const shelf = SHELVES[s.shelf];
 <Base title={s.label} description={s.blurb}>
   <PageHead eyebrow={`A series from ${shelf.label}`} title={s.label} note={s.blurb} />
   <div class="wrap">
+    {'icon' in s && <img class="series-icon" src={s.icon} alt={s.iconAlt} />}
     {posts.length ? (
       <div class="cards">{posts.map((p) => <PostCard post={p} />)}</div>
     ) : (
@@ -29,6 +30,13 @@ const shelf = SHELVES[s.shelf];
   </div>
 </Base>
 <style>
+  .series-icon {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin: -1rem auto 2rem;
+  }
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));

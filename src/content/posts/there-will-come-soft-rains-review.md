@@ -11,6 +11,8 @@ book:
 draft: false
 ---
 
+<figure class="story-art wide"><img src="/art/reviews/there-will-come-soft-rains.webp" alt="A pencil drawing of an empty mid-century modern house in the rain, lights on inside, ivy on the chimney, swallows overhead, and a broken flowerpot by the steps." loading="lazy" /></figure>
+
 Fun fact: in the 1950 edition of *The Martian Chronicles*, Ray Bradbury set this story in August 2026. That's this year. We made it. Mostly.
 
 <aside class="note">later editions moved it to 2057. coward.</aside>

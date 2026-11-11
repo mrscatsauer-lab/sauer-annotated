@@ -11,6 +11,8 @@ book:
 draft: false
 ---
 
+<figure class="story-art wide"><img src="/art/reviews/lamb-to-the-slaughter.webp" alt="A pencil drawing of a 1950s housewife in a ruffled apron, gripping a leg of lamb like a club, in a kitchen with a tipped-over glass on the table." loading="lazy" /></figure>
+
 Yes, that Roald Dahl. The man who gave us *Charlie and the Chocolate Factory* also wrote a story in which a pregnant housewife beats her husband to death with a frozen leg of lamb, cooks it, and serves it to the police officers investigating his murder.
 
 <mark>The cops eat the murder weapon.</mark> That's the story. It's perfect.

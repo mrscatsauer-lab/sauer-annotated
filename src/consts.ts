@@ -36,11 +36,15 @@ export const SERIES = {
     label: 'Small Lives',
     blurb: 'Flash fiction from creatures who don’t know what we know about their world.',
     shelf: 'writing-life',
+    icon: '/art/series-small-lives.webp',
+    iconAlt: 'A mouse in round glasses reading a book among old leather books',
   },
   'here-be-monsters': {
     label: 'Here Be Monsters',
     blurb: 'Poems and stories about the monsters we grow up with, and the ones we finally outgrow.',
     shelf: 'writing-life',
+    icon: '/art/series-here-be-monsters.webp',
+    iconAlt: 'An old map with a kraken, a sea serpent, and the words monsters be here',
   },
 } as const;
 

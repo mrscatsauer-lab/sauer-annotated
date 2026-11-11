@@ -10,6 +10,8 @@ book:
   rating: 5
 ---
 
+<figure class="story-art wide"><img src="/art/reviews/omelas.webp" alt="A pencil drawing of hooded figures walking away down a rocky path, leaving behind a beautiful domed city by the water with festival tents and banners." loading="lazy" /></figure>
+
 Some stories make students cry. Some make them bored. "The Ones Who Walk Away from Omelas" makes them *mad*.
 
 My students were angry. Most of them were furious with the people who stay in Omelas. A few were just as furious with the people who walk away. Nobody was neutral, and nobody wanted to stop talking about it.

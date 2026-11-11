@@ -34,9 +34,12 @@ const shelfSeries = Object.entries(SERIES).filter(([, v]) => v.shelf === shelf);
         <ul>
           {shelfSeries.map(([key, v]) => (
             <li>
-              <a href={`/series/${key}/`}>
-                <span class="name">{v.label}</span>
-                <span class="blurb">{v.blurb}</span>
+              <a href={`/series/${key}/`} class:list={{ 'has-icon': 'icon' in v }}>
+                {'icon' in v && <img class="icon" src={v.icon} alt={v.iconAlt} loading="lazy" />}
+                <span class="text">
+                  <span class="name">{v.label}</span>
+                  <span class="blurb">{v.blurb}</span>
+                </span>
               </a>
             </li>
           ))}
@@ -120,32 +123,43 @@ const shelfSeries = Object.entries(SERIES).filter(([, v]) => v.shelf === shelf);
     gap: 1rem;
   }
   .series-row a {
-    display: block;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
     height: 100%;
-    padding: 1.1rem 1.2rem;
-    border: 1px dashed var(--rose);
-    border-radius: var(--radius);
-    background: var(--rose-wash);
+    padding: 0.85rem 1.1rem;
+    border: 1.5px solid var(--accent);
+    outline: 1px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+    background: var(--card);
     color: var(--ink);
     text-decoration: none;
     transition: transform 0.15s ease;
   }
   .series-row a:hover {
     transform: translateY(-2px);
-    border-style: solid;
+  }
+  .series-row .icon {
+    width: 84px;
+    height: auto;
+    flex: none;
   }
   .series-row .name {
     display: block;
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--accent);
   }
   .series-row .blurb {
     display: block;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.92rem;
+    line-height: 1.45;
     color: var(--ink-soft);
-    margin-top: 0.2rem;
+    margin-top: 0.15rem;
+  }
+  .series-row ul {
+    gap: 1.2rem;
   }
 </style>
