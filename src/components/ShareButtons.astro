@@ -1,0 +1,115 @@
+---
+// "Pass it on" share row. On phones it opens the phone's own share sheet;
+// everywhere else it offers copy link, Facebook, Pinterest, and email.
+interface Props { url: string; title: string; description?: string; image?: string }
+const { url, title, description = '', image } = Astro.props;
+const u = encodeURIComponent(url);
+const t = encodeURIComponent(title);
+const fb = `https://www.facebook.com/sharer/sharer.php?u=${u}`;
+const pin = `https://www.pinterest.com/pin/create/button/?url=${u}&description=${t}${image ? `&media=${encodeURIComponent(image)}` : ''}`;
+const mail = `mailto:?subject=${t}&body=${encodeURIComponent(`I thought you'd like this: ${title}\n\n${url}`)}`;
+---
+<div class="share" data-share data-url={url} data-title={title} data-text={description}>
+  <span class="share-label hand">pass it on</span>
+  <div class="share-btns">
+    <button type="button" class="sb native" data-native hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Share
+    </button>
+    <button type="button" class="sb" data-copy>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <span data-copy-label>Copy link</span>
+    </button>
+    <a class="sb web" href={fb} target="_blank" rel="noopener">Facebook</a>
+    <a class="sb web" href={pin} target="_blank" rel="noopener">Pinterest</a>
+    <a class="sb web" href={mail}>Email</a>
+  </div>
+</div>
+<script>
+  document.querySelectorAll<HTMLElement>('[data-share]').forEach((box) => {
+    const { url = location.href, title = document.title, text = '' } = box.dataset;
+    const native = box.querySelector<HTMLButtonElement>('[data-native]');
+    const canNative = typeof navigator.share === 'function' && matchMedia('(pointer: coarse)').matches;
+    if (native && canNative) {
+      native.hidden = false;
+      box.classList.add('has-native');
+      native.addEventListener('click', () => navigator.share({ title, text, url }).catch(() => {}));
+    }
+    const copy = box.querySelector<HTMLButtonElement>('[data-copy]');
+    const label = box.querySelector<HTMLElement>('[data-copy-label]');
+    copy?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        if (label) label.textContent = 'Copied!';
+      } catch {
+        if (label) label.textContent = 'Press Ctrl+C';
+        prompt('Copy this link:', url);
+      }
+      setTimeout(() => label && (label.textContent = 'Copy link'), 2200);
+    });
+  });
+</script>
+<style>
+  .share {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem 1rem;
+    margin: 2.5rem 0 1.5rem;
+    padding: 1.1rem 0;
+    border-top: 1px dashed var(--rule);
+    border-bottom: 1px dashed var(--rule);
+  }
+  .share-label {
+    font-size: 1.6rem;
+    color: var(--accent);
+    transform: rotate(-3deg);
+  }
+  .share-btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  .sb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.95rem;
+    border: 1.5px solid var(--accent);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--accent);
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .sb:hover,
+  .sb:focus-visible {
+    background: var(--accent);
+    color: var(--paper);
+  }
+  .sb svg {
+    width: 15px;
+    height: 15px;
+  }
+  .sb.native {
+    background: var(--accent);
+    color: var(--paper);
+  }
+  .sb[hidden],
+  .has-native .web {
+    display: none;
+  }
+  @media print {
+    .share {
+      display: none;
+    }
+  }
+</style>

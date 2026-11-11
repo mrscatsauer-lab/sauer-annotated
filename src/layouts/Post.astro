@@ -2,6 +2,7 @@
 import { getEntry, getCollection, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import PostCard from '../components/PostCard.astro';
+import ShareButtons from '../components/ShareButtons.astro';
 import Crow from '../components/Crow.astro';
 import { SHELVES, SERIES, SEQUENCES } from '../consts';
 import { formatDate, formatDay, readingTime, isLive } from '../utils';
@@ -153,6 +154,15 @@ const related = picks.map((r) => r.p);
         </a>
       </aside>
     )}
+
+    <div class="wrap share-wrap">
+      <ShareButtons
+        url={new URL(`/posts/${post.id}/`, Astro.site).toString()}
+        title={title}
+        description={description}
+        image={new URL(`/og/posts/${post.id}.png`, Astro.site).toString()}
+      />
+    </div>
 
     {related.length > 0 && (
       <section class="keep-reading wrap" aria-label="Keep reading">
@@ -485,5 +495,8 @@ const related = picks.map((r) => r.p);
     .keep-reading {
       display: none;
     }
+  }
+  .share-wrap {
+    max-width: calc(var(--measure) + 2 * var(--gutter));
   }
 </style>
