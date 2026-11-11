@@ -545,6 +545,9 @@ a:hover {
 .prose table.fill-in td {
   height: 3.4rem;
 }
+.prose .lines.short {
+  height: 4.2rem;
+}
 .prose .lines {
   height: 6.5rem;
   margin: 0.4em 0 1.4em;
@@ -595,9 +598,12 @@ a:hover {
   .prose table.fill-in td {
     height: 0.72in;
   }
-  .prose table.fill-in th:nth-child(2),
-  .prose table.fill-in th:nth-child(3),
-  .prose table.fill-in th:nth-child(4) {
+  .prose table.fill-in.compact td {
+    height: 0.58in;
+  }
+  .prose table.fill-in:not(.own-cols) th:nth-child(2),
+  .prose table.fill-in:not(.own-cols) th:nth-child(3),
+  .prose table.fill-in:not(.own-cols) th:nth-child(4) {
     width: 0.8in;
   }
   .prose .lines {
@@ -611,6 +617,9 @@ a:hover {
     );
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+  }
+  .prose .lines.short {
+    height: 0.75in;
   }
 }
 

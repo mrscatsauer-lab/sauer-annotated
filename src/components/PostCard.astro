@@ -18,6 +18,7 @@ const shelf = SHELVES[post.data.shelf];
   ) : post.data.series && <p class="series hand">{SERIES[post.data.series].label}</p>}
   <h3>{post.data.title}</h3>
   {post.data.book && <p class="book">{post.data.book.title} <span>by {post.data.book.author}</span></p>}
+  {post.data.pairedBook && <p class="book">{post.data.pairedBook.title} <span>by {post.data.pairedBook.author}</span></p>}
   <p class="desc">{post.data.description}</p>
   <p class="more">{readingTime(post.body)} min read <span aria-hidden="true">→</span></p>
 </article>

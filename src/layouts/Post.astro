@@ -7,7 +7,9 @@ import { formatDate, formatDay, readingTime, isLive } from '../utils';
 
 interface Props { post: CollectionEntry<'posts'> }
 const { post } = Astro.props;
-const { title, description, date, updated, shelf, tags, book } = post.data;
+const { title, description, date, updated, shelf, tags, book, pairedBook } = post.data;
+const books = [book, pairedBook].filter((x): x is NonNullable<typeof book> => Boolean(x));
+const toStars = (r?: number) => (r !== undefined ? Math.round(r * 2) / 2 : undefined);
 const companion = post.data.companion ? await getEntry('posts', post.data.companion) : undefined;
 const seqKey = post.data.sequence;
 const seq = seqKey ? SEQUENCES[seqKey] : undefined;
@@ -19,7 +21,6 @@ const nextPart = seqParts.find((e) => e.data.part === part + 1);
 const firstPart = seqParts.find((e) => e.data.part === 1);
 const hasHiddenNotes = post.data.hiddenNotes && (post.body ?? '').includes('class="note');
 const printUrl = new URL(Astro.url.pathname, Astro.site).toString().replace(/^https?:\/\//, '');
-const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : undefined;
 ---
 <Base title={title} description={description}>
   <article class="post">
@@ -48,21 +49,28 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
       {post.data.draft && <p class="draft">Draft: only visible while you preview locally</p>}
     </header>
 
-    {book && (
-      <aside class="catalog-card wrap" aria-label="Book details">
-        <div class="card-inner">
-          <p class="eyebrow">Catalog card</p>
-          <p class="book-title">{book.title}</p>
-          <p class="book-author">{book.author}</p>
-          {stars !== undefined && (
-            <p class="stars" aria-label={`${stars} out of 5`}>
-              {[1, 2, 3, 4, 5].map((n) => (
-                <span class={stars >= n ? 'on' : stars >= n - 0.5 ? 'half' : ''}>★</span>
-              ))}
-            </p>
-          )}
-        </div>
-      </aside>
+    {books.length > 0 && (
+      <div class:list={['catalog-row wrap', { paired: books.length > 1 }]}>
+        {books.map((bk) => {
+          const stars = toStars(bk.rating);
+          return (
+            <aside class="catalog-card" aria-label="Book details">
+              <div class="card-inner">
+                <p class="eyebrow">Catalog card</p>
+                <p class="book-title">{bk.title}</p>
+                <p class="book-author">{bk.author}</p>
+                {stars !== undefined && (
+                  <p class="stars" aria-label={`${stars} out of 5`}>
+                    {[1, 2, 3, 4, 5].map((n) => (
+                      <span class={stars >= n ? 'on' : stars >= n - 0.5 ? 'half' : ''}>★</span>
+                    ))}
+                  </p>
+                )}
+              </div>
+            </aside>
+          );
+        })}
+      </div>
     )}
 
     {hasHiddenNotes && (
@@ -335,9 +343,18 @@ const stars = book?.rating !== undefined ? Math.round(book.rating * 2) / 2 : und
     padding: 0.3rem 0.8rem;
     border-radius: 999px;
   }
-  .catalog-card {
+  .catalog-row {
     max-width: calc(26rem + 2 * var(--gutter));
     margin-bottom: 2.5rem;
+    display: grid;
+    gap: 1rem;
+  }
+  .catalog-row.paired {
+    max-width: calc(46rem + 2 * var(--gutter));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+  .catalog-card {
+    display: grid;
   }
   .card-inner {
     background: var(--card);
