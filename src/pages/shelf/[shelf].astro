@@ -3,6 +3,10 @@ import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import PostCard from '../../components/PostCard.astro';
 import Nightstand from '../../components/Nightstand.astro';
+import { nightstand } from '../../data/nightstand';
+import { Image } from 'astro:assets';
+import shelfArt from '../../assets/art/bookshelf.webp';
+import lateArt from '../../assets/art/sorry-im-late.webp';
 import { SHELVES, SERIES, type ShelfKey } from '../../consts';
 import { getPosts } from '../../utils';
 
@@ -59,6 +63,31 @@ const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstan
     )}
     {shelf === 'reviews' ? (
       <>
+        <nav class="series-row" aria-label="Kinds of reviews">
+          <p class="eyebrow">Two stacks</p>
+          <ul>
+            <li>
+              <a href="#classroom" class="has-icon">
+                <Image class="icon" src={shelfArt} alt="" width={180} />
+                <span class="text">
+                  <span class="name">From my classroom</span>
+                  <span class="blurb">Books my students read with me, and what they really thought.</span>
+                  <span class="count">{classroom.length} {classroom.length === 1 ? 'review' : 'reviews'} →</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#nightstand" class="has-icon">
+                <Image class="icon" src={lateArt} alt="" width={180} />
+                <span class="text">
+                  <span class="name">From my nightstand</span>
+                  <span class="blurb">Books I read for me. No rubrics, just opinions.</span>
+                  <span class="count">{nightstandReviews.length} {nightstandReviews.length === 1 ? 'review' : 'reviews'}{nightstand[0] ? ` + now reading: ${nightstand[0].title}` : ''} →</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
         <section class="review-group" id="classroom">
           <h2>From my classroom</h2>
           <p class="group-blurb">Books, stories, and plays my students read with me, plus what they really thought of them.</p>
@@ -186,6 +215,14 @@ const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstan
   .series-row a:hover {
     transform: translateY(-2px);
   }
+  .series-row .count {
+    display: block;
+    font-family: var(--font-hand);
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-top: 0.3rem;
+  }
+  .series-row :global(.icon),
   .series-row .icon {
     width: 84px;
     height: auto;
