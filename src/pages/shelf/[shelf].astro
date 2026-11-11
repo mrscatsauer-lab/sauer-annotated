@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import PostCard from '../../components/PostCard.astro';
+import Nightstand from '../../components/Nightstand.astro';
 import { SHELVES, SERIES, type ShelfKey } from '../../consts';
 import { getPosts } from '../../utils';
 
@@ -16,6 +17,8 @@ const { shelf } = Astro.params as { shelf: ShelfKey };
 const { posts } = Astro.props;
 const s = SHELVES[shelf];
 const shelfSeries = Object.entries(SERIES).filter(([, v]) => v.shelf === shelf);
+const classroom = posts.filter((p) => p.data.reviewSource !== 'nightstand');
+const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstand');
 ---
 <Base title={s.label} description={s.blurb}>
   <PageHead eyebrow="Shelf" title={s.label} note={s.blurb} />
@@ -26,6 +29,14 @@ const shelfSeries = Object.entries(SERIES).filter(([, v]) => v.shelf === shelf);
         <strong>Dinner Table Cards</strong>
         <span class="sub">Conversation starters by age. Shuffle one at the table or print the deck.</span>
         <span class="go">Open the deck →</span>
+      </a>
+    )}
+    {shelf === 'teaching' && (
+      <a class="cards-callout" href="/supply-closet/">
+        <span class="hand">printables!</span>
+        <strong>The Supply Closet</strong>
+        <span class="sub">Every lesson and student handout on the site, ready to print or save as a PDF.</span>
+        <span class="go">Grab what you need →</span>
       </a>
     )}
     {shelfSeries.length > 0 && (
@@ -46,7 +57,27 @@ const shelfSeries = Object.entries(SERIES).filter(([, v]) => v.shelf === shelf);
         </ul>
       </nav>
     )}
-    {posts.length ? (
+    {shelf === 'reviews' ? (
+      <>
+        <section class="review-group" id="classroom">
+          <h2>From my classroom</h2>
+          <p class="group-blurb">Books, stories, and plays my students read with me, plus what they really thought of them.</p>
+          {classroom.length ? (
+            <div class="cards">{classroom.map((p) => <PostCard post={p} />)}</div>
+          ) : (
+            <p class="hand empty">Nothing here yet.</p>
+          )}
+        </section>
+        <section class="review-group" id="nightstand">
+          <h2>From my nightstand</h2>
+          <p class="group-blurb">Books I read for me. No lesson plans, no rubrics, just opinions.</p>
+          <div class="ns-wrap"><Nightstand onShelf /></div>
+          {nightstandReviews.length > 0 && (
+            <div class="cards">{nightstandReviews.map((p) => <PostCard post={p} />)}</div>
+          )}
+        </section>
+      </>
+    ) : posts.length ? (
       <div class="cards">{posts.map((p) => <PostCard post={p} />)}</div>
     ) : (
       <p class="hand empty">This shelf is empty for now. Give it time.</p>
@@ -54,6 +85,21 @@ const shelfSeries = Object.entries(SERIES).filter(([, v]) => v.shelf === shelf);
   </div>
 </Base>
 <style>
+  .review-group {
+    margin-bottom: 3.5rem;
+    scroll-margin-top: 2rem;
+  }
+  .review-group h2 {
+    font-size: 1.7rem;
+    margin: 0 0 0.2rem;
+  }
+  .group-blurb {
+    color: var(--ink-soft);
+    margin: 0 0 1.5rem;
+  }
+  .ns-wrap {
+    margin: 0.5rem 0 2rem;
+  }
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));

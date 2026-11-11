@@ -1,0 +1,77 @@
+---
+import { nightstand } from '../data/nightstand';
+interface Props { compact?: boolean; onShelf?: boolean }
+const { compact = false, onShelf = false } = Astro.props;
+const [current, ...upNext] = nightstand;
+---
+{current && (
+  <aside class:list={['nightstand', { compact }]} aria-label="What I'm reading now">
+    <p class="ns-eyebrow">On my nightstand</p>
+    <p class="ns-title">{current.title}</p>
+    <p class="ns-author">by {current.author}</p>
+    {current.note && <p class="ns-note hand">{current.note}</p>}
+    {upNext.length > 0 && (
+      <p class="ns-next">up next: {upNext.map((b) => b.title).join(', ')}</p>
+    )}
+    {onShelf ? (
+      <p class="ns-foot hand">the review goes right below when i finish</p>
+    ) : (
+      <p class="ns-foot hand">the review shows up on <a href="/shelf/reviews/#nightstand">Checked Out</a> when i finish</p>
+    )}
+  </aside>
+)}
+<style>
+  .nightstand {
+    position: relative;
+    max-width: 26rem;
+    margin: 0 auto;
+    padding: 1.3rem 1.5rem 1.1rem;
+    background-color: var(--card);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--accent);
+    border-radius: 3px;
+    box-shadow: var(--shadow);
+    transform: rotate(-1.2deg);
+    text-align: center;
+  }
+  .ns-eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  .ns-title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.45rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .ns-author {
+    color: var(--ink-soft);
+    margin: 0.15rem 0 0;
+  }
+  .ns-note {
+    font-size: 1.35rem;
+    color: var(--accent);
+    margin: 0.6rem 0 0;
+  }
+  .ns-next {
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    margin: 0.6rem 0 0;
+  }
+  .ns-foot {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    margin: 0.8rem 0 0;
+  }
+  .ns-foot a {
+    color: var(--accent);
+  }
+  .compact {
+    transform: rotate(1deg);
+  }
+</style>

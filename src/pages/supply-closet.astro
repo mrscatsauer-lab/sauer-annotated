@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { getPosts } from '../utils';
+
+// Every Teacher's Edition lesson prints cleanly, so they all live here automatically.
+// Lessons with a student handout get a badge.
+const lessons = (await getPosts())
+  .filter((p) => p.data.shelf === 'teaching')
+  .map((p) => ({ post: p, handout: (p.body ?? '').includes('class="handout"') }));
+---
+<Base title="Supply Closet" description="Every printable on the site in one place: lessons, student handouts, and the Dinner Table Cards.">
+  <PageHead eyebrow="For teachers" title="The Supply Closet" note="take what you need. return the scissors." />
+  <div class="wrap closet">
+    <p class="intro">
+      Every lesson on this site prints cleanly. Open one, hit <strong>Print this lesson</strong>, and you'll get a tidy
+      copy with no menus, no ads, and no wasted ink. Want a PDF instead? Choose "Save as PDF" in the print window.
+      Student handouts always print on their own page at the end, so you can copy just that page.
+    </p>
+
+    <ul class="items">
+      {lessons.map(({ post, handout }) => (
+        <li>
+          <a href={`/posts/${post.id}/`}>
+            <span class="kind">{handout ? 'Lesson + student handout' : 'Lesson'}</span>
+            <span class="title">{post.data.title}</span>
+            <span class="desc">{post.data.description}</span>
+            <span class="go">open and print →</span>
+          </a>
+        </li>
+      ))}
+      <li>
+        <a href="/cards/">
+          <span class="kind">Printable deck</span>
+          <span class="title">Dinner Table Cards</span>
+          <span class="desc">Conversation starters sorted by age. Print the deck for family nights, advisory, or the first week of school.</span>
+          <span class="go">open the deck →</span>
+        </a>
+      </li>
+    </ul>
+
+    <p class="hand fine">
+      free for your classroom. please don't sell them, and if you share, send people here so they get the newest version.
+    </p>
+  </div>
+</Base>
+<style>
+  .intro {
+    max-width: var(--measure);
+    color: var(--ink-soft);
+    margin: 0 0 2rem;
+  }
+  .items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 1.4rem;
+  }
+  .items a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.1rem 1.2rem 1rem;
+    background: var(--card);
+    border: 1.5px solid var(--accent);
+    outline: 1px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+    color: var(--ink);
+    text-decoration: none;
+    transition: transform 0.15s ease;
+  }
+  .items a:hover {
+    transform: translateY(-2px);
+  }
+  .kind {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0.3rem 0 0.4rem;
+  }
+  .desc {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    color: var(--ink-soft);
+    flex: 1;
+  }
+  .go {
+    font-family: var(--font-hand);
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-top: 0.7rem;
+  }
+  .fine {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-top: 2.5rem;
+    transform: rotate(-1deg);
+  }
+</style>

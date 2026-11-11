@@ -1,6 +1,7 @@
 ---
 import { getEntry, getCollection, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
+import PostCard from '../components/PostCard.astro';
 import Crow from '../components/Crow.astro';
 import { SHELVES, SERIES, SEQUENCES } from '../consts';
 import { formatDate, formatDay, readingTime, isLive } from '../utils';
@@ -21,8 +22,29 @@ const nextPart = seqParts.find((e) => e.data.part === part + 1);
 const firstPart = seqParts.find((e) => e.data.part === 1);
 const hasHiddenNotes = post.data.hiddenNotes && (post.body ?? '').includes('class="note');
 const printUrl = new URL(Astro.url.pathname, Astro.site).toString().replace(/^https?:\/\//, '');
+import { getPosts } from '../utils';
+
+// "Keep reading": up to three related posts, scored by series, shelf, and shared tags
+const allPosts = await getPosts();
+const myTags = new Set(post.data.tags ?? []);
+const scored = allPosts
+  .filter((p) => p.id !== post.id && p.id !== post.data.companion && !(seqKey && p.data.sequence === seqKey))
+  .map((p) => {
+    let score = 0;
+    if (post.data.series && p.data.series === post.data.series) score += 5;
+    if (p.data.shelf === post.data.shelf) score += 2;
+    for (const t of p.data.tags ?? []) if (myTags.has(t)) score += 2.5;
+    const gap = Math.abs(p.data.date.valueOf() - post.data.date.valueOf()) / 8.64e7;
+    return { p, score, gap };
+  })
+  .filter((r) => r.score >= 2)
+  .sort((a, b) => b.score - a.score || a.gap - b.gap);
+// two closest matches, plus the best match from a different shelf if there is one
+const crossShelf = scored.find((r) => r.p.data.shelf !== post.data.shelf);
+const picks = crossShelf ? [...scored.filter((r) => r !== crossShelf).slice(0, 2), crossShelf] : scored.slice(0, 3);
+const related = picks.map((r) => r.p);
 ---
-<Base title={title} description={description}>
+<Base title={title} description={description} image={`/og/posts/${post.id}.png`} type="article">
   <article class="post">
     <header class="post-head wrap">
       <p class="print-source">From <strong>Catherine, Annotated</strong> · {printUrl}</p>
@@ -130,6 +152,13 @@ const printUrl = new URL(Astro.url.pathname, Astro.site).toString().replace(/^ht
           <span class="c-desc">{companion.data.description}</span>
         </a>
       </aside>
+    )}
+
+    {related.length > 0 && (
+      <section class="keep-reading wrap" aria-label="Keep reading">
+        <p class="kr-head"><span class="hand">keep reading</span></p>
+        <div class="kr-grid">{related.map((p) => <PostCard post={p} />)}</div>
+      </section>
     )}
 
     <footer class="post-foot">
@@ -434,5 +463,27 @@ const printUrl = new URL(Astro.url.pathname, Astro.site).toString().replace(/^ht
   .signoff p {
     font-size: 1.4rem;
     margin: 0;
+  }
+  .keep-reading {
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+  }
+  .kr-head {
+    text-align: center;
+    margin: 0 0 1.2rem;
+  }
+  .kr-head .hand {
+    font-size: 1.8rem;
+    color: var(--accent);
+  }
+  .kr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+    gap: 1.25rem;
+  }
+  @media print {
+    .keep-reading {
+      display: none;
+    }
   }
 </style>

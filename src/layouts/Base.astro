@@ -11,9 +11,11 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Analytics from '@vercel/analytics/astro';
 
-interface Props { title?: string; description?: string }
-const { title, description = SITE_DESCRIPTION } = Astro.props;
+interface Props { title?: string; description?: string; image?: string; type?: 'website' | 'article' }
+const { title, description = SITE_DESCRIPTION, image = '/og/site.png', type = 'website' } = Astro.props;
+const ogImage = new URL(image, Astro.site);
 const fullTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -30,7 +32,15 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="alternate" type="application/rss+xml" title={SITE_TITLE} href="/rss.xml" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={SITE_TITLE} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <meta property="og:url" content={canonical} />
     <meta name="theme-color" content="#1f3b39" />
     <script is:inline>
@@ -47,5 +57,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <slot />
     </main>
     <Footer />
+      <Analytics />
   </body>
 </html>

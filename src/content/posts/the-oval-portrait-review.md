@@ -3,6 +3,7 @@ title: "The Oval Portrait Is the Original \"Hold On, Let Me Get the Lighting Rig
 description: Edgar Allan Poe's shortest masterpiece is about a painter so busy capturing his wife that he never actually looks at her. It takes ten minutes to read and stays with you much longer.
 date: 2026-10-21
 shelf: reviews
+reviewSource: classroom
 tags: [short-stories, poe, gothic, required-reading]
 book:
   title: The Oval Portrait

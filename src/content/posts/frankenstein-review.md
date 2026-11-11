@@ -3,6 +3,7 @@ title: Frankenstein Is a Breakup Novel and I Will Not Be Taking Questions
 description: A man spends two years building the perfect partner, then ghosts him on day one. Mary Shelley wrote the original situationship, and it still holds up.
 date: 2026-09-16
 shelf: reviews
+reviewSource: classroom
 tags: [classics, gothic, mary-shelley, required-reading]
 book:
   title: Frankenstein; or, The Modern Prometheus

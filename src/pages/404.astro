@@ -6,25 +6,106 @@ import getLost from '../assets/art/get-lost.webp';
 <Base title="Not found">
   <section class="wrap lost">
     <Image src={getLost} alt="Get lost! Read a book." width={520} class="lost-art" />
-    <h1>This page has been checked out.</h1>
-    <p>It may be overdue, misshelved, or never existed. Try the <a href="/archive/">archive</a> or head <a href="/">home</a>.</p>
+    <p class="eyebrow">404 · overdue notice</p>
+    <h1>This page was checked out and never returned.</h1>
+    <p class="lede">
+      We've sent three increasingly passive-aggressive notices. No response. It may be overdue, misshelved, or
+      living under someone's bed with a stack of library books from 2019.
+    </p>
+
+    <div class="due-card" aria-hidden="true">
+      <p class="dc-head">Date Due</p>
+      <ul>
+        <li><span class="stamp">SEP 14</span></li>
+        <li><span class="stamp">OCT 02</span></li>
+        <li><span class="stamp">NOV 10</span></li>
+        <li><span class="stamp red">LOST</span></li>
+      </ul>
+      <p class="dc-fine hand">fine: 25¢ a day, payable in snacks</p>
+    </div>
+
+    <p class="next">
+      While we look for it, try the <a href="/archive/">archive</a>, browse <a href="/shelf/">the shelves</a>, or head <a href="/">home</a>.
+    </p>
   </section>
 </Base>
 <style>
   .lost {
     text-align: center;
     padding-top: 3rem;
+    max-width: 44rem;
   }
   .lost :global(.lost-art) {
-    width: min(260px, 70vw);
+    width: min(240px, 66vw);
     height: auto;
   }
-  .hand {
-    font-size: 1.6rem;
-    margin: 0.5rem 0;
+  .eyebrow {
+    margin: 1rem 0 0.3rem;
+    color: var(--accent);
   }
   h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
     font-weight: 500;
+    margin: 0 0 0.8rem;
+  }
+  .lede {
+    color: var(--ink-soft);
+    font-size: 1.1rem;
+  }
+  .due-card {
+    width: min(15rem, 80vw);
+    margin: 2rem auto;
+    padding: 0.9rem 1rem 1rem;
+    background: #f3e7c9;
+    color: #3a2f25;
+    border: 1px solid #d9c79c;
+    box-shadow: var(--shadow);
+    transform: rotate(-2.5deg);
+  }
+  .dc-head {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #b8a274;
+  }
+  .due-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .due-card li {
+    border-bottom: 1px solid #d9c79c;
+    padding: 0.35rem 0;
+  }
+  .stamp {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #3d4f7a;
+    opacity: 0.85;
+    transform: rotate(-3deg);
+  }
+  .due-card li:nth-child(even) .stamp {
+    transform: rotate(2deg);
+  }
+  .stamp.red {
+    color: #a01818;
+    border: 2px solid #a01818;
+    padding: 0 0.4rem;
+    transform: rotate(-8deg);
+    font-size: 1.15rem;
+  }
+  .dc-fine {
+    font-size: 1.25rem;
+    color: #7a1f2b;
+    margin: 0.6rem 0 0;
+  }
+  .next a {
+    color: var(--accent);
   }
 </style>

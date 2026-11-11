@@ -28,6 +28,8 @@ const posts = defineCollection({
         rating: z.number().min(0).max(5).optional(),
       })
       .optional(),
+    // Reviews only: was this a book from class, or one Catherine read on her own?
+    reviewSource: z.enum(['classroom', 'nightstand']).optional(),
     // Paired reviews: a second catalog card shown beside the first
     pairedBook: z
       .object({

@@ -8,6 +8,8 @@ import loveBooks from '../assets/art/reading-is-my-love.webp';
 import readMe from '../assets/art/read-me.webp';
 import shelfArt from '../assets/art/bookshelf.webp';
 import PostCard from '../components/PostCard.astro';
+import Nightstand from '../components/Nightstand.astro';
+import { nightstand } from '../data/nightstand';
 import { SHELVES, SITE_TAGLINE } from '../consts';
 import { getPosts } from '../utils';
 
@@ -40,7 +42,7 @@ const shelfArtwork = {
         </div>
       </div>
       <div class="plate" aria-hidden="true">
-        <span class="hand note n1">currently reading: everything</span>
+        <span class="hand note n1">currently reading: {nightstand[0]?.title.toLowerCase() ?? 'everything'}</span>
         <Image src={bouquet} alt="" widths={[420, 640, 900]} sizes="(max-width: 900px) 90vw, 480px" loading="eager" class="bouquet" />
       </div>
     </div>
@@ -82,6 +84,10 @@ const shelfArtwork = {
     ) : (
       <p class="empty hand">Nothing shelved yet. The first post is coming.</p>
     )}
+  </section>
+
+  <section class="wrap section nightstand-home">
+    <Nightstand />
   </section>
 
   <section class="wrap section">
