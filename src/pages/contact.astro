@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import EmailLink from '../components/EmailLink.astro';
+---
+<Base title="Contact" description="Say hi, ask a question, or tell me I'm wrong about a book.">
+  <PageHead eyebrow="Contact" title="Pass me a note" note="no folding it into a triangle, please" />
+  <div class="wrap contact">
+    <div class="prose">
+      <p>
+        I love hearing from readers. Parents with a question about a reluctant reader, teachers who want to swap
+        lesson ideas, students who think I'm wrong about <em>Romeo and Juliet</em>: all welcome. Especially that last
+        group. Bring evidence.
+      </p>
+      <p>The best way to reach me is email. I read everything, even if it takes me a few days to write back. I have a lot of essays to grade.</p>
+    </div>
+
+    <div class="envelope">
+      <p class="eyebrow">Write to me</p>
+      <p class="addr"><EmailLink /></p>
+      <p class="btn-row">
+        <EmailLink class="btn" label="Open an email" subject="Hello from Catherine, Annotated" />
+      </p>
+      <p class="hand small">i promise to answer before the bell rings. eventually.</p>
+    </div>
+
+    <div class="prose after">
+      <h2>Just want to say something nice?</h2>
+      <p>
+        Leave it on the <a href="/margin-notes/">Margin Notes wall</a> instead. It's a page where readers scribble
+        little notes in the margins, and the good ones get posted for everyone to see.
+      </p>
+    </div>
+  </div>
+</Base>
+<style>
+  .contact {
+    max-width: calc(var(--measure) + 2 * var(--gutter));
+  }
+  .envelope {
+    margin: 2rem 0;
+    padding: 1.6rem 1.6rem 1.3rem;
+    background: var(--card);
+    border: 1.5px solid var(--accent);
+    outline: 1px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 2px;
+    text-align: center;
+  }
+  .envelope .eyebrow {
+    margin: 0 0 0.4rem;
+  }
+  .addr {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 4vw, 1.6rem);
+    margin: 0 0 1rem;
+    word-break: break-word;
+  }
+  .addr :global(a) {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .btn-row {
+    margin: 0 0 0.8rem;
+  }
+  .envelope :global(.btn) {
+    display: inline-block;
+    padding: 0.7rem 1.3rem;
+    border-radius: 999px;
+    background: var(--btn);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .envelope .small {
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin: 0;
+  }
+  .after h2 {
+    font-size: 1.4rem;
+  }
+</style>

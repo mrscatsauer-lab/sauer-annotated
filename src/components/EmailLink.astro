@@ -1,0 +1,30 @@
+---
+// Shows Catherine's email to people but keeps it out of the page source,
+// so spam scrapers can't read it. The address is assembled in the browser.
+interface Props { label?: string; subject?: string; body?: string; class?: string }
+const { label, subject = '', body = '', class: cls = '' } = Astro.props;
+const user = 'mrscatsauer';
+const domain = 'gmail.com';
+// stored reversed so the plain address never appears in the HTML
+const u = user.split('').reverse().join('');
+const d = domain.split('').reverse().join('');
+---
+<a class:list={['email-link', cls]} href="#" data-u={u} data-d={d} data-subject={subject} data-body={body} data-label={label ?? ''}>
+  <span class="email-text">{label ?? 'email me'}</span>
+</a>
+<noscript><span class="email-fallback">{user} [at] gmail [dot] com</span></noscript>
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('a.email-link').forEach((a) => {
+    const rev = (s = '') => s.split('').reverse().join('');
+    const addr = `${rev(a.dataset.u)}@${rev(a.dataset.d)}`;
+    const params = new URLSearchParams();
+    if (a.dataset.subject) params.set('subject', a.dataset.subject);
+    if (a.dataset.body) params.set('body', a.dataset.body);
+    const q = params.toString().replace(/\+/g, '%20');
+    a.href = `mailto:${addr}${q ? `?${q}` : ''}`;
+    if (!a.dataset.label) {
+      const t = a.querySelector('.email-text');
+      if (t) t.textContent = addr;
+    }
+  });
+</script>

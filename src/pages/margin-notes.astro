@@ -1,0 +1,229 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import EmailLink from '../components/EmailLink.astro';
+import { marginNotes } from '../data/margin-notes';
+
+// newest first, then split into the left and right margins
+const notes = [...marginNotes].sort((a, b) => b.date.localeCompare(a.date));
+const left = notes.filter((_, i) => i % 2 === 0);
+const right = notes.filter((_, i) => i % 2 === 1);
+const tilts = [-3, 2, -1.5, 3, -2.5, 1.5];
+const body = `Your note (a line or two):\n\n\nYour first name or initials:\n\nPick a pen color (maroon, green, mustard, or blush):\n`;
+---
+<Base title="Margin Notes" description="Leave a little note in the margins. The good ones get posted.">
+  <PageHead eyebrow="Margin Notes" title="Write in the margins" note="this is the one book you're allowed to write in" />
+
+  <div class="wrap book-wrap">
+    <div class="book">
+      <aside class="margin left" aria-label="Margin notes">
+        {left.map((n, i) => (
+          <figure class={`mnote ${n.color}`} style={`--tilt:${tilts[(i * 2) % tilts.length]}deg`}>
+            <blockquote>{n.note}</blockquote>
+            <figcaption>— {n.name}</figcaption>
+          </figure>
+        ))}
+      </aside>
+
+      <div class="page-wrap">
+      <article class="page">
+        <p class="chapter">Chapter One</p>
+        <h2 class="title">On Leaving a Mark</h2>
+        <p>
+          Every good book I own has someone else's handwriting in it. Mostly mine. A question mark next to a plot hole.
+          A heart beside a sentence so good I had to stop and read it twice. An "absolutely not" in the margin of a
+          chapter I still think about.
+        </p>
+        <p>
+          Margins are where readers talk back. So this page is all margin. Tell me what you're reading, what you loved,
+          what you argued with, or just that you stopped by. Say something kind to the next person who reads it.
+        </p>
+        <p>
+          The rest of this page is yours. Leave your mark.
+        </p>
+        <p class="page-num">i</p>
+      </article>
+      </div>
+
+      <aside class="margin right" aria-label="More margin notes">
+        {right.map((n, i) => (
+          <figure class={`mnote ${n.color}`} style={`--tilt:${tilts[(i * 2 + 1) % tilts.length]}deg`}>
+            <blockquote>{n.note}</blockquote>
+            <figcaption>— {n.name}</figcaption>
+          </figure>
+        ))}
+        {notes.length < 2 && <p class="empty hand">← your note could go right here</p>}
+      </aside>
+    </div>
+
+    <section class="how prose">
+      <h2>How to leave a note</h2>
+      <ol>
+        <li>Click the button below. It opens an email with a little form already filled in.</li>
+        <li>Write a line or two, sign it with your first name or initials, and pick a pen color.</li>
+        <li>I read every note. The good ones get scribbled onto this page.</li>
+      </ol>
+      <p class="btn-row">
+        <EmailLink class="btn" label="Leave a margin note" subject="A margin note for Catherine, Annotated" body={body} />
+      </p>
+      <p class="rules hand">
+        house rules: first names only. be kind. no spoilers without a warning. students, i know your handwriting, so behave.
+      </p>
+    </section>
+  </div>
+</Base>
+<style>
+  .book {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 34rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+  /* torn beige page: the paper stays paper in light and dark mode */
+  .page-wrap {
+    position: relative;
+    filter: drop-shadow(0 6px 10px rgb(60 40 20 / 0.18)) drop-shadow(0 1px 1px rgb(60 40 20 / 0.12));
+  }
+  .page-wrap::before {
+    /* a printed scrap tucked behind the page */
+    content: '';
+    position: absolute;
+    top: -14px;
+    right: -18px;
+    width: 30%;
+    height: 46%;
+    background-color: #e6dccb;
+    background-image: url('/art/paper-grain.svg'),
+      repeating-linear-gradient(to bottom, transparent 0 15px, rgb(80 60 40 / 0.18) 15px 16px, transparent 16px 22px);
+    -webkit-mask: url('/art/torn-page-mask.svg') center / 100% 100% no-repeat;
+    mask: url('/art/torn-page-mask.svg') center / 100% 100% no-repeat;
+    transform: rotate(4deg);
+  }
+  .page {
+    position: relative;
+    padding: 3rem 2.6rem 2.2rem;
+    background-color: #f1e7d6;
+    background-image: url('/art/paper-grain.svg'),
+      radial-gradient(ellipse at 30% 20%, rgb(255 250 240 / 0.6), transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgb(170 130 90 / 0.12), transparent 55%);
+    -webkit-mask: url('/art/torn-page-mask.svg') center / 100% 100% no-repeat;
+    mask: url('/art/torn-page-mask.svg') center / 100% 100% no-repeat;
+    color: #2a2320;
+    font-family: var(--font-body);
+  }
+  .page h2 {
+    color: #2a2320;
+  }
+  .chapter {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #6b5d50;
+    margin: 0 0 0.4rem;
+  }
+  .page h2.title {
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 0 0 1.4rem;
+  }
+  .page p {
+    line-height: 1.75;
+    text-indent: 1.5em;
+    margin: 0 0 0.6rem;
+  }
+  .page p.chapter,
+  .page .page-num {
+    text-indent: 0;
+  }
+  .page-num {
+    text-align: center;
+    font-style: italic;
+    color: #6b5d50;
+    margin-top: 1.8rem !important;
+  }
+  .margin {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    padding-top: 2rem;
+  }
+  .mnote {
+    margin: 0;
+    font-family: var(--font-hand);
+    transform: rotate(var(--tilt, -2deg));
+    color: var(--pen);
+  }
+  .mnote blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 1.45rem;
+    line-height: 1.15;
+    font-style: normal;
+  }
+  .mnote figcaption {
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    padding-left: 1.2rem;
+    opacity: 0.85;
+  }
+  .mnote.maroon { --pen: var(--maroon); }
+  .mnote.green { --pen: var(--green); }
+  .mnote.mustard { --pen: #a87a1c; }
+  .mnote.blush { --pen: #b5604a; }
+  .left .mnote { text-align: right; }
+  .empty {
+    font-size: 1.35rem;
+    color: var(--ink-soft);
+    transform: rotate(2deg);
+    margin: 1rem 0 0;
+  }
+  .how {
+    margin: 3.5rem auto 0;
+  }
+  .how h2 {
+    font-size: 1.5rem;
+  }
+  .btn-row {
+    margin: 1.4rem 0 1rem;
+  }
+  .how :global(.btn) {
+    display: inline-block;
+    padding: 0.75rem 1.4rem;
+    border-radius: 999px;
+    background: var(--btn);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .rules {
+    font-size: 1.35rem;
+    color: var(--accent);
+    transform: rotate(-1deg);
+  }
+  @media (max-width: 900px) {
+    .book {
+      grid-template-columns: 1fr;
+    }
+    .page-wrap {
+      order: -1;
+    }
+    .page-wrap::before {
+      right: 4px;
+      top: -10px;
+      width: 34%;
+    }
+    .page {
+      padding: 2.4rem 1.6rem 1.8rem;
+    }
+    .margin {
+      padding-top: 0;
+    }
+    .left .mnote { text-align: left; }
+    .empty { display: none; }
+  }
+</style>
