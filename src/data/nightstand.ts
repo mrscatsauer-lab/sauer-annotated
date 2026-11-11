@@ -6,6 +6,5 @@ export interface NightstandBook {
   note?: string; // optional one-liner in Catherine's words
 }
 
-export const nightstand: NightstandBook[] = [
-  { title: 'House of Leaves', author: 'Mark Z. Danielewski' },
-];
+// Empty list = the nightstand card hides itself everywhere.
+export const nightstand: NightstandBook[] = [];

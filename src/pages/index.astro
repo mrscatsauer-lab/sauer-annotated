@@ -86,9 +86,11 @@ const shelfArtwork = {
     )}
   </section>
 
-  <section class="wrap section nightstand-home">
-    <Nightstand />
-  </section>
+  {nightstand.length > 0 && (
+    <section class="wrap section nightstand-home">
+      <Nightstand />
+    </section>
+  )}
 
   <section class="wrap section">
     <div class="quote">
