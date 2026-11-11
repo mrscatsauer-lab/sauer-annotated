@@ -1,7 +1,7 @@
 ---
 title: Romeo and Juliet Is a Remake, and the Original Had a Lion
 description: Shakespeare's famous love story is a cover of an Ovid myth from 1,600 years earlier. Both are about love. Both are mostly about not waiting five minutes.
-date: 2026-11-09
+date: 2026-10-05
 shelf: reviews
 tags: [classics, shakespeare, ovid, required-reading]
 book:

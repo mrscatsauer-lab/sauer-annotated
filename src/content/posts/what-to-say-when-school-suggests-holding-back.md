@@ -1,7 +1,7 @@
 ---
 title: What to Say When the School Suggests Holding Your Child Back
 description: '"We think your child should repeat the grade." Here is what to ask before anyone decides, and what to say to your kid either way.'
-date: 2026-11-10
+date: 2026-10-28
 shelf: parents
 series: what-to-say-when
 tags: [grade-retention, scripts, school-meetings]

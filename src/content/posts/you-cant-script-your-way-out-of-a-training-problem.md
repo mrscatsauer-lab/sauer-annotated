@@ -1,7 +1,7 @@
 ---
 title: You Can't Script Your Way Out of a Training Problem
 description: Scripted curriculum promises consistency. The research says what actually moves students is a teacher who knows what to do when the script stops working. That's the part we keep skipping.
-date: 2026-11-09
+date: 2026-11-08
 shelf: soapbox
 tags: [curriculum, teacher-training, literacy, research]
 ---

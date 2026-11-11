@@ -1,7 +1,7 @@
 ---
 title: There Will Come Soft Rains Is About a Smart House With Nobody Home
 description: Ray Bradbury's most famous short story stars a house that keeps cooking breakfast after the world ends. It's set in August 2026. My students loved it anyway.
-date: 2026-11-10
+date: 2026-11-02
 shelf: reviews
 tags: [short-stories, science-fiction, bradbury, required-reading]
 book:

@@ -1,7 +1,7 @@
 ---
 title: "Would You Walk Away? Teaching Omelas With a Fishbowl Discussion"
 description: Ursula K. Le Guin's "The Ones Who Walk Away from Omelas" made my students angry, and that's exactly why it works. A lesson on imagery, argument, and one impossible choice, with a printable fishbowl tracker.
-date: 2026-11-10
+date: 2026-11-04
 shelf: teaching
 tags: [lesson-plans, socratic-seminar, fishbowl, argument, imagery, honors]
 book:

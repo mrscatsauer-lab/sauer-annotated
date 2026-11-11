@@ -1,7 +1,7 @@
 ---
 title: 'What "Analyze" Actually Means (and Why Your Kid Keeps Getting It Wrong)'
 description: The most common word on English assignments, decoded. Spoiler, it is not "summarize," and the difference is worth points.
-date: 2026-11-08
+date: 2026-09-23
 shelf: parents
 series: teenager-translator
 tags: [high-school, essays, homework-help]

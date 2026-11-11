@@ -1,7 +1,7 @@
 ---
 title: "Red Flag, Green Flag: A One-Day Characterization Lesson for Romeo and Juliet"
 description: Your students already judge people by their red flags. This lesson makes them prove it with a line number. One class period, sticky notes, and a courtroom.
-date: 2026-11-09
+date: 2026-10-07
 shelf: teaching
 tags: [lesson-plans, characterization, shakespeare, romeo-and-juliet, honors]
 ---

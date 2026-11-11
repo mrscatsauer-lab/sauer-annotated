@@ -1,7 +1,7 @@
 ---
 title: "We Held My Daughter Back. The Research Says Retention Doesn't Work. We're Both Right."
 description: Should struggling students repeat a grade? Most of the world has quietly said no. I said yes for my own kid. Here's what the research taught me, and why passing kids along without help isn't the answer either.
-date: 2026-11-10
+date: 2026-10-26
 shelf: soapbox
 tags: [grade-retention, policy, texas, research, parents]
 companion: what-to-say-when-school-suggests-holding-back

@@ -1,7 +1,7 @@
 ---
 title: Someone to Stay
 description: The love I imagine, the love I grew up with, and the little girl still waiting in between.
-date: 2026-11-08
+date: 2026-10-23
 shelf: writing-life
 series: here-be-monsters
 tags: [poetry]

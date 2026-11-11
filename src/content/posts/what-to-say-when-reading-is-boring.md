@@ -1,7 +1,7 @@
 ---
 title: What to Say When Your Kid Says Reading Is Boring
 description: '"Reading is boring" is almost never about reading. Here is what it usually means, and what to say instead of "but it''s good for you."'
-date: 2026-11-08
+date: 2026-09-18
 shelf: parents
 series: what-to-say-when
 tags: [reluctant-readers, scripts, motivation]

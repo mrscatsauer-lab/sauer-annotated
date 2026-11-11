@@ -1,7 +1,7 @@
 ---
 title: "A Meeting Is Not a Mentor: PLCs Need the Right Time, Place, and Coach"
 description: I cried after second period on my first day of teaching. A coach and a daily PLC are the reason I stayed. Here's why PLCs work, when they don't, and why scheduling one isn't the same as making it matter.
-date: 2026-11-10
+date: 2026-10-19
 shelf: soapbox
 tags: [plc, teacher-training, coaching, new-teachers, research]
 ---

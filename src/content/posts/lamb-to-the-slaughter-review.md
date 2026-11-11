@@ -1,7 +1,7 @@
 ---
 title: In Lamb to the Slaughter, the Murder Weapon Comes With Peas
 description: Roald Dahl's short story about a perfect housewife, a frozen leg of lamb, and the most satisfying dinner party in literature. My students loved it. I can see why.
-date: 2026-11-09
+date: 2026-10-12
 shelf: reviews
 tags: [short-stories, roald-dahl, suspense, irony, required-reading]
 book:

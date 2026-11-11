@@ -1,7 +1,7 @@
 ---
 title: The Library After Dark
 description: Deep blue wallpaper, never-ending shelves, and one reader who knows exactly which row she's looking for.
-date: 2026-11-08
+date: 2026-09-21
 shelf: writing-life
 series: small-lives
 tags: [short-story, flash-fiction]

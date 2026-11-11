@@ -1,7 +1,7 @@
 ---
 title: The Only Moon
 description: Something frantic moves in the dark, and the hunter in the burrow wakes up hungry.
-date: 2026-11-08
+date: 2026-10-02
 shelf: writing-life
 series: small-lives
 tags: [short-story, flash-fiction]

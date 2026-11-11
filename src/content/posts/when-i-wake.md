@@ -1,7 +1,7 @@
 ---
 title: When I Wake
 description: A short poem about the light someone brings, and the morning that comes after.
-date: 2026-11-08
+date: 2026-09-28
 shelf: writing-life
 tags: [poetry]
 companion: in-the-dark

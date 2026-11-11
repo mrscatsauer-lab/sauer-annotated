@@ -1,7 +1,7 @@
 ---
 title: The Closet
 description: Piles of clothes, tiny claws in the walls, and a girl who needs the door to open and needs it to stay shut.
-date: 2026-11-09
+date: 2026-11-10
 shelf: writing-life
 series: here-be-monsters
 companion: the-monsters-we-carry-part-1

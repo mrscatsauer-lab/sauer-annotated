@@ -1,12 +1,12 @@
 ---
 title: HB 1416 Looks Great on Paper. That's the Problem.
 description: Texas replaced holding kids back with required tutoring. Good idea. But a reading program on a Chromebook, a teacher with no reading training, and a log full of hours aren't the same thing as help.
-date: 2026-11-10
+date: 2026-11-06
 shelf: soapbox
 tags: [hb-1416, accelerated-instruction, tutoring, policy, texas]
 ---
 
-In my [last post](/posts/holding-kids-back/), I said Texas is moving in the right direction on grade retention. Instead of holding kids back after a failed STAAR test, the state now requires schools to help them catch up.
+In a [recent post](/posts/holding-kids-back/), I said Texas is moving in the right direction on grade retention. Instead of holding kids back after a failed STAAR test, the state now requires schools to help them catch up.
 
 On paper, I love it. In practice, I've watched it turn into something else.
 

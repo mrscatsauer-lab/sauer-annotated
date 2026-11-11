@@ -1,7 +1,7 @@
 ---
 title: "Did Lizzie Do It? A Primary Source Murder Mystery for Honors English"
 description: Real inquest testimony, autopsy reports, and crime scene maps from 1892. Your students become the jury, build a case, and argue it out in a Socratic seminar. Mine loved every minute.
-date: 2026-11-09
+date: 2026-10-14
 shelf: teaching
 tags: [lesson-plans, socratic-seminar, primary-sources, argument, honors]
 ---

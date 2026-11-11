@@ -1,7 +1,7 @@
 ---
 title: "Wonder: Three Questions for Tonight"
 description: A book about a kid who looks different, and three dinner questions that get families talking about kindness, courage, and who we let sit with us.
-date: 2026-11-08
+date: 2026-09-30
 shelf: parents
 series: pass-the-potatoes
 tags: [middle-grade, conversation-starters, kindness]
