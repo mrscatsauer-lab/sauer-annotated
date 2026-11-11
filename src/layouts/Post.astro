@@ -107,6 +107,14 @@ const related = picks.map((r) => r.p);
       <slot />
     </div>
 
+    {tags.length > 0 && (
+      <div class="wrap tag-wrap">
+        <ul class="tags" aria-label="Tags">
+          {tags.map((t) => <li>#{t}</li>)}
+        </ul>
+      </div>
+    )}
+
     {hasHiddenNotes && (
       <aside class="reread wrap" aria-label="Annotated edition">
         <div class="reread-card">
@@ -172,11 +180,6 @@ const related = picks.map((r) => r.p);
     )}
 
     <footer class="post-foot">
-      {tags.length > 0 && (
-        <ul class="tags" aria-label="Tags">
-          {tags.map((t) => <li>#{t}</li>)}
-        </ul>
-      )}
       {updated && <p class="updated">Revised {formatDate(updated)}</p>}
       <div class="signoff">
         <Crow size={48} />
@@ -498,5 +501,12 @@ const related = picks.map((r) => r.p);
   }
   .share-wrap {
     max-width: calc(var(--measure) + 2 * var(--gutter));
+  }
+  .tag-wrap {
+    max-width: calc(var(--measure) + 2 * var(--gutter));
+    margin-top: 1.6rem;
+  }
+  .tag-wrap .tags {
+    justify-content: flex-start;
   }
 </style>
