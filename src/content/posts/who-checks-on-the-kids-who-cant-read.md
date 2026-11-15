@@ -52,7 +52,13 @@ So the old system flagged kids and handed them to people who didn't know how to 
 
 This is my real question.
 
-Under [HB 1416](/posts/hb-1416-looks-good-on-paper/), a student who fails a state test gets accelerated instruction. I've already written about how that often turns into a kid on a Chromebook logging hours. But at least there was a trigger. Something told the school, "This student needs help."
+Under [HB 1416](/posts/hb-1416-looks-good-on-paper/), a student who fails a state test gets accelerated instruction. I've seen what that looks like. Students who failed STAAR reading get put into "tutoring," which means a computer program that has them read grade-level texts and answer questions about them.
+
+Think about that for a second. A kid who can't read grade-level text gets more grade-level text. Nobody checks whether the problem is decoding, fluency, vocabulary, or comprehension. Nothing is in place to help with the actual gap. The program just keeps asking the question they already couldn't answer.
+
+<aside class="note">that's not tutoring. that's a retake with a mouse.</aside>
+
+Still, at least there was a trigger. Something told the school, "This student needs help."
 
 When the tests change, what pulls the alarm? If a district skips the optional English I fall test, nobody finds out a freshman is struggling until the spring. And if a sophomore can't read well, there's no state test left that will notice at all.
 
