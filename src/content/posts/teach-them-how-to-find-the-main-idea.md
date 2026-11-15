@@ -34,13 +34,21 @@ Four things.
 
 **It's meant to be daily.** The developers recommend short, explicit practice every day, with the teacher modeling the thinking at every step. And they're clear that teachers need ongoing professional development and coaching to do it well, not a one-time workshop. You know I agree with that one.
 
+## How I've used it
+
+I first taught KAT to my middle school students at a Title I school. They made vast improvements in the short time I taught it. Kids who used to hand me the topic or a retelling started handing me real main ideas, because they finally had a way to build one.
+
+I teach high school now, and I still use the strategies for summarizing and finding the main idea. They work there, too.
+
+<aside class="note">same stems, bigger kids.</aside>
+
 ## An honest note for high school teachers
 
 Most of the KAT research has been done in grades 4 through 8. I haven't seen published studies with high school students yet, so using it in grades 9–12 is an extension, not a proven fact.
 
 Here's the part English teachers will like: it isn't only for nonfiction. The developers say the same strategy works with narratives and even poems. A story can be built on cause and effect. A poem can be a comparison.
 
-But the problem it solves doesn't disappear at ninth grade. If you teach high school, you've met students who still read nonfiction as one long list of facts. A clear routine for finding the structure is useful at any age, especially for the students who are still catching up.
+But the problem it solves doesn't disappear at ninth grade, and in my classroom, the main idea and summary strategies have held up. A clear routine for finding the structure is useful at any age, especially for the students who are still catching up.
 
 ## Where to learn more
 
