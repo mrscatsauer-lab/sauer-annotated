@@ -1,7 +1,7 @@
 ---
 title: "Nobody Will Miss STAAR. I'm Worried About What Leaves With It."
 description: Texas is replacing STAAR and dropping the English II test as a graduation requirement. Fine. But reading scores are falling, and nobody has answered the real question. Who checks that a teenager can actually read?
-date: 2026-11-14
+date: 2026-11-13
 shelf: soapbox
 tags: [staar, hb-8, accountability, literacy, policy, texas, research]
 ---

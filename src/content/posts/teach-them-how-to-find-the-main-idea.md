@@ -1,7 +1,7 @@
 ---
 title: Stop Asking Kids for the Main Idea. Teach Them How to Find It.
 description: The KAT framework from Texas A&M gives students a routine for nonfiction. Preteach the words, spot the text structure, and build the main idea instead of guessing at it. Here's what it is and where to learn more.
-date: 2026-11-15
+date: 2026-11-14
 shelf: teaching
 tags: [reading-comprehension, text-structure, vocabulary, science-of-reading, nonfiction]
 ---
