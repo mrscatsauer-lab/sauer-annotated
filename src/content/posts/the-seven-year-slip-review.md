@@ -1,7 +1,7 @@
 ---
 title: The Seven Year Slip Is All About Timing
 description: After two books that made me work for it, Ashley Poston's time-slip romance was exactly what I needed. Cute, quick, and built on a plot I hadn't seen before.
-date: 2026-11-18
+date: 2026-11-17
 shelf: reviews
 reviewSource: nightstand
 tags: [romance, time-travel, magical-realism, ashley-poston, nightstand]

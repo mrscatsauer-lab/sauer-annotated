@@ -1,7 +1,7 @@
 ---
 title: The Bird and the Sword Had Me Hooked. Then They Got Married.
 description: Amy Harmon's fantasy romance had me listening on audiobook while I cleaned the house. Then the wedding came halfway through, the slow burn went out, and I spent the rest of the book waiting for something to happen.
-date: 2026-11-17
+date: 2026-11-12
 shelf: reviews
 reviewSource: nightstand
 tags: [romance, fantasy, romantasy, slow-burn, amy-harmon, nightstand]
