@@ -50,6 +50,9 @@ export const SERIES = {
     label: 'Here Be Home',
     blurb: "Poems and stories about what comes after the monsters. The shadows still show up. It’s better anyway.",
     shelf: 'writing-life',
+
+    icon: '/art/series-here-be-home.webp',
+    iconAlt: 'A pencil drawing of a cottage with flower boxes, a picket fence, and a wooden sign that reads Here Be Home',
   },
 } as const;
 

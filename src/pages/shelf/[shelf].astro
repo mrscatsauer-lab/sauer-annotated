@@ -199,10 +199,12 @@ const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstan
   }
   .series-row a {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.8rem;
     align-items: center;
+    text-align: center;
     height: 100%;
-    padding: 0.85rem 1.1rem;
+    padding: 1.2rem 1.2rem 1.3rem;
     border: 1.5px solid var(--accent);
     outline: 1px solid var(--accent);
     outline-offset: 3px;
@@ -224,8 +226,9 @@ const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstan
   }
   .series-row :global(.icon),
   .series-row .icon {
-    width: 84px;
-    height: auto;
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
     flex: none;
   }
   .series-row .name {
