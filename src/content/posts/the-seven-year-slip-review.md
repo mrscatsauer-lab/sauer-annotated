@@ -8,11 +8,11 @@ tags: [romance, time-travel, magical-realism, ashley-poston, nightstand]
 book:
   title: The Seven Year Slip
   author: Ashley Poston
-  rating: 4.5
+  rating: 5
 checkout:
   readIf: "you want a cute, quick romance with a twist you haven't read a hundred times, or you need a palate cleanser after a book that wore you out."
   skipIf: "you need every rule of time travel explained. This one asks you to just go with it."
-  pairWith: "a free afternoon. You'll finish it in one."
+  pairWith: "a free afternoon and nowhere to be. You'll want to keep reading all night and finish it in one sitting."
 ---
 
 My last two nightstand reviews were both three and a half stars. One was slow. One fell flat halfway through. I needed a book that didn't make me work for it.
@@ -47,6 +47,6 @@ The small complaints I saw were fair ones. [Dini Panda Reads](https://dinipandar
 
 ## The verdict
 
-Four and a half stars. It's cute, it's quick, and the plot felt genuinely new. Sometimes a book doesn't have to wreck you or teach you anything. Sometimes it just has to be lovely, and this one is.
+Five stars. I almost took off half a star, and then I asked myself why. It's cute, it's quick, and the plot felt genuinely new. Sometimes a book doesn't have to wreck you or teach you anything. Sometimes it just has to be lovely, and this one is.
 
 **Sources:** [Bookshelf Fantasies](https://bookshelffantasies.com/2023/07/08/book-review-the-seven-year-slip-by-ashley-poston/), [Books, Bones & Buffy](https://booksbonesbuffy.com/2023/06/08/the-seven-year-slip-by-ashley-poston-review/), [Dini Panda Reads](https://dinipandareads.com/2025/07/31/book-review-the-seven-year-slip-by-ashley-poston/)
