@@ -43,7 +43,9 @@ That's the trick of it. The book calls him the Villain on every page, and the mo
 
 The ending doesn't really end. Book one stops on a cliffhanger, right in the middle of the danger, so you have to pick up the next book to find out what happens.
 
-I get why authors do it. It still cost a star. When I finish a book, I want to feel like I finished something, not like I hit pause.
+I really hate cliffhangers. Sometimes I forget to read the next one. Sometimes I have a million other books to read in between, and by the time I get back to the series, I've lost the thread. And it's even more frustrating when the next book isn't out yet, or it is and I just haven't gotten to it.
+
+So one star off. Not because the book wasn't good, but because it made me wait.
 
 ## The verdict
 
