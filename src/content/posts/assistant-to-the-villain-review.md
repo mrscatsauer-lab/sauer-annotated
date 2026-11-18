@@ -1,7 +1,7 @@
 ---
 title: Assistant to the Villain Made Me Root for the Bad Guy
 description: Hannah Nicole Maehrer's fantasy rom-com is a workplace comedy where the boss happens to be the kingdom's most feared villain. The office humor is hilarious, and it's the first book that had me cheering for the bad guys. One star off for an ending that doesn't end.
-date: 2026-11-18
+date: 2026-10-08
 shelf: reviews
 reviewSource: nightstand
 tags: [romance, fantasy, romantasy, rom-com, villains, hannah-nicole-maehrer, nightstand]
@@ -15,7 +15,7 @@ checkout:
   pairWith: "*Apprentice to the Villain*, already on your nightstand before you hit the last chapter."
 ---
 
-I read this one months ago, and I'm still thinking about how cute it was.
+I read this one over the summer, and I'm still thinking about how cute it was.
 
 ## The setup
 
