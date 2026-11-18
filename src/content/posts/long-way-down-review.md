@@ -1,7 +1,7 @@
 ---
 title: Long Way Down Takes About a Minute. My Students Didn't Want It to End.
 description: Jason Reynolds's novel in verse happens in one elevator ride, one floor at a time. It's packed with figurative language, it's a quick read, and my students came to class every day anxiously waiting for the next floor. It's also heavy, and you should know that going in.
-date: 2026-11-18
+date: 2026-11-15
 shelf: reviews
 reviewSource: classroom
 tags: [novel-in-verse, figurative-language, characterization, plot, jason-reynolds, required-reading]
