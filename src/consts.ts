@@ -46,6 +46,11 @@ export const SERIES = {
     icon: '/art/series-here-be-monsters.webp',
     iconAlt: 'An old map with a kraken, a sea serpent, and the words monsters be here',
   },
+  'here-be-home': {
+    label: 'Here Be Home',
+    blurb: "Poems and stories about what comes after the monsters. The shadows still show up. It’s better anyway.",
+    shelf: 'writing-life',
+  },
 } as const;
 
 export type SeriesKey = keyof typeof SERIES;

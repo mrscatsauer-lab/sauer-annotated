@@ -3,7 +3,7 @@ title: The First Room That Was Mine
 description: A white iron bed, a floor full of Lego houses, and the first night when nothing happened.
 date: 2026-11-17
 shelf: writing-life
-series: here-be-monsters
+series: here-be-home
 tags: [poetry]
 draft: false
 ---

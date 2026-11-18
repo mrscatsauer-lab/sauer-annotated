@@ -3,7 +3,7 @@ title: "Somebody's Mother"
 description: A snack for a toddler, a memory of jelly shoes, and a six-year-old looking for a new mother.
 date: 2026-09-14
 shelf: writing-life
-series: here-be-monsters
+series: here-be-home
 tags: [short-story, fiction, flash-fiction, motherhood]
 hiddenNotes: true
 annotationBlurb: See how it’s built, in my own margin notes.

@@ -3,7 +3,7 @@ title: between us
 description: A love poem for my husband, about two people who survived their own shadows and found home in each other.
 date: 2026-11-11
 shelf: writing-life
-series: here-be-monsters
+series: here-be-home
 tags: [poetry]
 draft: false
 ---
