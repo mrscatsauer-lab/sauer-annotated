@@ -37,7 +37,7 @@ And it seems to work. A Texas Tech study of the first districts found a positive
 
 Hinojosa says TIA "requires teachers to jump through more hoops to get more money."
 
-What hoops? TIA asks you to come to work, try your best, and do your job well. That's it. Your principal observes you, which already happens. Your students take tests, which already happens. The only extra thing TIA asks is that your students actually grow.
+What hoops? TIA asks you to come to work, try your best, and do your job well. That's it. I don't have to do anything for TIA but my job. Your principal observes you, which already happens. Your students take tests, which already happens. The only extra thing TIA asks is that your students actually grow.
 
 In almost any other job, people get bonuses based on how well they perform. Nobody calls that jumping through hoops. They call it getting paid for doing good work.
 
