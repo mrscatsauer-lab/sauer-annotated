@@ -43,11 +43,15 @@ In almost any other job, people get bonuses based on how well they perform. Nobo
 
 Taking TIA away doesn't remove a hoop. It takes something away from good teachers.
 
+<aside class="note">the only hoop is called "doing your job."</aside>
+
 ## My TIA story
 
 My first year, I earned an Exemplary rating. I worked my butt off for that.
 
 My second year, I had a different evaluator. I don't think she cared for me. That year I was getting my master's in reading and literacy so I could be a better teacher, and my students grew *more* than they had the year before. I still scored lower on my evaluations.
+
+<aside class="note">same teacher. better results. lower score. make it make sense.</aside>
 
 So on paper, I looked like a worse teacher. Based on one person's opinion of me during one fifty-minute class period. That is crap.
 
@@ -98,6 +102,8 @@ Hinojosa says she wants to "respect" the teachers who have already earned TIA. T
 **Make the beginning-of-year test count.** If growth matters more, the starting line has to be honest. Make the beginning-of-year test count for something, like a grade, so students have a reason to try. When the first test matters to the kids, nobody can tell them to tank it.
 
 **Give credit for learning more.** If you're earning a master's or a doctorate in your field, that should count toward your score. I'm not talking about any degree. I'm talking about professional growth in the thing you teach. My second year, I was getting my master's in reading and literacy so I could teach better, and my evaluation went down. A system that's supposed to reward great teaching should notice when a teacher is working to get better at it.
+
+<aside class="note">four fixes. not one of them is "get rid of it."</aside>
 
 Raise base pay for everyone. And keep paying the teachers who go above and beyond. Those aren't competing ideas. Texas can do both.
 
