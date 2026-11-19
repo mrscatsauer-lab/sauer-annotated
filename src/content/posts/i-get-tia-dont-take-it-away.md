@@ -33,6 +33,16 @@ And it seems to work. A Texas Tech study of the first districts found a positive
 
 <aside class="note">a raise for being good at your job. in teaching. wild concept.</aside>
 
+## There are no hoops
+
+Hinojosa says TIA "requires teachers to jump through more hoops to get more money."
+
+What hoops? TIA asks you to come to work, try your best, and do your job well. That's it. Your principal observes you, which already happens. Your students take tests, which already happens. The only extra thing TIA asks is that your students actually grow.
+
+In almost any other job, people get bonuses based on how well they perform. Nobody calls that jumping through hoops. They call it getting paid for doing good work.
+
+Taking TIA away doesn't remove a hoop. It takes something away from good teachers.
+
 ## My TIA story
 
 My first year, I earned an Exemplary rating. I worked my butt off for that.
@@ -76,6 +86,8 @@ But she didn't put a number on it. She said, "We'll see what we have available."
 <aside class="note">"we'll see" is not a salary.</aside>
 
 ## Fix it. Don't scrap it.
+
+TIA has flaws. I've been on the wrong end of one. But the program isn't crap, and the money is real, and it goes to teachers who earned it.
 
 Hinojosa says she wants to "respect" the teachers who have already earned TIA. The best way to respect them is to keep the program and fix what's broken. Four fixes would go a long way:
 
