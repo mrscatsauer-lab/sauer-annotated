@@ -55,7 +55,9 @@ Dude. That's amazing.
 
 **The evaluations are biased.** I lived it. Different evaluators will score you completely differently, and when a big piece of your pay rides on one person watching one class, that's a problem. My students' growth went up. My score went down. Those two things shouldn't be able to happen at the same time.
 
-If Hinojosa's team wants to fix something, fix that.
+**The growth measure can be gamed.** Growth is measured from the beginning-of-year test to the end-of-year test. So some teachers tell their students not to try on the beginning-of-year test. A low starting score makes the growth look bigger, and bigger growth means a better TIA rating. The kids lose a real measure of where they started, and the teachers who play it straight look worse next to the ones who don't.
+
+If Hinojosa's team wants to fix something, fix those.
 
 ## Why scrapping it is the wrong answer
 
@@ -75,7 +77,13 @@ But she didn't put a number on it. She said, "We'll see what we have available."
 
 ## Fix it. Don't scrap it.
 
-Hinojosa says she wants to "respect" the teachers who have already earned TIA. The best way to respect them is to keep the program and fix what's broken: make the evaluations fairer, so one person's opinion can't sink a teacher whose students are thriving.
+Hinojosa says she wants to "respect" the teachers who have already earned TIA. The best way to respect them is to keep the program and fix what's broken. Three fixes would go a long way:
+
+**More than one observer.** No teacher's pay should ride on one person's opinion of one class period. Use several observers and several visits, so one evaluator who doesn't like you can't sink a year of good teaching.
+
+**More weight on growth.** Student growth is the closest thing we have to an objective measure of whether a teacher is getting results. It should count for more than a fifty-minute observation.
+
+**Make the beginning-of-year test count.** If growth matters more, the starting line has to be honest. Make the beginning-of-year test count for something, like a grade, so students have a reason to try. When the first test matters to the kids, nobody can tell them to tank it.
 
 Raise base pay for everyone. And keep paying the teachers who go above and beyond. Those aren't competing ideas. Texas can do both.
 
