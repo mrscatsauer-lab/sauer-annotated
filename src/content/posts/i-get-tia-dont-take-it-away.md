@@ -77,13 +77,15 @@ But she didn't put a number on it. She said, "We'll see what we have available."
 
 ## Fix it. Don't scrap it.
 
-Hinojosa says she wants to "respect" the teachers who have already earned TIA. The best way to respect them is to keep the program and fix what's broken. Three fixes would go a long way:
+Hinojosa says she wants to "respect" the teachers who have already earned TIA. The best way to respect them is to keep the program and fix what's broken. Four fixes would go a long way:
 
 **More than one observer.** No teacher's pay should ride on one person's opinion of one class period. Use several observers and several visits, so one evaluator who doesn't like you can't sink a year of good teaching.
 
 **More weight on growth.** Student growth is the closest thing we have to an objective measure of whether a teacher is getting results. It should count for more than a fifty-minute observation.
 
 **Make the beginning-of-year test count.** If growth matters more, the starting line has to be honest. Make the beginning-of-year test count for something, like a grade, so students have a reason to try. When the first test matters to the kids, nobody can tell them to tank it.
+
+**Give credit for learning more.** If you're earning a master's or a doctorate in your field, that should count toward your score. My second year, I was getting my master's in reading and literacy so I could teach better, and my evaluation went down. A system that's supposed to reward great teaching should notice when a teacher is working to get better at it.
 
 Raise base pay for everyone. And keep paying the teachers who go above and beyond. Those aren't competing ideas. Texas can do both.
 
