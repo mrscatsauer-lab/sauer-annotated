@@ -37,11 +37,15 @@ I love Dominic. His whole personality is taking care of people. On an island whe
 
 The book switches between *then*, on the island, and *now*, after they're rescued and trying to live in a world that kept going without them. I loved that format. You know they survive, so the suspense isn't whether they make it. It's what happened out there, and what it cost them.
 
+<aside class="note">you know the ending before you start, and you still can't stop. that's the trick.</aside>
+
 ## The one thing that bothered me
 
 I would never justify cheating. That's the only thing about this book that bothered me.
 
 I didn't like Darren from the start, and the author clearly works hard to make sure you don't either. (More on that in the spoilers.) I understand why. If Darren is awful enough, it's easier to root for Callista and Dominic.
+
+<aside class="note">didn't like darren from page one. my gut was right.</aside>
 
 But two wrongs don't make a right. Darren being a bad guy doesn't make cheating on him okay.
 
