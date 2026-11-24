@@ -8,5 +8,5 @@ export interface NightstandBook {
 
 // Empty list = the nightstand card hides itself everywhere.
 export const nightstand: NightstandBook[] = [
-  { title: 'Never Keep', author: 'Caroline Peckham & Susanne Valenti' },
+  { title: 'The Washwoman at the River’s End', author: 'Megan Shade' },
 ];
