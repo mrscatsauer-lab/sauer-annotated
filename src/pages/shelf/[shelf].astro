@@ -67,16 +67,6 @@ const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstan
           <p class="eyebrow">Two stacks</p>
           <ul>
             <li>
-              <a href="#classroom" class="has-icon">
-                <Image class="icon" src={shelfArt} alt="" width={180} />
-                <span class="text">
-                  <span class="name">From my classroom</span>
-                  <span class="blurb">Books my students read with me, and what they really thought.</span>
-                  <span class="count">{classroom.length} {classroom.length === 1 ? 'review' : 'reviews'} →</span>
-                </span>
-              </a>
-            </li>
-            <li>
               <a href="#nightstand" class="has-icon">
                 <Image class="icon" src={lateArt} alt="" width={180} />
                 <span class="text">
@@ -86,17 +76,18 @@ const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstan
                 </span>
               </a>
             </li>
+            <li>
+              <a href="#classroom" class="has-icon">
+                <Image class="icon" src={shelfArt} alt="" width={180} />
+                <span class="text">
+                  <span class="name">From my classroom</span>
+                  <span class="blurb">Books my students read with me, and what they really thought.</span>
+                  <span class="count">{classroom.length} {classroom.length === 1 ? 'review' : 'reviews'} →</span>
+                </span>
+              </a>
+            </li>
           </ul>
         </nav>
-        <section class="review-group" id="classroom">
-          <h2>From my classroom</h2>
-          <p class="group-blurb">Books, stories, and plays my students read with me, plus what they really thought of them.</p>
-          {classroom.length ? (
-            <div class="cards">{classroom.map((p) => <PostCard post={p} />)}</div>
-          ) : (
-            <p class="hand empty">Nothing here yet.</p>
-          )}
-        </section>
         <section class="review-group" id="nightstand">
           <h2>From my nightstand</h2>
           <p class="group-blurb">Books I read for me. No lesson plans, no rubrics, just opinions.</p>
@@ -108,6 +99,15 @@ const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstan
               )}
             </div>
           </div>
+        </section>
+        <section class="review-group" id="classroom">
+          <h2>From my classroom</h2>
+          <p class="group-blurb">Books, stories, and plays my students read with me, plus what they really thought of them.</p>
+          {classroom.length ? (
+            <div class="cards">{classroom.map((p) => <PostCard post={p} />)}</div>
+          ) : (
+            <p class="hand empty">Nothing here yet.</p>
+          )}
         </section>
       </>
     ) : posts.length ? (
