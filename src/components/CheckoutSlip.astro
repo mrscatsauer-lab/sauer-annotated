@@ -1,15 +1,24 @@
 ---
 // The "checked out to Catherine" slip: reading check-ins for the current
 // nightstand book. Data lives in src/data/nightstand.ts (the `log` array).
+// On a finished review, pass the book and its log as props instead.
 import { nightstand } from '../data/nightstand';
-const current = nightstand[0];
-const log = current?.log ?? [];
+type Entry = { date: string; chapter: string; comment: string; note?: string };
+interface Props {
+  book?: { title: string; author: string };
+  log?: Entry[];
+  finished?: boolean;
+}
+const props = Astro.props;
+const current = props.book ?? nightstand[0];
+const log: Entry[] = props.log ?? nightstand[0]?.log ?? [];
+const finished = props.finished ?? false;
 const stamp = (d: string) =>
   new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
 ---
 {current && (
   <aside class="slip" aria-label={`Reading check-ins for ${current.title}`}>
-    <p class="k">Checked out to Catherine</p>
+    <p class="k">{finished ? 'Returned by Catherine' : 'Checked out to Catherine'}</p>
     <p class="bk">{current.title}</p>
     <p class="au">{current.author}</p>
     {log.length > 0 ? (
@@ -31,7 +40,11 @@ const stamp = (d: string) =>
     ) : (
       <p class="none">no check-ins yet. i just started.</p>
     )}
-    <p class="foot">the review goes on the shelf when i finish</p>
+    {finished ? (
+      <p class="foot">my notes while i was reading</p>
+    ) : (
+      <p class="foot">the review goes on the shelf when i finish</p>
+    )}
   </aside>
 )}
 <style>
@@ -88,6 +101,25 @@ const stamp = (d: string) =>
   table {
     width: 100%;
     border-collapse: collapse;
+    margin: 0;
+    font-size: inherit;
+  }
+  /* keep the review page's table styles off the slip */
+  .slip th,
+  .slip td {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-top: 0 !important;
+    background: none !important;
+  }
+  .slip th {
+    font-family: 'Courier New', monospace !important;
+    border-bottom: 2px solid #b8a274 !important;
+    padding: 0.25rem !important;
+  }
+  .slip td {
+    border-bottom: 1px solid #d9c79c !important;
+    padding: 0.55rem 0.25rem !important;
   }
   th {
     font-family: 'Courier New', monospace;

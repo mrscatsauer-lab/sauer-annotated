@@ -2,6 +2,7 @@
 import { getEntry, getCollection, type CollectionEntry } from 'astro:content';
 import Base from './Base.astro';
 import PostCard from '../components/PostCard.astro';
+import CheckoutSlip from '../components/CheckoutSlip.astro';
 import ShareButtons from '../components/ShareButtons.astro';
 import Crow from '../components/Crow.astro';
 import { SHELVES, SERIES, SEQUENCES } from '../consts';
@@ -11,6 +12,7 @@ interface Props { post: CollectionEntry<'posts'> }
 const { post } = Astro.props;
 const { title, description, date, updated, shelf, tags, book, pairedBook } = post.data;
 const checkout = post.data.checkout;
+const readingLog = post.data.readingLog;
 const inline = (t = '') =>
   t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\*([^*]+)\*/g, '<em>$1</em>').replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>');
 const checkoutRows = checkout
@@ -114,9 +116,15 @@ const related = picks.map((r) => r.p);
     )}
 
     <div class:list={['prose', 'wrap-prose', { 'notes-hidden': hasHiddenNotes }]} id="story">
+      {readingLog && book && (
+        <div class="log-side"><CheckoutSlip book={{ title: book.title, author: book.author }} log={readingLog} finished /></div>
+      )}
       <slot />
     </div>
 
+    {readingLog && book && (
+      <div class="wrap log-inline"><CheckoutSlip book={{ title: book.title, author: book.author }} log={readingLog} finished /></div>
+    )}
     {checkoutRows.length > 0 && (
       <div class="wrap checkout-wrap">
         <aside class="checkout-card" aria-label="Checkout card">
@@ -656,6 +664,30 @@ const related = picks.map((r) => r.p);
     .checkout-card {
       transform: none;
       box-shadow: none;
+    }
+  }
+  /* Finished-book reading log: left margin on wide screens, inline before the checkout card otherwise */
+  .log-side {
+    display: none;
+  }
+  .log-inline {
+    max-width: calc(var(--measure) + 2 * var(--gutter));
+    margin-top: 2.2rem;
+  }
+  .log-inline :global(.slip) {
+    max-width: 26rem;
+    margin: 0 auto;
+  }
+  @media (min-width: 1280px) {
+    .log-side {
+      display: block;
+      float: left;
+      clear: left;
+      width: 16rem;
+      margin: 0.3rem 0 1rem -19rem;
+    }
+    .log-inline {
+      display: none;
     }
   }
 </style>

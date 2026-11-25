@@ -28,6 +28,10 @@ const posts = defineCollection({
         rating: z.number().min(0).max(5).optional(),
       })
       .optional(),
+    // Reviews: the reading check-ins from the nightstand checkout slip, moved here when she finishes
+    readingLog: z
+      .array(z.object({ date: z.string(), chapter: z.string(), comment: z.string(), note: z.string().optional() }))
+      .optional(),
     // Reviews: the library checkout card (Read it if / Skip it if / Pair it with)
     checkout: z
       .object({
