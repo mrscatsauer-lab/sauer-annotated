@@ -2,7 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import PostCard from '../../components/PostCard.astro';
-import Nightstand from '../../components/Nightstand.astro';
+import CheckoutSlip from '../../components/CheckoutSlip.astro';
 import { nightstand } from '../../data/nightstand';
 import { Image } from 'astro:assets';
 import shelfArt from '../../assets/art/bookshelf.webp';
@@ -100,10 +100,14 @@ const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstan
         <section class="review-group" id="nightstand">
           <h2>From my nightstand</h2>
           <p class="group-blurb">Books I read for me. No lesson plans, no rubrics, just opinions.</p>
-          <div class="ns-wrap"><Nightstand onShelf /></div>
-          {nightstandReviews.length > 0 && (
-            <div class="cards">{nightstandReviews.map((p) => <PostCard post={p} />)}</div>
-          )}
+          <div class:list={['ns-layout', { 'has-slip': nightstand[0] }]}>
+            {nightstand[0] && <div class="ns-side"><CheckoutSlip /></div>}
+            <div class="ns-main">
+              {nightstandReviews.length > 0 && (
+                <div class="cards">{nightstandReviews.map((p) => <PostCard post={p} />)}</div>
+              )}
+            </div>
+          </div>
         </section>
       </>
     ) : posts.length ? (
@@ -126,8 +130,37 @@ const nightstandReviews = posts.filter((p) => p.data.reviewSource === 'nightstan
     color: var(--ink-soft);
     margin: 0 0 1.5rem;
   }
-  .ns-wrap {
-    margin: 0.5rem 0 2rem;
+  .ns-layout.has-slip {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 20rem;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .ns-side {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 1.5rem;
+  }
+  .ns-main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  @media (max-width: 860px) {
+    .ns-layout.has-slip {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .ns-side,
+    .ns-main {
+      grid-column: 1;
+      grid-row: auto;
+      position: static;
+    }
+    .ns-side {
+      max-width: 26rem;
+      margin: 0 auto;
+    }
   }
   .cards {
     display: grid;

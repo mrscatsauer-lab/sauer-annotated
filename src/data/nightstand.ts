@@ -4,6 +4,9 @@ export interface NightstandBook {
   title: string;
   author: string;
   note?: string; // optional one-liner in Catherine's words
+  // Reading check-ins for the checkout slip on the Checked Out shelf. Newest first.
+  // date: 'YYYY-MM-DD', chapter: e.g. 'Ch. 7', comment: her words, note: optional handwritten aside.
+  log?: { date: string; chapter: string; comment: string; note?: string }[];
 }
 
 // Empty list = the nightstand card hides itself everywhere.

@@ -1,0 +1,153 @@
+---
+// The "checked out to Catherine" slip: reading check-ins for the current
+// nightstand book. Data lives in src/data/nightstand.ts (the `log` array).
+import { nightstand } from '../data/nightstand';
+const current = nightstand[0];
+const log = current?.log ?? [];
+const stamp = (d: string) =>
+  new Date(d + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase();
+---
+{current && (
+  <aside class="slip" aria-label={`Reading check-ins for ${current.title}`}>
+    <p class="k">Checked out to Catherine</p>
+    <p class="bk">{current.title}</p>
+    <p class="au">{current.author}</p>
+    {log.length > 0 ? (
+      <table>
+        <thead><tr><th scope="col">Date</th><th scope="col">Chapter</th><th scope="col">Notes</th></tr></thead>
+        <tbody>
+          {log.map((e) => (
+            <tr>
+              <td><span class="stamp">{stamp(e.date)}</span></td>
+              <td class="ch">{e.chapter}</td>
+              <td>
+                <p class="c">{e.comment}</p>
+                {e.note && <p class="n">{e.note}</p>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    ) : (
+      <p class="none">no check-ins yet. i just started.</p>
+    )}
+    <p class="foot">the review goes on the shelf when i finish</p>
+  </aside>
+)}
+<style>
+  .slip {
+    position: relative;
+    background: #f3e7c9;
+    border: 1px solid #d9c79c;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    transform: rotate(-1deg);
+    padding: 1.4rem 1.2rem 1rem;
+    color: #3a2f25;
+  }
+  .slip::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    width: 4rem;
+    height: 0.8rem;
+    margin-left: -2rem;
+    background: var(--paper);
+    border: 1px solid #d9c79c;
+    border-top: 0;
+    border-radius: 0 0 2rem 2rem;
+  }
+  .slip p {
+    margin: 0;
+  }
+  .k {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #7a1f2b;
+    text-align: center;
+  }
+  .bk {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 0.4rem !important;
+  }
+  .au {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: #6b5d50;
+    text-align: center;
+    margin-bottom: 0.8rem !important;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3d4f7a;
+    text-align: left;
+    border-bottom: 2px solid #b8a274;
+    padding: 0.25rem;
+  }
+  td {
+    border-bottom: 1px solid #d9c79c;
+    padding: 0.55rem 0.25rem;
+    vertical-align: top;
+  }
+  .stamp {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: #a01818;
+    border: 1.5px solid #a01818;
+    border-radius: 3px;
+    padding: 0 0.3rem;
+    transform: rotate(-4deg);
+    white-space: nowrap;
+    opacity: 0.85;
+  }
+  .ch {
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    color: #3d4f7a;
+    white-space: nowrap;
+  }
+  .c {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  .n {
+    font-family: var(--font-hand);
+    font-size: 1.25rem;
+    line-height: 1.1;
+    color: #7a1f2b;
+    margin-top: 0.25rem !important;
+  }
+  .none,
+  .foot {
+    font-family: var(--font-hand);
+    text-align: center;
+    color: #7a1f2b;
+  }
+  .none {
+    font-size: 1.35rem;
+    padding: 0.8rem 0;
+    border-top: 2px solid #b8a274;
+  }
+  .foot {
+    font-size: 1.1rem;
+    color: #6b5d50;
+    margin-top: 0.8rem !important;
+  }
+</style>
