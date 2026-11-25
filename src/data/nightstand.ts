@@ -16,6 +16,12 @@ export const nightstand: NightstandBook[] = [
     author: 'Megan Shade',
     log: [
       {
+        date: '2026-11-24',
+        chapter: 'Ch. 2',
+        comment: 'Oh no. It was going so well. Then we meet Brennen, who speaks Gaelic, and suddenly I’m reading the way the teacher in Charlie Brown talks. Wah-wah-wah. There are translations, but all that back-and-forth is breaking up my flow.',
+        note: 'might switch to audible for this part.',
+      },
+      {
         date: '2026-11-23',
         chapter: 'Ch. 1',
         comment: 'What a unique idea: a woman who washes the clothes of the dead so their souls can pass on to the After.',
