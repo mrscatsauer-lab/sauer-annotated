@@ -11,5 +11,16 @@ export interface NightstandBook {
 
 // Empty list = the nightstand card hides itself everywhere.
 export const nightstand: NightstandBook[] = [
-  { title: 'The Washwoman at the River’s End', author: 'Megan Shade' },
+  {
+    title: 'The Washwoman at the River’s End',
+    author: 'Megan Shade',
+    log: [
+      {
+        date: '2026-11-23',
+        chapter: 'Ch. 1',
+        comment: 'What a unique idea: a woman who washes the clothes of the dead so their souls can pass on to the After.',
+        note: 'one chapter in and i’m already hooked.',
+      },
+    ],
+  },
 ];
