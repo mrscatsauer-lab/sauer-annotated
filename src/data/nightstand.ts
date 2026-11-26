@@ -16,6 +16,12 @@ export const nightstand: NightstandBook[] = [
     author: 'Megan Shade',
     log: [
       {
+        date: '2026-11-25',
+        chapter: 'Ch. 7',
+        comment: 'Brennen finds her. “I am going to find a way to kill you.”',
+        note: 'the tension is thick!',
+      },
+      {
         date: '2026-11-24',
         chapter: 'Ch. 2',
         comment: 'Oh no. It was going so well. Then we meet Brennen, who speaks Gaelic, and suddenly I’m reading the way the teacher in Charlie Brown talks. Wah-wah-wah. There are translations, but all that back-and-forth is breaking up my flow.',
